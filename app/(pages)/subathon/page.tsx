@@ -21,7 +21,7 @@ export default function SubathonPage() {
     <section className='size-full bg-[url(/graphics/noisey.svg)] bg-repeat'>
       <SubathonHeader />
 
-      <div className='mx-auto max-w-7xl space-y-16 px-6 pb-24'>
+      <div className='mx-auto max-w-7xl space-y-16 px-6'>
         <ProgressOverview />
         <GoalsList />
 

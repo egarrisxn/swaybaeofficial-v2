@@ -1,6 +1,6 @@
 export const currentStats = {
-  totalPoints: 128200,
-  hoursStreamed: 16,
+  totalPoints: 137900,
+  hoursStreamed: 17,
   daysRemaining: 4,
 };
 
@@ -12,6 +12,7 @@ export const goals = [
       "Let's look back at Sway's stream journey! We'll look back through all the clips ever created and enjoy them together.",
     completed: true,
     currentProgress: 100,
+    link: "https://www.youtube.com/watch?v=F-pIy8lnyUQ",
   },
   {
     points: 30000,
@@ -20,6 +21,7 @@ export const goals = [
       "Exactly what it sounds like. We can thank Smoothie King x Heinz Ketchup for this one.",
     completed: true,
     currentProgress: 100,
+    link: "https://www.youtube.com/watch?v=F-pIy8lnyUQ",
   },
   {
     points: 40000,
@@ -28,6 +30,7 @@ export const goals = [
       "For the day, a channel point offering will unlock, allowing you to choose which Hearthstone hat Sway has to wear until someone redeems another.",
     completed: true,
     currentProgress: 100,
+    link: "https://www.twitch.tv/sway_bae/clip/MiniatureHappyJaySMOrc-nfiWA5VzCgeDM5cr",
   },
   {
     points: 50000,
@@ -81,7 +84,7 @@ export const goals = [
     description:
       "Excited about Sway's new merch line? So is she! Join this giveaway to score whatever you'd like from her merch store!",
     completed: false,
-    currentProgress: 123800,
+    currentProgress: 137900,
   },
   {
     points: 200000,

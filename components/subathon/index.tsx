@@ -1,4 +1,11 @@
-import { CheckCircle, Clock, Users, Repeat, Zap } from "lucide-react";
+import {
+  CheckCircle,
+  Clock,
+  Users,
+  Repeat,
+  Zap,
+  ExternalLinkIcon,
+} from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -15,7 +22,6 @@ export function SubathonHeader() {
             <Clock className='size-3 text-accent md:size-3.5' />
             <span className='text-muted-foreground'>Happening Now!</span>
           </div>
-
           <h1 className='bg-gradient-to-br from-foreground via-foreground to-accent bg-clip-text pt-1 pb-6 text-[2.5rem] leading-none font-bold tracking-tight text-transparent text-shadow-lg sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl'>
             {`Sway's Subathon`}
             <br />
@@ -25,7 +31,6 @@ export function SubathonHeader() {
             Join the ultimate streaming marathon with point-based goals, crazy
             challenges, and non-stop entertainment
           </p>
-
           <div className='flex flex-col items-center gap-6 sm:flex-row sm:justify-center'>
             <a
               href='https://www.twitch.tv/sway_bae'
@@ -52,7 +57,6 @@ export function ProgressOverview() {
   const nextGoalProgress = nextGoal
     ? (currentStats.totalPoints / nextGoal.points) * 100
     : 0;
-
   return (
     <Card className='p-8'>
       <div className='space-y-6'>
@@ -66,12 +70,13 @@ export function ProgressOverview() {
               ` • Next goal: ${nextGoal.points.toLocaleString()} points`}
           </p>
         </div>
-
         {nextGoal && (
           <div className='space-y-3'>
             <div className='flex justify-between text-sm'>
-              <span className='font-medium'>Progress to {nextGoal.title}</span>
-              <span className='text-muted-foreground'>
+              <span className='font-serif font-semibold tracking-wide'>
+                Progress to {nextGoal.title}
+              </span>
+              <span className='font-serif font-semibold tracking-wide text-muted-foreground'>
                 {nextGoalProgress.toFixed(1)}%
               </span>
             </div>
@@ -83,13 +88,12 @@ export function ProgressOverview() {
             </div>
           </div>
         )}
-
         <div className='grid gap-4 sm:grid-cols-3'>
           <div className='text-center'>
             <div className='mb-1 text-2xl font-bold text-accent'>
               {currentStats.totalPoints.toLocaleString()}
             </div>
-            <div className='text-sm leading-relaxed font-medium text-foreground'>
+            <div className='font-serif text-sm leading-relaxed font-medium text-foreground'>
               Total Points
             </div>
           </div>
@@ -97,7 +101,7 @@ export function ProgressOverview() {
             <div className='mb-1 text-2xl font-bold text-accent'>
               {goals.filter((g) => g.completed).length}
             </div>
-            <div className='text-sm leading-relaxed font-medium text-foreground'>
+            <div className='font-serif text-sm leading-relaxed font-medium text-foreground'>
               Goals Completed
             </div>
           </div>
@@ -105,7 +109,7 @@ export function ProgressOverview() {
             <div className='mb-1 text-2xl font-bold text-accent'>
               {currentStats.hoursStreamed}
             </div>
-            <div className='text-sm leading-relaxed font-medium text-foreground'>
+            <div className='font-serif text-sm leading-relaxed font-medium text-foreground'>
               Hours Streamed
             </div>
           </div>
@@ -118,7 +122,6 @@ export function ProgressOverview() {
 export function GoalsList() {
   const completedGoals = goals.filter((goal) => goal.completed);
   const activeGoals = goals.filter((goal) => !goal.completed);
-
   return (
     <section className='space-y-8'>
       <div className='text-center'>
@@ -126,10 +129,9 @@ export function GoalsList() {
           Point Goals
         </h2>
         <p className='text-base leading-relaxed text-balance text-muted-foreground'>
-          Unlock amazing content and crazy challenges as we hit each milestone
+          Unlock amazing content and crazy challenges as we hit each milestone.
         </p>
       </div>
-
       <div className='grid gap-6'>
         {/* Active Goals */}
         <div className='space-y-4'>
@@ -142,12 +144,10 @@ export function GoalsList() {
             </h3>
             <Badge variant='secondary'>{activeGoals.length}</Badge>
           </div>
-
           <div className='grid gap-4 md:grid-cols-2 lg:grid-cols-3'>
             {activeGoals.slice(0, 9).map((goal, index) => {
               const progressPercentage =
                 (currentStats.totalPoints / goal.points) * 100;
-
               return (
                 <Card
                   key={index}
@@ -162,25 +162,22 @@ export function GoalsList() {
                         {goal.points.toLocaleString()} pts
                       </Badge>
                       <Badge className='shrink-0 bg-accent text-accent-foreground'>
-                        <Clock className='mr-1 h-3 w-3' />
+                        <Clock className='mr-1 size-3' />
                         Locked
                       </Badge>
                     </div>
-
-                    <h4 className='text-xl leading-tight font-medium tracking-tight text-balance md:text-2xl lg:text-3xl'>
+                    <h4 className='font-serif text-xl leading-tight font-semibold tracking-tight text-balance md:text-2xl lg:text-3xl'>
                       {goal.title}
                     </h4>
-
                     <p className='flex-1 text-base leading-relaxed text-pretty text-muted-foreground'>
                       {goal.description}
                     </p>
-
                     <div className='space-y-2'>
                       <div className='flex justify-between text-sm'>
-                        <span className='font-medium'>
+                        <span className='font-serif font-semibold'>
                           {currentStats.totalPoints.toLocaleString()} pts
                         </span>
-                        <span className='text-muted-foreground'>
+                        <span className='font-serif font-semibold text-muted-foreground'>
                           {progressPercentage.toFixed(1)}%
                         </span>
                       </div>
@@ -198,7 +195,6 @@ export function GoalsList() {
               );
             })}
           </div>
-
           {activeGoals.length > 9 && (
             <div className='text-center'>
               <Badge variant='outline' className='text-sm'>
@@ -220,7 +216,6 @@ export function GoalsList() {
               </h3>
               <Badge variant='secondary'>{completedGoals.length}</Badge>
             </div>
-
             <div className='grid gap-4 md:grid-cols-2 lg:grid-cols-3'>
               {completedGoals.map((goal, index) => (
                 <Card
@@ -236,22 +231,38 @@ export function GoalsList() {
                         {goal.points.toLocaleString()} pts
                       </Badge>
                       <Badge className='shrink-0 bg-success text-success-foreground'>
-                        <CheckCircle className='mr-1 h-3 w-3' />
+                        <CheckCircle className='mr-1 size-3' />
                         Complete
                       </Badge>
                     </div>
-
-                    <h4 className='text-xl leading-tight font-medium tracking-tight text-balance md:text-2xl lg:text-3xl'>
+                    <h4 className='font-serif text-xl leading-tight font-semibold tracking-tight text-balance md:text-2xl lg:text-3xl'>
                       {goal.title}
                     </h4>
-
-                    <p className='flex-1 text-base leading-relaxed text-pretty text-muted-foreground'>
-                      {goal.description}
-                    </p>
-
-                    <div className='pt-2'>
+                    <div className='flex-1 gap-2 text-base leading-relaxed text-pretty text-muted-foreground'>
+                      <p>{goal.description}</p>
+                      {goal.link && (
+                        <a
+                          href={goal.link}
+                          target='_blank'
+                          rel='noopener noreferrer'
+                          className='flex flex-row items-center gap-1.5 leading-loose font-semibold text-link/90 hover:text-link'
+                        >
+                          {goal.link.includes("youtube.com") ||
+                          goal.link.includes("youtu.be")
+                            ? "Watch Highlight"
+                            : goal.link.includes("twitch.tv")
+                              ? "Watch Clip"
+                              : "Video Link"}
+                          <ExternalLinkIcon
+                            strokeWidth={2.5}
+                            className='size-3.5'
+                          />
+                        </a>
+                      )}
+                    </div>
+                    <div>
                       <div className='h-2 overflow-hidden rounded-full bg-success/20'>
-                        <div className='h-full w-full bg-success' />
+                        <div className='size-full bg-success' />
                       </div>
                     </div>
                   </div>
@@ -277,7 +288,6 @@ export function PointSystem() {
             How Points Work
           </h2>
         </div>
-
         <div className='grid gap-8'>
           <div className='space-y-4'>
             <h3 className='text-lg font-semibold text-foreground'>
@@ -306,7 +316,6 @@ export function PointSystem() {
               </div>
             </div>
           </div>
-
           <div className='space-y-4'>
             <h3 className='text-lg font-semibold text-foreground'>
               Multi-Month Bonuses
@@ -344,7 +353,6 @@ export function RecurringGoals() {
             Recurring Goals
           </h2>
         </div>
-
         <div className='grid gap-4 md:grid-cols-2'>
           {recurringGoals.map((goal, index) => (
             <Card
@@ -360,11 +368,9 @@ export function RecurringGoals() {
                     Every {goal.interval.toLocaleString()}
                   </Badge>
                 </div>
-
-                <h4 className='text-xl leading-tight font-medium tracking-tight text-balance md:text-2xl lg:text-3xl'>
+                <h4 className='font-serif text-xl leading-tight font-semibold tracking-tight text-balance md:text-2xl lg:text-3xl'>
                   {goal.title}
                 </h4>
-
                 <p className='text-base leading-relaxed text-pretty text-muted-foreground'>
                   {goal.description}
                 </p>
@@ -379,8 +385,8 @@ export function RecurringGoals() {
 
 export function EventStats() {
   return (
-    <Card className='border-0 bg-transparent p-8 shadow-none'>
-      <div className='space-y-12'>
+    <Card className='p-8'>
+      <div className='space-y-6'>
         <div className='flex items-center gap-3'>
           <div className='rounded-full bg-primary p-2.5'>
             <Users className='size-5 text-primary-foreground' />
@@ -389,28 +395,28 @@ export function EventStats() {
             Event Stats
           </h2>
         </div>
-        <div className='grid w-full gap-6 sm:grid-cols-2 lg:grid-cols-4 2xl:gap-16'>
+        <div className='grid gap-6 sm:grid-cols-2 lg:grid-cols-4'>
           <div className='text-center'>
             <div className='mb-1 text-3xl font-bold text-accent'>22</div>
-            <div className='text-sm leading-relaxed font-medium text-foreground'>
+            <div className='font-serif text-sm leading-relaxed font-medium text-foreground'>
               Goals to Finish
             </div>
           </div>
           <div className='text-center'>
             <div className='mb-1 text-3xl font-bold text-accent'>1,113,200</div>
-            <div className='text-sm leading-relaxed font-medium text-foreground'>
+            <div className='font-serif text-sm leading-relaxed font-medium text-foreground'>
               Points to Hit
             </div>
           </div>
           <div className='text-center'>
             <div className='mb-1 text-3xl font-bold text-accent'>5</div>
-            <div className='text-sm leading-relaxed font-medium text-foreground'>
+            <div className='font-serif text-sm leading-relaxed font-medium text-foreground'>
               Epic Days
             </div>
           </div>
           <div className='text-center'>
             <div className='mb-1 text-3xl font-bold text-accent'>∞</div>
-            <div className='text-sm leading-relaxed font-medium text-foreground'>
+            <div className='font-serif text-sm leading-relaxed font-medium text-foreground'>
               Memories to Make
             </div>
           </div>
@@ -422,7 +428,7 @@ export function EventStats() {
 
 export function SubathonSendoff() {
   return (
-    <section className='bg-gradient-to-t from-transparent via-accent/5 to-transparent px-6 py-24 text-center md:pt-32 md:pb-28 lg:pt-40 lg:pb-36 dark:from-transparent dark:via-accent/5 dark:to-transparent'>
+    <section className='bg-gradient-to-t from-transparent via-primary/5 to-transparent px-6 py-24 text-center md:py-32 lg:py-40 dark:from-transparent dark:via-accent/5 dark:to-transparent'>
       <h2 className='mb-4 text-3xl font-bold md:text-4xl lg:text-5xl'>
         Thank You for Joining!
       </h2>
