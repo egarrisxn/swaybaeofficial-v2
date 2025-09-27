@@ -2,8 +2,8 @@ import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Sway Bae",
-    short_name: "SB",
+    name: "Sway Bae Official",
+    short_name: "SWAY BAE",
     description: "The official Page for Sway Bae & The Bae Squad!",
     theme_color: "#ffffff",
     background_color: "#ffffff",

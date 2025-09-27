@@ -125,7 +125,7 @@ export async function subscribeToNewsletter(
   };
 }
 
-export async function sendNewsletter(formData: FormData) {
+export async function sendNewsletter(_: any, formData: FormData) {
   const newsletterContent = formData.get("newsletter") as string;
   if (!newsletterContent) {
     return { success: false, message: "Newsletter content cannot be empty." };
