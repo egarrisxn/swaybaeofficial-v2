@@ -8,7 +8,7 @@ export default function CommunityPage() {
   );
 }
 
-// import { Link } from "next-view-transitions";;
+// import Link from "next/link";
 // import { createClient } from "@/lib/supabase/server";
 // import LogoutButton from "@/components/shared/logout-button";
 // import UserAvatar from "@/components/shared/user-avatar";

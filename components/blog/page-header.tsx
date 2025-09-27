@@ -1,5 +1,5 @@
 // import type { ReactNode } from "react";
-// import { Link } from "next-view-transitions";
+// import Link from "next/link";
 // import { ArrowLeftIcon } from "@/components/icons";
 // import SearchBar from "@/components/blog/search-bar";
 

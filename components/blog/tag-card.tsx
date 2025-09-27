@@ -1,4 +1,4 @@
-// import { Link } from "next-view-transitions";
+// import Link from "next/link";
 // import Image from "next/image";
 // import { Card } from "@/components/ui/card";
 // import { ArrowRightIcon } from "@/components/icons";

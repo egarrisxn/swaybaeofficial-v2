@@ -1,4 +1,4 @@
-import { Link } from "next-view-transitions";
+import Link from "next/link";
 import type { Links } from "@/types";
 
 export function LinkRenderer({ href, label, external }: Links) {

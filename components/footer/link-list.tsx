@@ -1,4 +1,4 @@
-import { Link } from "next-view-transitions";
+import Link from "next/link";
 import type { LinkLists } from "@/types";
 
 export function LinkList({ title, links }: LinkLists) {

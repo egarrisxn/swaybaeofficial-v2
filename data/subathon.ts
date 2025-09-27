@@ -44,30 +44,30 @@ export const goals = [
     title: "Sound Clip Raffle",
     description:
       "The sound clip raffle is back! Try your luck at having your own sound clip on the Soundboard! There will be 3 winners.",
-    completed: false,
-    currentProgress: 50,
+    completed: true,
+    currentProgress: 100,
   },
   {
     points: 80000,
     title: "Peak",
     description: "Sway plays peak with some friends!",
-    completed: false,
-    currentProgress: 0,
+    completed: true,
+    currentProgress: 100,
   },
   {
     points: 90000,
     title: "Crazy Soda Tasting",
     description:
       "Sway and Ethan taste six insane flavors of soda - Pumpkin Pie, Peanut Butter and Jelly, Sweet Corn, Bacon, Buffalo Wing, and Ranch Dressing.",
-    completed: false,
-    currentProgress: 0,
+    completed: true,
+    currentProgress: 100,
   },
   {
     points: 100000,
     title: "Tilt Game",
     description: "Sway plays Jump King.",
-    completed: false,
-    currentProgress: 0,
+    completed: true,
+    currentProgress: 100,
   },
   {
     points: 150000,
@@ -75,7 +75,7 @@ export const goals = [
     description:
       "Excited about Sway's new merch line? So is she! Join this giveaway to score whatever you'd like from her merch store!",
     completed: false,
-    currentProgress: 0,
+    currentProgress: 123200,
   },
   {
     points: 200000,

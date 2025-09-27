@@ -1,4 +1,4 @@
-import { Link } from "next-view-transitions";
+import Link from "next/link";
 import { MobileMenu } from "@/components/nav/mobile-menu";
 import { ThemeToggle } from "@/components/nav/theme-toggle";
 import { DesktopMenu } from "@/components/nav/desktop-menu";

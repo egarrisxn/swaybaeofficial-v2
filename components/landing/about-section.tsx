@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Link } from "next-view-transitions";
+import Link from "next/link";
 import { BlurText, BlurItem } from "@/components/ui/blur";
 import { Button } from "@/components/ui/button";
 

@@ -1,4 +1,4 @@
-import { Link } from "next-view-transitions";
+import Link from "next/link";
 import { UserNewsletterForm } from "@/components/resend/user-newsletter-form";
 import { TooltipSocialIcon } from "@/components/shared/tooltip-social-icon";
 import { CopyrightText } from "@/components/footer/copyright-text";
