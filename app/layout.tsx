@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 import type { Metadata, Viewport } from "next";
 import { Poppins, Fira_Sans } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 // import { ViewTransitions } from "next-view-transitions";
 import { ThemeProvider } from "@/app/providers/theme";
 import { TooltipProvider } from "@/app/providers/tooltip";
@@ -105,6 +106,7 @@ export default async function RootLayout({
           <Toaster richColors position='bottom-center' />
         </ThemeProvider>
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );

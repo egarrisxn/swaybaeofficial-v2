@@ -1,3 +1,9 @@
+export const currentStats = {
+  totalPoints: 128200,
+  hoursStreamed: 16,
+  daysRemaining: 4,
+};
+
 export const goals = [
   {
     points: 20000,
@@ -186,9 +192,3 @@ export const recurringGoals = [
       "1 hour of 10 channel point song requests! (Song requests must be family-friendly. If Sway at Nite goal is reached, song requests will be disabled during that time).",
   },
 ];
-
-export const currentStats = {
-  totalPoints: 123800,
-  hoursStreamed: 20,
-  daysRemaining: 10,
-};

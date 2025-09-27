@@ -9,6 +9,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: "/private/",
     },
-    sitemap: `${BASE_URL}/sitemap.xml`,
+    sitemap: "https://swaybae.net/sitemap.xml",
   };
 }
