@@ -1,0 +1,82 @@
+import { Video } from "@/components/ui/video";
+import { Button } from "@/components/ui/button";
+import { YouTubeFeed } from "@/components/shared/youtube-feed";
+
+import { youTubeText } from "@/data/landing";
+
+export default function YouTubeSection() {
+  return (
+    <section
+      id='youtube'
+      aria-labelledby='youtube-heading'
+      className='w-full border-2 border-border bg-muted pt-24 pb-20 text-muted-foreground 2xl:py-20 4xl:mx-auto 4xl:max-w-[112rem] 4xl:rounded-3xl 4xl:py-18'
+    >
+      <div className='container mx-auto max-w-xl px-4 lg:max-w-8xl lg:px-8 2xl:max-w-9xl 4xl:max-w-11xl 4xl:px-0'>
+        <div className='flex flex-col gap-10 lg:flex-row lg:items-center lg:gap-12 4xl:gap-16'>
+          <div className='order-1 flex flex-col justify-center gap-3 px-4 lg:order-2 lg:px-0 xl:gap-5 4xl:w-[60%]'>
+            <span className='text-sm font-extrabold tracking-wide text-muted-foreground uppercase xs:text-base'>
+              {youTubeText.b}
+            </span>
+            <h2
+              id='youtube-heading '
+              className='max-w-3xl font-serif text-3xl font-bold tracking-tight text-shadow-lg sm:text-4xl sm:leading-none 2xl:text-6xl'
+            >
+              {youTubeText.h2}
+            </h2>
+            <p className='max-w-3xl font-light text-muted-foreground sm:text-lg sm:leading-snug 2xl:text-2xl'>
+              {youTubeText.p}
+            </p>
+            <a
+              href='https://www.youtube.com/swaybaetv'
+              rel='noopener noreferrer'
+              target='_blank'
+              className='hidden lg:flex'
+            >
+              <Button variant='contrast'>{youTubeText.btn}</Button>
+            </a>
+          </div>
+          <div className='order-2 mx-auto w-full max-w-2xl lg:order-1 4xl:w-[40%]'>
+            <Video
+              videoAnimationStyle='from-center'
+              videoSrc='https://www.youtube-nocookie.com/embed/LJtxzJ6S_hE'
+              thumbnailSrc='/images/sway-youtube.webp'
+              thumbnailAlt='Featured YouTube video'
+              className='rounded-2xl shadow-xl'
+            />
+          </div>
+        </div>
+        <div className='mt-20 2xl:px-2 4xl:mt-16 4xl:px-0'>
+          <span className='pl-1 text-sm font-medium tracking-wide text-muted-foreground uppercase xs:pl-0 xs:text-base'>
+            {youTubeText.vid}
+          </span>
+          <div className='pt-2'>
+            <YouTubeFeed />
+          </div>
+          <div className='mx-auto mt-16 hidden flex-row items-center justify-center text-center text-lg font-light tracking-tight text-foreground lg:flex'>
+            I have recently started a VOD channel as well to keep all of my
+            Twitch streams, you can
+            <a
+              href='https://www.youtube.com/@SwayBaeVODS'
+              rel='noopener noreferrer'
+              target='_blank'
+              className='px-1 text-link underline underline-offset-4'
+            >
+              check it out here
+            </a>
+            !
+          </div>
+          <a
+            href='https://www.youtube.com/swaybaetv'
+            rel='noopener noreferrer'
+            target='_blank'
+            className='mt-20 flex items-center justify-center lg:hidden'
+          >
+            <Button size='lg' variant='contrast'>
+              {youTubeText.btn}
+            </Button>
+          </a>
+        </div>
+      </div>
+    </section>
+  );
+}

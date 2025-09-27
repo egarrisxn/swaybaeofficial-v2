@@ -1,0 +1,17 @@
+// import { createClient } from "next-sanity";
+// import imageUrlBuilder from "@sanity/image-url";
+// import { apiVersion, projectId, dataset } from "./api";
+// import { SanityImageSource } from "@sanity/image-url/lib/types/types";
+
+// export const client = createClient({
+//   apiVersion,
+//   projectId,
+//   dataset,
+//   useCdn: true,
+// });
+
+// const builder = imageUrlBuilder(client);
+
+// export function urlFor(source: SanityImageSource) {
+//   return builder.image(source);
+// }
