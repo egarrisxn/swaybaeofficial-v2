@@ -6,7 +6,9 @@
 
 ## Overview
 
-The official website for a full-time streamer and content creator, @Sway_Bae.
+The **NEW** online space for full-time streamer and content creator, Sway Bae.
+
+For the previous version, please visit [swaybaeofficial-v2](https://github.com/egarrisxn/swaybaeofficial-v1) to check it out.
 
 ## Technologies
 
