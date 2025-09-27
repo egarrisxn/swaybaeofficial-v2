@@ -75,7 +75,7 @@ export const goals = [
     description:
       "Excited about Sway's new merch line? So is she! Join this giveaway to score whatever you'd like from her merch store!",
     completed: false,
-    currentProgress: 123200,
+    currentProgress: 123800,
   },
   {
     points: 200000,
@@ -188,9 +188,7 @@ export const recurringGoals = [
 ];
 
 export const currentStats = {
-  totalPoints: 0,
-  currentViewers: 0,
-  totalFollowers: 15600,
-  hoursStreamed: 0,
+  totalPoints: 123800,
+  hoursStreamed: 20,
   daysRemaining: 10,
 };

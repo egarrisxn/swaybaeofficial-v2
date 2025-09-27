@@ -84,37 +84,29 @@ export function ProgressOverview() {
           </div>
         )}
 
-        <div className='grid gap-4 sm:grid-cols-2 lg:grid-cols-4'>
+        <div className='grid gap-4 sm:grid-cols-3'>
           <div className='text-center'>
             <div className='mb-1 text-2xl font-bold text-accent'>
               {currentStats.totalPoints.toLocaleString()}
             </div>
-            <div className='text-sm leading-relaxed text-muted-foreground'>
+            <div className='text-sm leading-relaxed font-medium text-foreground'>
               Total Points
-            </div>
-          </div>
-          <div className='text-center'>
-            <div className='mb-1 text-2xl font-bold text-accent'>
-              {currentStats.currentViewers.toLocaleString()}
-            </div>
-            <div className='text-sm leading-relaxed text-muted-foreground'>
-              Live Viewers
-            </div>
-          </div>
-          <div className='text-center'>
-            <div className='mb-1 text-2xl font-bold text-accent'>
-              {currentStats.hoursStreamed}
-            </div>
-            <div className='text-sm leading-relaxed text-muted-foreground'>
-              Hours Streamed
             </div>
           </div>
           <div className='text-center'>
             <div className='mb-1 text-2xl font-bold text-accent'>
               {goals.filter((g) => g.completed).length}
             </div>
-            <div className='text-sm leading-relaxed text-muted-foreground'>
+            <div className='text-sm leading-relaxed font-medium text-foreground'>
               Goals Completed
+            </div>
+          </div>
+          <div className='text-center'>
+            <div className='mb-1 text-2xl font-bold text-accent'>
+              {currentStats.hoursStreamed}
+            </div>
+            <div className='text-sm leading-relaxed font-medium text-foreground'>
+              Hours Streamed
             </div>
           </div>
         </div>
@@ -275,11 +267,10 @@ export function GoalsList() {
 
 export function PointSystem() {
   return (
-    // <Card className='border-0 bg-gradient-to-br from-card to-primary/5 p-8'>
     <Card className='p-8'>
       <div className='space-y-6'>
         <div className='flex items-center gap-3'>
-          <div className='rounded-full bg-primary p-2'>
+          <div className='rounded-full bg-primary p-2.5'>
             <Zap className='size-5 text-primary-foreground' />
           </div>
           <h2 className='text-xl font-medium tracking-tight md:text-2xl lg:text-3xl'>
@@ -343,7 +334,6 @@ export function PointSystem() {
 
 export function RecurringGoals() {
   return (
-    // <Card className='border-0 bg-gradient-to-br from-accent/5 to-transparent p-8'>
     <Card className='border-0 bg-transparent p-8 shadow-none'>
       <div className='space-y-6'>
         <div className='flex items-center gap-3'>
@@ -357,7 +347,10 @@ export function RecurringGoals() {
 
         <div className='grid gap-4 md:grid-cols-2'>
           {recurringGoals.map((goal, index) => (
-            <Card key={index} className='h-full border-0 bg-card/50 p-6'>
+            <Card
+              key={index}
+              className='group h-full border-0 bg-card/50 p-6 transition-all hover:scale-[1.02] hover:bg-card hover:shadow-lg'
+            >
               <div className='space-y-4'>
                 <div className='flex items-start justify-between gap-4'>
                   <Badge
@@ -384,51 +377,72 @@ export function RecurringGoals() {
   );
 }
 
-export function CommunityStats() {
+export function EventStats() {
   return (
-    // <Card className='border-0 bg-gradient-to-br from-card to-accent/5 p-8'>
-    <Card className='p-8'>
-      <div className='space-y-6'>
+    <Card className='border-0 bg-transparent p-8 shadow-none'>
+      <div className='space-y-12'>
         <div className='flex items-center gap-3'>
-          <div className='rounded-full bg-primary p-2'>
+          <div className='rounded-full bg-primary p-2.5'>
             <Users className='size-5 text-primary-foreground' />
           </div>
           <h2 className='text-xl font-medium tracking-tight md:text-2xl lg:text-3xl'>
             Event Stats
           </h2>
         </div>
-
-        <div className='grid gap-6 sm:grid-cols-2 lg:grid-cols-4'>
+        <div className='grid w-full gap-6 sm:grid-cols-2 lg:grid-cols-4 2xl:gap-16'>
           <div className='text-center'>
-            <div className='mb-1 text-3xl font-bold text-accent'>
-              {goals.filter((g) => g.completed).length}
-            </div>
-            <div className='text-sm leading-relaxed text-muted-foreground'>
-              Goals Unlocked
+            <div className='mb-1 text-3xl font-bold text-accent'>22</div>
+            <div className='text-sm leading-relaxed font-medium text-foreground'>
+              Goals to Finish
             </div>
           </div>
           <div className='text-center'>
-            <div className='mb-1 text-3xl font-bold text-accent'>
-              {currentStats.totalPoints.toLocaleString()}
-            </div>
-            <div className='text-sm leading-relaxed text-muted-foreground'>
-              Total Points
+            <div className='mb-1 text-3xl font-bold text-accent'>1,113,200</div>
+            <div className='text-sm leading-relaxed font-medium text-foreground'>
+              Points to Hit
             </div>
           </div>
           <div className='text-center'>
-            <div className='mb-1 text-3xl font-bold text-accent'>10</div>
-            <div className='text-sm leading-relaxed text-muted-foreground'>
+            <div className='mb-1 text-3xl font-bold text-accent'>5</div>
+            <div className='text-sm leading-relaxed font-medium text-foreground'>
               Epic Days
             </div>
           </div>
           <div className='text-center'>
             <div className='mb-1 text-3xl font-bold text-accent'>∞</div>
-            <div className='text-sm leading-relaxed text-muted-foreground'>
+            <div className='text-sm leading-relaxed font-medium text-foreground'>
               Memories to Make
             </div>
           </div>
         </div>
       </div>
     </Card>
+  );
+}
+
+export function SubathonSendoff() {
+  return (
+    <section className='bg-gradient-to-t from-transparent via-accent/5 to-transparent px-6 py-24 text-center md:pt-32 md:pb-28 lg:pt-40 lg:pb-36 dark:from-transparent dark:via-accent/5 dark:to-transparent'>
+      <h2 className='mb-4 text-3xl font-bold md:text-4xl lg:text-5xl'>
+        Thank You for Joining!
+      </h2>
+      <p className='mx-auto mb-6 max-w-2xl text-lg leading-relaxed text-muted-foreground md:text-xl'>
+        {` Your support, energy, and points make this Subathon unforgettable! Every
+        cheer, sub, and donation brings us closer to the next goal. Let's make
+        memories that last forever!`}
+      </p>
+      <a
+        href='https://www.twitch.tv/sway_bae'
+        target='_blank'
+        rel='noopener noreferrer'
+      >
+        <Button
+          size='dynamic'
+          className='text-white transition-all hover:scale-103'
+        >
+          {`Let's Keep the Fun Going!`}
+        </Button>
+      </a>
+    </section>
   );
 }
