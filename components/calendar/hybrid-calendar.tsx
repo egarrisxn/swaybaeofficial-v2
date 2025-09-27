@@ -4,11 +4,16 @@ import { useState } from "react";
 import { ChevronLeftIcon, ChevronRightIcon, RefreshCwIcon } from "lucide-react";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Button } from "@/components/ui/button";
-import { Card, CardHeader, CardContent } from "@/components/ui/card";
+import {
+  Card,
+  CardHeader,
+  CardContent,
+  CardFooter,
+} from "@/components/ui/card";
 import { CalendarGrid } from "@/components/calendar/calendar-grid";
 import { CalendarList } from "@/components/calendar/calendar-list";
-import { useCalendarEvents } from "@/hooks/use-calendar-events"; //! PROD
-// import { useCalendarEvents } from "@/hooks/use-mock-events"; //! DEV
+import { CalendarSubscribe } from "@/components/calendar/calendar-subscribe";
+import { useCalendarEvents } from "@/hooks/use-calendar-events";
 
 import { calendarDays } from "@/data/public";
 
@@ -32,20 +37,20 @@ export default function HybridCalendar({
     );
 
   return (
-    <Card className='gap-4 rounded-[2.5rem]'>
+    <Card className='rounded-[2.5rem]'>
       {showMonthNav && (
         <CardHeader className='flex items-center justify-between'>
           <Button
             size='icon'
             variant='contrast'
-            className='rounded-xl lg:size-11'
+            className='rounded-xl lg:size-10.5'
             onClick={() => navigateMonth(-1)}
           >
-            <ChevronLeftIcon className='size-4 lg:size-5' aria-hidden />
+            <ChevronLeftIcon className='size-4.5 lg:size-5' aria-hidden />
             <span className='sr-only'>Previous month</span>
           </Button>
           <h2
-            className='font-serif text-2xl font-black tracking-tight text-card-foreground sm:text-3xl lg:text-4xl 4xl:text-5xl'
+            className='font-serif text-2xl font-semibold tracking-tight text-card-foreground sm:text-3xl lg:text-4xl 4xl:text-5xl'
             aria-live='polite'
             aria-atomic='true'
           >
@@ -58,16 +63,16 @@ export default function HybridCalendar({
           <Button
             size='icon'
             variant='contrast'
-            className='rounded-xl lg:size-11'
+            className='rounded-xl lg:size-10.5'
             onClick={() => navigateMonth(1)}
           >
-            <ChevronRightIcon className='size-4 lg:size-5' aria-hidden />
+            <ChevronRightIcon className='size-4.5 lg:size-5' aria-hidden />
             <span className='sr-only'>Next month</span>
           </Button>
         </CardHeader>
       )}
 
-      <CardContent className='px-4 pt-1'>
+      <CardContent className='px-4 pt-1 lg:m-0 lg:p-0'>
         {loading ? (
           <>
             <div className='hidden lg:block'>
@@ -90,7 +95,6 @@ export default function HybridCalendar({
                 ))}
               </div>
             </div>
-
             <div
               className='block space-y-4 overflow-y-auto pr-2 lg:hidden'
               style={{ maxHeight }}
@@ -130,21 +134,23 @@ export default function HybridCalendar({
                 events={events}
               />
             </div>
-
             <div
-              className='block overflow-y-auto pr-2 lg:hidden'
+              className='block overflow-y-auto border-b pr-2 lg:hidden'
               style={{ maxHeight }}
               role='list'
             >
               <CalendarList
+                events={events}
                 currentDate={currentDate}
                 onDateChange={setCurrentDate}
-                events={events}
               />
             </div>
           </>
         )}
       </CardContent>
+      <CardFooter className='flex flex-row items-start justify-end lg:mt-0 lg:pt-0'>
+        <CalendarSubscribe />
+      </CardFooter>
     </Card>
   );
 }

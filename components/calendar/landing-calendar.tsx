@@ -12,8 +12,7 @@ import {
 } from "@/components/ui/card";
 import { CalendarList } from "@/components/calendar/calendar-list";
 import { CalendarSubscribe } from "@/components/calendar/calendar-subscribe";
-import { useCalendarEvents } from "@/hooks/use-calendar-events"; //! PROD
-// import { useCalendarEvents } from "@/hooks/use-mock-events"; //! DEV
+import { useCalendarEvents } from "@/hooks/use-calendar-events";
 
 interface LandingCalendarProps {
   initialDate?: Date;
@@ -54,7 +53,7 @@ export function LandingCalendar({
             aria-atomic='true'
           >
             {currentDate.toLocaleDateString("en-US", {
-              month: "short",
+              month: "long",
               year: "numeric",
             })}
           </h2>
@@ -111,7 +110,7 @@ export function LandingCalendar({
           </div>
         )}
       </CardContent>
-      <CardFooter>
+      <CardFooter className='flex flex-row items-start justify-end'>
         <CalendarSubscribe />
       </CardFooter>
     </Card>

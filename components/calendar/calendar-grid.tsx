@@ -57,7 +57,7 @@ export function CalendarGrid({ currentDate, events }: CalendarEvents) {
         ))}
       </div>
 
-      <div className='grid grid-cols-7 gap-2'>
+      <div className='grid grid-cols-7'>
         {days.map((day, idx) => {
           if (day === null)
             return <div key={`empty-${idx}`} className='aspect-square' />;
@@ -71,14 +71,15 @@ export function CalendarGrid({ currentDate, events }: CalendarEvents) {
             <div
               key={`day-${day}-${idx}`}
               className={cn(
-                "flex aspect-square flex-col rounded-md border border-border/30 p-2 transition-all duration-200",
-                isToday && "border-border/100 bg-muted/10"
+                "flex aspect-square flex-col border border-foreground/20 p-2 transition-all duration-200",
+                isToday &&
+                  "border-secondary bg-background/80 text-secondary dark:bg-background/30"
               )}
             >
-              <span className='mb-1 text-sm font-medium'>{day}</span>
-              <div className='flex flex-1 flex-col gap-1 overflow-hidden'>
+              <span className='text-sm font-semibold'>{day}</span>
+              <div className='flex flex-1 flex-col gap-2 overflow-hidden'>
                 {dayEvents.length === 0 ? (
-                  <p className='truncate text-xs text-muted-foreground'>
+                  <p className='truncate py-1 text-xs text-foreground/80'>
                     No events today
                   </p>
                 ) : (
@@ -90,7 +91,7 @@ export function CalendarGrid({ currentDate, events }: CalendarEvents) {
                         tabIndex={0}
                         onClick={() => handleEventClick(event)}
                         className={cn(
-                          "cursor-pointer truncate rounded px-1 py-0.5 text-xs text-foreground transition-opacity hover:opacity-80",
+                          "cursor-pointer rounded-[0.35rem] border-2 border-background px-2 py-1 text-xs font-medium text-black shadow-lg transition-opacity hover:opacity-80 dark:text-black",
                           getEventLabelColor(event.type)
                         )}
                         title={event.title}

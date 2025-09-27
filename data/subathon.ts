@@ -1,6 +1,6 @@
 export const currentStats = {
-  totalPoints: 137900,
-  hoursStreamed: 17,
+  totalPoints: 163200,
+  hoursStreamed: 18,
   daysRemaining: 4,
 };
 
@@ -11,7 +11,7 @@ export const goals = [
     description:
       "Let's look back at Sway's stream journey! We'll look back through all the clips ever created and enjoy them together.",
     completed: true,
-    currentProgress: 100,
+    currentProgress: 0,
     link: "https://www.youtube.com/watch?v=F-pIy8lnyUQ",
   },
   {
@@ -20,7 +20,7 @@ export const goals = [
     description:
       "Exactly what it sounds like. We can thank Smoothie King x Heinz Ketchup for this one.",
     completed: true,
-    currentProgress: 100,
+    currentProgress: 0,
     link: "https://www.youtube.com/watch?v=F-pIy8lnyUQ",
   },
   {
@@ -29,7 +29,7 @@ export const goals = [
     description:
       "For the day, a channel point offering will unlock, allowing you to choose which Hearthstone hat Sway has to wear until someone redeems another.",
     completed: true,
-    currentProgress: 100,
+    currentProgress: 0,
     link: "https://www.twitch.tv/sway_bae/clip/MiniatureHappyJaySMOrc-nfiWA5VzCgeDM5cr",
   },
   {
@@ -38,7 +38,7 @@ export const goals = [
     description:
       "Sway will transform herself into the beloved character, Buttons.",
     completed: true,
-    currentProgress: 100,
+    currentProgress: 0,
   },
   {
     points: 60000,
@@ -46,7 +46,7 @@ export const goals = [
     description:
       "Sway attempts to make different Hearthstone characters in the Sims. 3-5 different ones, depending on time.",
     completed: true,
-    currentProgress: 100,
+    currentProgress: 0,
   },
   {
     points: 70000,
@@ -54,14 +54,14 @@ export const goals = [
     description:
       "The sound clip raffle is back! Try your luck at having your own sound clip on the Soundboard! There will be 3 winners.",
     completed: true,
-    currentProgress: 100,
+    currentProgress: 0,
   },
   {
     points: 80000,
     title: "Peak",
     description: "Sway plays peak with some friends!",
     completed: true,
-    currentProgress: 100,
+    currentProgress: 0,
   },
   {
     points: 90000,
@@ -69,22 +69,22 @@ export const goals = [
     description:
       "Sway and Ethan taste six insane flavors of soda - Pumpkin Pie, Peanut Butter and Jelly, Sweet Corn, Bacon, Buffalo Wing, and Ranch Dressing.",
     completed: true,
-    currentProgress: 100,
+    currentProgress: 0,
   },
   {
     points: 100000,
     title: "Tilt Game",
     description: "Sway plays Jump King.",
     completed: true,
-    currentProgress: 100,
+    currentProgress: 0,
   },
   {
     points: 150000,
     title: "Merch Giveaway",
     description:
       "Excited about Sway's new merch line? So is she! Join this giveaway to score whatever you'd like from her merch store!",
-    completed: false,
-    currentProgress: 137900,
+    completed: true,
+    currentProgress: 0,
   },
   {
     points: 200000,
@@ -92,7 +92,7 @@ export const goals = [
     description:
       "Sway and Ethan taste some craaazy foods including a cheeseburger in a tube and mac and cheese candy canes!",
     completed: false,
-    currentProgress: 0,
+    currentProgress: 163200,
   },
   {
     points: 250000,
