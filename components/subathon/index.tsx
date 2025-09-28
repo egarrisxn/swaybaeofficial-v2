@@ -22,15 +22,13 @@ export function SubathonHeader() {
             <Clock className='size-3 text-accent md:size-3.5' />
             <span className='text-muted-foreground'>Happening Now!</span>
           </div>
-          <h1 className='bg-gradient-to-br from-foreground via-foreground to-accent bg-clip-text pt-1 pb-6 text-[2.5rem] leading-none font-bold tracking-tight text-transparent text-shadow-lg sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl'>
-            {`Sway's Subathon`}
-            <br />
-            {`Extravaganza!`}
+          <h1 className='bg-gradient-to-br from-foreground via-foreground to-accent bg-clip-text pt-1 pb-6 text-[2.5rem] leading-none font-bold tracking-tighter text-transparent text-shadow-lg sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl'>
+            {`Sway's Subtember Subathon`}
           </h1>
           <p className='mb-12 text-lg leading-relaxed text-balance text-muted-foreground md:text-xl'>
-            Join the ultimate streaming marathon with point-based goals, crazy
-            challenges, and non-stop entertainment
+            {`Join Sway for the ultimate Subtember Subathon! Stay tuned for live updates, highlights, community clips, and all the can't-miss moments.`}
           </p>
+
           <div className='flex flex-col items-center gap-6 sm:flex-row sm:justify-center'>
             <a
               href='https://www.twitch.tv/sway_bae'
@@ -403,7 +401,7 @@ export function EventStats() {
             </div>
           </div>
           <div className='text-center'>
-            <div className='mb-1 text-3xl font-bold text-accent'>1,113,200</div>
+            <div className='mb-1 text-3xl font-bold text-accent'>6,790,000</div>
             <div className='font-serif text-sm leading-relaxed font-medium text-foreground'>
               Points to Hit
             </div>
@@ -430,12 +428,10 @@ export function SubathonSendoff() {
   return (
     <section className='bg-gradient-to-t from-transparent via-primary/5 to-transparent px-6 py-24 text-center md:py-32 lg:py-40 dark:from-transparent dark:via-accent/5 dark:to-transparent'>
       <h2 className='mb-4 text-3xl font-bold md:text-4xl lg:text-5xl'>
-        Thank You for Joining!
+        Thank You for Your Support!
       </h2>
       <p className='mx-auto mb-6 max-w-2xl text-lg leading-relaxed text-muted-foreground md:text-xl'>
-        {` Your support, energy, and points make this Subathon unforgettable! Every
-        cheer, sub, and donation brings us closer to the next goal. Let's make
-        memories that last forever!`}
+        {`Your support makes everything possible. Every cheer, sub, and donation helps us grow, unlock new goals, and create memories together. This community is what makes the subathon special, and you are a huge part of it.`}
       </p>
       <a
         href='https://www.twitch.tv/sway_bae'
@@ -446,7 +442,7 @@ export function SubathonSendoff() {
           size='dynamic'
           className='text-white transition-all hover:scale-103'
         >
-          {`Let's Keep the Fun Going!`}
+          {`Continue the Celebration`}
         </Button>
       </a>
     </section>

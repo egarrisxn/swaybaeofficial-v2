@@ -4,7 +4,7 @@ import PagesFooter from "@/components/footer/pages-footer";
 
 export default function PagesLayout({ children }: { children: ReactNode }) {
   return (
-    <div className='relative grid min-h-dvh w-full grid-rows-[auto_1fr_auto] overscroll-contain'>
+    <div className='relative grid min-h-dvh w-full grid-rows-[auto_1fr_auto] overscroll-contain bg-[url(/graphics/noisey.svg)] bg-repeat'>
       <Navbar />
       <main>{children}</main>
       <PagesFooter />

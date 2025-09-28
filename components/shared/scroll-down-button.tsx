@@ -1,6 +1,6 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
+import { ArrowDownIcon } from "@/components/icons";
 import { useSmoothScroll } from "@/hooks/use-smooth-scroll";
 import type { ScrollButtons } from "@/types";
 
@@ -8,14 +8,13 @@ export function ScrollDownButton({ targetId }: ScrollButtons) {
   const scrollTo = useSmoothScroll();
 
   return (
-    <Button
-      size='dynamic'
-      variant='outline'
+    <button
+      type='button'
       onClick={() => scrollTo(targetId)}
-      className='text-white'
+      className='absolute bottom-5 left-1/2 z-30 -translate-x-1/2 animate-bounce cursor-pointer rounded-full p-3 transition-transform hover:scale-110'
       aria-label='Scroll down'
     >
-      Learn More
-    </Button>
+      <ArrowDownIcon className='size-8 text-white' />
+    </button>
   );
 }

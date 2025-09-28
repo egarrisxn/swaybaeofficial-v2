@@ -9,19 +9,15 @@ const ArrowDownIcon = ({
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'
+      viewBox='0 0 24 24'
+      fill='none'
+      stroke='currentColor'
+      strokeWidth={strokeWidth}
       width={width}
       height={height}
-      viewBox='0 0 24 24'
       className={className}
     >
-      <path
-        fill='none'
-        stroke='currentColor'
-        strokeLinecap='round'
-        strokeLinejoin='round'
-        strokeWidth={strokeWidth}
-        d='M12 5v14m6-6l-6 6m-6-6l6 6'
-      ></path>
+      <path strokeLinecap='round' strokeLinejoin='round' d='M19 9l-7 7-7-7' />
     </svg>
   );
 };

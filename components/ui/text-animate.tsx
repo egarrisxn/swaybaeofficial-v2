@@ -211,10 +211,9 @@ const TextAnimateBase = ({
   animation = "fadeIn",
   accessible = true,
   startOnView = true,
-  once = true, // always true for first-time viewport
+  once = true,
   ...props
 }: TextAnimateProps) => {
-  // Split text into segments
   let segments: string[] = [];
   switch (by) {
     case "word":
@@ -274,9 +273,8 @@ const TextAnimateBase = ({
         item: defaultItemAnimationVariants[animation].item,
       };
 
-  // Use a wrapper div for viewport detection to avoid React 19 ref warnings
   const wrapperRef = useRef(null);
-  const isInView = useInView(wrapperRef, { once }); // only triggers once
+  const isInView = useInView(wrapperRef, { once });
 
   const MotionComponent = motion.create(Component);
 
