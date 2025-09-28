@@ -10,7 +10,7 @@ import {
   NavigationMenuList,
 } from "@/components/ui/navigation-menu";
 import { ThemeToggle } from "@/components/nav/theme-toggle";
-import { navLinks } from "@/data/constants";
+import { navLinks } from "@/lib/constants";
 
 export function Hero() {
   const pathname = usePathname();

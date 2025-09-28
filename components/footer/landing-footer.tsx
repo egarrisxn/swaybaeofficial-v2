@@ -12,7 +12,7 @@ import {
   moreLinks,
   sharedLinks,
   socialData,
-} from "@/data/constants";
+} from "@/lib/constants";
 
 export function LandingFooter() {
   return (

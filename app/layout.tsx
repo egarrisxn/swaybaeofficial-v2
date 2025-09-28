@@ -8,10 +8,9 @@ import { ThemeProvider } from "@/app/providers/theme";
 import { TooltipProvider } from "@/app/providers/tooltip";
 import { CookieBanner } from "@/components/cookie-banner";
 import { Toaster } from "@/components/ui/sonner";
+import { SITE } from "@/lib/config";
 import Script from "next/script";
 import "./globals.css";
-
-import { SITE } from "@/data/config";
 
 const poppins = Poppins({
   subsets: ["latin"],

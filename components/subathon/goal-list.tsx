@@ -2,7 +2,7 @@ import { CheckCircle, Clock, Zap, ExternalLinkIcon } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 
-import { subathonGoals, subathonStats } from "@/data/subathon";
+import { subathonGoals, subathonStats } from "@/lib/subathon";
 
 export function GoalsList() {
   const completedGoals = subathonGoals.filter((goal) => goal.completed);

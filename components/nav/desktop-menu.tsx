@@ -7,7 +7,7 @@ import {
   NavigationMenuItem,
   NavigationMenuList,
 } from "@/components/ui/navigation-menu";
-import { navLinks } from "@/data/constants";
+import { navLinks } from "@/lib/constants";
 
 export function DesktopMenu() {
   const pathname = usePathname();

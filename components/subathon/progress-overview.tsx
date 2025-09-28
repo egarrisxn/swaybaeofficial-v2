@@ -1,6 +1,6 @@
 import { Card } from "@/components/ui/card";
 
-import { subathonGoals, subathonStats } from "@/data/subathon";
+import { subathonGoals, subathonStats } from "@/lib/subathon";
 
 export function ProgressOverview() {
   const nextGoal = subathonGoals.find((goal) => !goal.completed);

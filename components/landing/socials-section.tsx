@@ -1,6 +1,6 @@
 import { SocialCard } from "@/components/shared/social-card";
 
-import { socialData } from "@/data/constants";
+import { socialData } from "@/lib/constants";
 
 export default function SocialsSection() {
   return (

@@ -13,7 +13,7 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import { DropdownToggle } from "@/components/nav/dropdown-toggle";
-import { navLinks } from "@/data/constants";
+import { navLinks } from "@/lib/constants";
 
 export function MobileMenu() {
   const pathname = usePathname();

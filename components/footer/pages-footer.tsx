@@ -1,7 +1,7 @@
 import { TooltipSocialIcon } from "@/components/shared/tooltip-social-icon";
 import { CopyrightText } from "@/components/footer/copyright-text";
 import { LinkRenderer } from "@/components/footer/link-renderer";
-import { socialData, sharedLinks } from "@/data/constants";
+import { socialData, sharedLinks } from "@/lib/constants";
 
 export default function PagesFooter() {
   return (
