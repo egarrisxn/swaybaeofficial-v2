@@ -39,6 +39,7 @@ export const goals = [
       "Sway will transform herself into the beloved character, Buttons.",
     completed: true,
     currentProgress: 0,
+    link: "https://www.youtube.com/watch?v=WN_huvsGTPQ",
   },
   {
     points: 60000,
