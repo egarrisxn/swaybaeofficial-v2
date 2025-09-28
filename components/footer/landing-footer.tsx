@@ -8,9 +8,9 @@ import { BackToTopButton } from "@/components/footer/back-to-top-button";
 import { CurrentlyPlayingSpotify } from "@/components/footer/currently-playing-spotify";
 
 import {
-  footerLinksOne,
-  footerLinksTwo,
-  sharedFooterLinks,
+  quickLinks,
+  moreLinks,
+  sharedLinks,
   socialData,
 } from "@/data/constants";
 
@@ -46,8 +46,8 @@ export function LandingFooter() {
                   </p>
                   <UserNewsletterForm />
                 </div>
-                <LinkList title='Quick Links' links={footerLinksOne} />
-                <LinkList title='More Links' links={footerLinksTwo} />
+                <LinkList title='Quick Links' links={quickLinks} />
+                <LinkList title='More Links' links={moreLinks} />
                 <div>
                   <div className='hidden md:block'>
                     <h4 className='mb-6 text-sm font-medium'>Newsletter</h4>
@@ -84,7 +84,7 @@ export function LandingFooter() {
 
           <section className='flex flex-col flex-wrap items-center justify-center gap-4 border-t pt-8 pb-2 text-shaded-foreground lg:flex-row lg:justify-between lg:gap-0 lg:px-8 xl:px-16 4xl:px-24'>
             <ul className='flex flex-wrap items-center gap-1 lg:gap-1.5 4xl:gap-2'>
-              {sharedFooterLinks.map(({ href, label, icon, external }, i) => (
+              {sharedLinks.map(({ href, label, icon, external }, i) => (
                 <li
                   key={label}
                   className='flex items-center text-xs font-medium tracking-tight lg:text-base 4xl:text-lg'
@@ -95,7 +95,7 @@ export function LandingFooter() {
                     icon={icon}
                     external={external}
                   />
-                  {i < sharedFooterLinks.length - 1 && (
+                  {i < sharedLinks.length - 1 && (
                     <span
                       className='pl-1 lg:pl-1.5 4xl:pl-2'
                       aria-hidden='true'

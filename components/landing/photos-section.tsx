@@ -1,7 +1,17 @@
 import Image from "next/image";
 import { BlurItem } from "@/components/ui/blur";
 
-import { photoGrid } from "@/data/landing";
+export const photoGrid: string[] = [
+  "/grid/1.png",
+  "/grid/2.png",
+  "/grid/3.png",
+  "/grid/4.png",
+  "/grid/5.png",
+  "/grid/6.png",
+  "/grid/7.png",
+  "/grid/8.png",
+  "/grid/9.png",
+];
 
 export default function PhotosSection() {
   return (

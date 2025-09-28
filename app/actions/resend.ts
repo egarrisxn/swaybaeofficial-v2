@@ -1,6 +1,7 @@
 "use server";
 
 import type { ReactElement } from "react";
+import { Resend } from "resend";
 import { createClient } from "@/lib/supabase/server";
 import {
   ContactTemplate,
@@ -8,13 +9,17 @@ import {
   WelcomeNewsletterTemplate,
 } from "@/lib/resend/templates";
 import { ContactSchema, NewsletterSchema } from "@/lib/resend/schemas";
-import { RESEND, CONTACT_EMAIL_TO, NEWSLETTER_EMAIL_FROM } from "@/lib/env";
-import type { FormResult, FormState } from "@/types";
+
+import type { ActionState, ActionResult } from "@/types";
+
+const RESEND = new Resend(process.env.RESEND_API_KEY);
+const CONTACT_EMAIL_TO = process.env.CONTACT_FORM_EMAIL_TO;
+const NEWSLETTER_EMAIL_FROM = process.env.NEWSLETTER_FORM_EMAIL_FROM;
 
 export async function sendContactMessage(
-  _prevState: FormState,
+  _prevState: ActionState,
   formData: FormData
-): Promise<FormState> {
+): Promise<ActionState> {
   if (!CONTACT_EMAIL_TO) {
     console.error("CONTACT_FORM_EMAIL_TO is not set in .env.local");
     return {
@@ -39,7 +44,7 @@ export async function sendContactMessage(
 
   const { name, email, message } = validated.data;
 
-  const emailResponse: FormResult = await RESEND.emails
+  const emailResponse: ActionResult = await RESEND.emails
     .send({
       from: `Contact Form <onboarding@resend.dev>`,
       to: CONTACT_EMAIL_TO,
@@ -65,9 +70,9 @@ export async function sendContactMessage(
 }
 
 export async function subscribeToNewsletter(
-  _prevState: FormState,
+  _prevState: ActionState,
   formData: FormData
-): Promise<FormState> {
+): Promise<ActionState> {
   if (!NEWSLETTER_EMAIL_FROM) {
     console.error("NEWSLETTER_FORM_EMAIL_FROM is not set in .env.local");
     return {
@@ -101,7 +106,7 @@ export async function subscribeToNewsletter(
     };
   }
 
-  const emailResponse: FormResult = await RESEND.emails
+  const emailResponse: ActionResult = await RESEND.emails
     .send({
       from: `Your Newsletter <${NEWSLETTER_EMAIL_FROM}>`,
       to: email,

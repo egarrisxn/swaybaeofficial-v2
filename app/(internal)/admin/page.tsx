@@ -11,7 +11,11 @@ import {
 } from "@/components/ui/card";
 import { AdminNewsletterForm } from "@/components/resend/admin-newsletter-form";
 import { ActionButton } from "@/components/shared/action-button";
-import { ADMIN_USER } from "@/lib/env";
+
+const ADMIN_USER = process.env.ADMIN_USER_ID;
+// export const ADMIN_USER string[] = process.env.ADMIN_USER_IDS
+//   ? process.env.ADMIN_USER_IDS.split(",").map((id) => id.trim())
+//   : [];
 
 export default async function AdminPage() {
   const supabase = await createClient();

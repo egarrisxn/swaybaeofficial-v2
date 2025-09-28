@@ -15,7 +15,7 @@ import { CalendarList } from "@/components/calendar/calendar-list";
 import { CalendarSubscribe } from "@/components/calendar/calendar-subscribe";
 import { useCalendarEvents } from "@/hooks/use-calendar-events";
 
-import { calendarDays } from "@/data/public";
+import { calendarDays } from "@/data/constants";
 
 interface HybridCalendarProps {
   initialDate?: Date;

@@ -8,7 +8,7 @@ import {
   getEventLabelType,
   formatEventTime,
 } from "@/lib/calendar";
-import type { CalendarEvent, CalendarEvents } from "@/types";
+import type { CalendarEvent, CalendarEvents } from "@/types/calendar";
 
 export function CalendarList({ currentDate, events }: CalendarEvents) {
   const year = currentDate.getFullYear();

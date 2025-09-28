@@ -10,10 +10,10 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
-import { formatEventTime, getEventLabelColor } from "@/lib/calendar";
 import { cn } from "@/lib/utils";
+import { formatEventTime, getEventLabelColor } from "@/lib/calendar";
 
-import { type CalendarEvent } from "@/types";
+import type { CalendarEvent } from "@/types/calendar";
 
 interface CalendarDialogProps {
   event?: CalendarEvent;

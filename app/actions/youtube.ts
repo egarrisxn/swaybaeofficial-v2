@@ -1,7 +1,9 @@
 "use server";
 
-import { YOUTUBE_KEY, YOUTUBE_ID } from "@/lib/env";
-import type { YouTubeVideo, YouTubeApiItem } from "@/types";
+import type { YouTubeVideo, YouTubeApiItem } from "@/types/youtube";
+
+const YOUTUBE_KEY = process.env.YOUTUBE_API_KEY;
+const YOUTUBE_ID = process.env.YOUTUBE_CHANNEL_ID;
 
 export async function getLatestYouTube(): Promise<YouTubeVideo[] | null> {
   if (!YOUTUBE_KEY || !YOUTUBE_ID) {

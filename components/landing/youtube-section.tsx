@@ -2,7 +2,15 @@ import { Video } from "@/components/ui/video";
 import { Button } from "@/components/ui/button";
 import { YouTubeFeed } from "@/components/shared/youtube-feed";
 
-import { youTubeText } from "@/data/landing";
+import type { TextBlurb } from "@/types";
+
+const youTubeText: TextBlurb = {
+  badge: "Check this out",
+  heading: `Watch some of my most recent YouTube videoeos.`,
+  body: `Make sure to like and subscribe to the channel for all my new videoeo updates!`,
+  button: "Subscribe!",
+  video: "Latest Videoeos",
+};
 
 export default function YouTubeSection() {
   return (
@@ -15,16 +23,16 @@ export default function YouTubeSection() {
         <div className='flex flex-col gap-10 lg:flex-row lg:items-center lg:gap-12 4xl:gap-16'>
           <div className='order-1 flex flex-col justify-center gap-3 px-4 lg:order-2 lg:px-0 xl:gap-5 4xl:w-[60%]'>
             <span className='text-sm font-extrabold tracking-wide text-muted-foreground uppercase xs:text-base'>
-              {youTubeText.b}
+              {youTubeText.badge}
             </span>
             <h2
               id='youtube-heading '
               className='max-w-3xl font-serif text-3xl font-bold tracking-tight text-shadow-lg sm:text-4xl sm:leading-none 2xl:text-6xl'
             >
-              {youTubeText.h2}
+              {youTubeText.heading}
             </h2>
             <p className='max-w-3xl font-light text-muted-foreground sm:text-lg sm:leading-snug 2xl:text-2xl'>
-              {youTubeText.p}
+              {youTubeText.body}
             </p>
             <a
               href='https://www.youtube.com/swaybaetv'
@@ -32,7 +40,7 @@ export default function YouTubeSection() {
               target='_blank'
               className='hidden lg:flex'
             >
-              <Button variant='contrast'>{youTubeText.btn}</Button>
+              <Button variant='contrast'>{youTubeText.button}</Button>
             </a>
           </div>
           <div className='order-2 mx-auto w-full max-w-2xl lg:order-1 4xl:w-[40%]'>
@@ -47,7 +55,7 @@ export default function YouTubeSection() {
         </div>
         <div className='mt-20 2xl:px-2 4xl:mt-16 4xl:px-0'>
           <span className='pl-1 text-sm font-medium tracking-wide text-muted-foreground uppercase xs:pl-0 xs:text-base'>
-            {youTubeText.vid}
+            {youTubeText.video}
           </span>
           <div className='pt-2'>
             <YouTubeFeed />
@@ -72,7 +80,7 @@ export default function YouTubeSection() {
             className='mt-20 flex items-center justify-center lg:hidden'
           >
             <Button size='lg' variant='contrast'>
-              {youTubeText.btn}
+              {youTubeText.button}
             </Button>
           </a>
         </div>

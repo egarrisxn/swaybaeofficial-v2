@@ -6,7 +6,7 @@ import { subscribeToNewsletter } from "@/app/actions/resend";
 import { Input } from "@/components/ui/input";
 import { AnimatedSendIcon } from "@/components/icons";
 
-import type { FormState } from "@/types";
+import type { ActionState } from "@/types";
 
 function FieldMessage({ id, errors }: { id: string; errors?: string[] }) {
   if (!errors?.length) return null;
@@ -21,7 +21,7 @@ function FieldMessage({ id, errors }: { id: string; errors?: string[] }) {
 }
 
 export function UserNewsletterForm() {
-  const initialState: FormState = { message: "", success: false };
+  const initialState: ActionState = { message: "", success: false };
   const [state, formAction] = useActionState(
     subscribeToNewsletter,
     initialState

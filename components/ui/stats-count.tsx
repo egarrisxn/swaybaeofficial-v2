@@ -8,7 +8,6 @@ import {
   useTransform,
   useInView,
 } from "motion/react";
-
 import { cn } from "@/lib/utils";
 
 interface StatItem {
@@ -145,7 +144,7 @@ function AnimatedCounter({
   );
 }
 
-export default function StatsCount({
+function StatsCount({
   stats = defaultStats,
   title = defaultTitle,
   showDividers = true,
@@ -256,3 +255,5 @@ export default function StatsCount({
     </motion.section>
   );
 }
+
+export { StatsCount };

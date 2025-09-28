@@ -5,9 +5,9 @@ import { CalendarDialog } from "@/components/calendar/calendar-dialog";
 import { getEventLabelColor } from "@/lib/calendar";
 import { cn } from "@/lib/utils";
 
-import { calendarDays } from "@/data/public";
+import { calendarDays } from "@/data/constants";
 
-import type { CalendarEvent, CalendarEvents } from "@/types";
+import type { CalendarEvent, CalendarEvents } from "@/types/calendar";
 
 export function CalendarGrid({ currentDate, events }: CalendarEvents) {
   const [selectedEvent, setSelectedEvent] = useState<CalendarEvent | undefined>(

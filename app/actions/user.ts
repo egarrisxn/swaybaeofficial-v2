@@ -2,7 +2,8 @@
 
 import { revalidatePath } from "next/cache";
 import { createClient } from "@/lib/supabase/server";
-import type { ServerActionResult } from "@/types";
+
+import type { ActionState } from "@/types";
 
 export async function getUserData() {
   const supabase = await createClient();
@@ -50,9 +51,9 @@ export async function getUserData() {
 }
 
 export async function userSubmitComment(
-  _prevState: ServerActionResult | undefined,
+  _prevState: ActionState | undefined,
   formData: FormData
-): Promise<ServerActionResult> {
+): Promise<ActionState> {
   const supabase = await createClient();
 
   const {

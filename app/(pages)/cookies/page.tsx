@@ -1,7 +1,53 @@
 import LastUpdated from "@/components/shared/last-updated";
 import ContactMeSnippet from "@/components/shared/contact-me-snippet";
 
-import { cookieData } from "@/data/public";
+import type { Lists } from "@/types";
+
+// interface Lists {
+//   title?: string;
+//   description?: string;
+//   link?: string;
+//   linkText?: string;
+// }
+
+const cookieData: Lists[] = [
+  {
+    description:
+      "This Cookie Policy explains what cookies are, how we use them, what types of cookies we place, the information they collect, and how that information is used. It also outlines how you can manage your cookie preferences. Cookies are small text files stored on your device when you visit a website. They hold limited information that helps the site function properly, keep it secure, improve your browsing experience, and provide insights into how the website is performing and where it can be improved.",
+  },
+  {
+    description:
+      "Like most websites, we use both first-party and third-party cookies for different purposes. First-party cookies are essential for the basic operation of our website. They do not collect personally identifiable information. Third-party cookies help us understand how visitors use the site, measure performance, maintain security, deliver relevant advertisements, and generally enhance your experience. They also make future visits faster and more efficient.",
+  },
+  {
+    description:
+      "You can review or change your cookie preferences at any time by selecting Cookie Settings. This allows you to update your choices or withdraw consent immediately. Most browsers also allow you to block or delete cookies through their settings. The links below explain how to manage cookies in the major browsers:",
+  },
+  {
+    title: "Chrome",
+    link: "https://support.google.com/accounts/answer/32050",
+    linkText: "Support Page",
+  },
+  {
+    title: "Safari",
+    link: "https://support.apple.com/en-in/guide/safari/sfri11471/mac",
+    linkText: "Support Page",
+  },
+  {
+    title: "Firefox",
+    link: "https://support.mozilla.org/en-US/kb/clear-cookies-and-site-data-firefox?redirectslug=delete-cookies-remove-info-websites-stored&redirectlocale=en-US",
+    linkText: "Support Page",
+  },
+  {
+    title: "Internet Explorer",
+    link: "https://support.microsoft.com/en-us/topic/how-to-delete-cookie-files-in-internet-explorer-bca9446f-d873-78de-77ba-d42645fa52fc",
+    linkText: "Support Page",
+  },
+  {
+    description:
+      "For other browsers, please consult the official support documentation.",
+  },
+];
 
 export default function CookiePolicyPage() {
   return (
@@ -16,7 +62,6 @@ export default function CookiePolicyPage() {
               <LastUpdated />
             </div>
           </header>
-
           <article className='mb-10'>
             <h3 className='mb-4 text-2xl font-semibold'>Use of Cookies</h3>
             {cookieData.map((item, index) => (
@@ -42,9 +87,7 @@ export default function CookiePolicyPage() {
               </p>
             ))}
           </article>
-
           <hr className='mb-6' />
-
           <ContactMeSnippet />
         </section>
       </div>

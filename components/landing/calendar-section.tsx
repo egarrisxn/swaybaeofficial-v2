@@ -2,7 +2,13 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { LandingCalendar } from "@/components/calendar/landing-calendar";
 
-import { calendarText } from "@/data/landing";
+import type { TextBlurb } from "@/types";
+
+export const calendarText: TextBlurb = {
+  badge: "Stay up to date",
+  heading: `Check out my calendar to see what's coming up next!`,
+  body: `The calendar is the best source of knowing what's coming up for the month ahead. It is always updated with upcoming Twitch streams, YouTube videoeos, and special events!`,
+};
 
 export default function CalendarSection() {
   return (
@@ -10,16 +16,16 @@ export default function CalendarSection() {
       <div className='container mx-auto grid max-w-xl grid-cols-1 gap-16 px-4 lg:max-w-3xl xl:max-w-7xl xl:grid-cols-2 xl:gap-16 2xl:max-w-8xl 2xl:gap-24 2xl:px-8 4xl:flex 4xl:max-w-11xl 4xl:items-center 4xl:px-0'>
         <div className='order-1 flex flex-col justify-center gap-3 px-4 xs:px-6 xl:order-2 xl:mb-24 xl:gap-5 xl:px-0 4xl:w-[55%]'>
           <span className='text-sm font-extrabold tracking-wide text-muted-foreground uppercase xs:text-base'>
-            {calendarText.b}
+            {calendarText.badge}
           </span>
           <h2
             id='calendar-heading'
             className='max-w-3xl font-serif text-3xl font-bold tracking-tight text-shadow-lg sm:text-4xl sm:leading-none lg:text-5xl 2xl:text-6xl'
           >
-            {calendarText.h2}
+            {calendarText.heading}
           </h2>
           <p className='max-w-3xl font-light text-muted-foreground sm:text-lg sm:leading-snug lg:text-xl 2xl:text-[1.35rem] 2xl:leading-snug'>
-            {calendarText.p}
+            {calendarText.body}
           </p>
           <Link href='/calendar' className='pt-2 lg:pt-0'>
             <Button variant='contrast'>Check Schedule</Button>

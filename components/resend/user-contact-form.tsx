@@ -17,7 +17,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 
-import type { FormState } from "@/types";
+import type { ActionState } from "@/types";
 
 function FieldError({ id, errors }: { id: string; errors?: string[] }) {
   if (!errors?.length) return null;
@@ -38,7 +38,7 @@ function SubmitButton() {
 }
 
 export function UserContactForm() {
-  const initialState: FormState = { message: "", success: false };
+  const initialState: ActionState = { message: "", success: false };
   const [state, formAction] = useActionState(sendContactMessage, initialState);
   const formRef = useRef<HTMLFormElement>(null);
 

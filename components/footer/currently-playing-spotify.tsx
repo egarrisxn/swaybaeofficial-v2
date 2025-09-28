@@ -2,9 +2,9 @@ import type { ReactNode } from "react";
 import Link from "next/link";
 import { getNowPlayingItem } from "@/app/actions/spotify";
 
-import type { SpotifyPlayer } from "@/types";
+import type { Spotify } from "@/types/spotify";
 
-const favorite: SpotifyPlayer = {
+const favorite: Spotify = {
   albumImageUrl:
     "https://i.scdn.co/image/ab67616d0000b2735689457006627002c29800ca",
   albumName: "Blood, Hair, And Eyeballs",
@@ -91,7 +91,7 @@ function SpotifyContainer({
   return cardContent;
 }
 
-function CurrentlyPlayingClient({ track }: { track: SpotifyPlayer | null }) {
+function CurrentlyPlayingClient({ track }: { track: Spotify | null }) {
   const isCurrentlyPlaying = track?.isPlaying ?? false;
   const currentTrack = isCurrentlyPlaying && track ? track : favorite;
 

@@ -1,15 +1,15 @@
 "use client";
 
 import { useActionState, startTransition } from "react";
-import type { ActionButtonState } from "@/types";
+import type { ActionState } from "@/types";
 
-const initialState: ActionButtonState = {
+const initialState: ActionState = {
   success: undefined,
   message: "",
 };
 
 interface ActionButtonProps<T> {
-  action: (state: ActionButtonState, payload: T) => Promise<ActionButtonState>;
+  action: (state: ActionState, payload: T) => Promise<ActionState>;
   id: T;
   label: string;
   className?: string;

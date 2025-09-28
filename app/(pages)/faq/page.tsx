@@ -16,7 +16,56 @@ export default function FAQPage() {
 // } from "@/components/ui/accordion";
 // import LastUpdated from "@/components/shared/last-updated";
 // import ContactMeSnippet from "@/components/shared/contact-me-snippet";
-// import { faqList } from "@/data/public";
+
+// import type { Lists } from "@/types";
+
+// // interface Lists {
+// //   title?: string;
+// //   description?: string;
+// //   link?: string;
+// //   linkText?: string;
+// // }
+
+// export const faqList: Lists[] = [
+//   {
+//     title: "Do you offer teleportation services?",
+//     description: "Only on Tuesdays, and only if Mercury is in retrograde.",
+//   },
+//   {
+//     title: "What's the return policy on bad life choices?",
+//     description:
+//       "We accept returns within 30 years with proof of receipt and a therapist's note.",
+//   },
+//   {
+//     title: "Can I pay in hugs?",
+//     description: "Yes, but only if your hugs are IRS-approved.",
+//   },
+//   {
+//     title: "Is it true your CEO is a raccoon in a trench coat?",
+//     description:
+//       "We can neither confirm nor deny, but he does love dumpsters and quarterly reports.",
+//   },
+//   {
+//     title: "What happens if I press this big red button?",
+//     description:
+//       "You gain temporary invisibility, but only when no one is looking.",
+//   },
+//   {
+//     title: "Can this software help me find true love?",
+//     description:
+//       "Absolutely! As long as your true love is fast-loading dashboards.",
+//   },
+//   {
+//     title: "Do you offer tech support for emotional breakdowns?",
+//     description:
+//       "Yes, our support team will send memes and virtual snacks within 15 minutes.",
+//   },
+//   {
+//     title: "Is there a secret menu?",
+//     description:
+//       "Yes. Just whisper 'enchanted spreadsheet' to your mouse and wait for the magic.",
+//   },
+// ];
 
 // export default function FAQPage() {
 //   return (

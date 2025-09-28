@@ -1,13 +1,12 @@
 "use server";
 
-import {
-  CLIENT_ID,
-  CLIENT_SECRET,
-  REFRESH_TOKEN,
-  TOKEN_ENDPOINT,
-  NOW_PLAYING_ENDPOINT,
-} from "@/lib/env";
-import type { SpotifyPlayer, SpotifyArtist } from "@/types";
+import type { Spotify, SpotifyArtist } from "@/types/spotify";
+
+const CLIENT_ID = process.env.SPOTIFY_CLIENT_ID;
+const CLIENT_SECRET = process.env.SPOTIFY_CLIENT_SECRET;
+const REFRESH_TOKEN = process.env.SPOTIFY_REFRESH_TOKEN;
+const TOKEN_ENDPOINT = `https://accounts.spotify.com/api/token`;
+const NOW_PLAYING_ENDPOINT = `https://api.spotify.com/v1/me/player/currently-playing`;
 
 async function getAccessToken() {
   if (!CLIENT_ID || !CLIENT_SECRET || !REFRESH_TOKEN) {
@@ -37,7 +36,7 @@ async function getAccessToken() {
   return data.access_token;
 }
 
-export async function getNowPlayingItem(): Promise<SpotifyPlayer> {
+export async function getNowPlayingItem(): Promise<Spotify> {
   try {
     const accessToken = await getAccessToken();
     const response = await fetch(NOW_PLAYING_ENDPOINT, {
@@ -64,7 +63,7 @@ export async function getNowPlayingItem(): Promise<SpotifyPlayer> {
     const nowPlayingData = await response.json();
     const song = nowPlayingData.item;
 
-    const metadata: SpotifyPlayer = {
+    const metadata: Spotify = {
       isPlaying: nowPlayingData.is_playing,
       albumImageUrl: song.album.images[0].url,
       albumName: song.album.name,

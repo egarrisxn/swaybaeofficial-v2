@@ -1,10 +1,65 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState, type JSX } from "react";
 import Image from "next/image";
 import { AnimatePresence, motion } from "motion/react";
-import { brandsData } from "@/data/constants";
-import type { BrandWithImg } from "@/types";
+
+interface Brands {
+  id: number;
+  name: string;
+  src: string;
+  href: string;
+}
+
+const brandsData: Brands[] = [
+  {
+    id: 1,
+    name: "YouTube",
+    src: "/brands/youtube.png",
+    href: "https://youtube.com",
+  },
+  { id: 2, name: "GCX", src: "/brands/gcx.png", href: "https://gcxevent.com" },
+  {
+    id: 3,
+    name: "Hello Fresh",
+    src: "/brands/hellofresh.png",
+    href: "https://hellofresh.com",
+  },
+  {
+    id: 4,
+    name: "Twitch",
+    src: "/brands/twitch.png",
+    href: "https://twitch.tv",
+  },
+  {
+    id: 5,
+    name: "1000 Dreams Fund",
+    src: "/brands/1000dreams.png",
+    href: "https://1000dreamsfund.org",
+  },
+  {
+    id: 6,
+    name: "Super Girl Gamer Pro",
+    src: "/brands/supergirl.png",
+    href: "https://supergirlgamerpro.com",
+  },
+  {
+    id: 7,
+    name: "Blizzard",
+    src: "/brands/blizzard.png",
+    href: "https://blizzard.com",
+  },
+  {
+    id: 8,
+    name: "Dreamhack",
+    src: "/brands/dreamhack.png",
+    href: "https://dreamhack.com",
+  },
+];
+
+interface BrandWithImg extends Brands {
+  img: (props: { className?: string }) => JSX.Element;
+}
 
 function shuffleArray(array: BrandWithImg[]): BrandWithImg[] {
   const shuffled = [...array];

@@ -1,10 +1,10 @@
-export const currentStats = {
-  totalPoints: 207150,
-  hoursStreamed: 19,
+export const subathonStats = {
+  totalPoints: 214950,
+  hoursStreamed: 25,
   daysRemaining: 3,
 };
 
-export const goals = [
+export const subathonGoals = [
   {
     points: 20000,
     title: "Unlock Clip Review",
@@ -71,6 +71,7 @@ export const goals = [
       "Sway and Ethan taste six insane flavors of soda - Pumpkin Pie, Peanut Butter and Jelly, Sweet Corn, Bacon, Buffalo Wing, and Ranch Dressing.",
     completed: true,
     currentProgress: 0,
+    link: "https://youtu.be/ejmHeBn8c8o",
   },
   {
     points: 100000,
@@ -78,6 +79,7 @@ export const goals = [
     description: "Sway plays Jump King.",
     completed: true,
     currentProgress: 0,
+    link: "https://youtu.be/CWTJEnO7-po",
   },
   {
     points: 150000,
@@ -94,6 +96,7 @@ export const goals = [
       "Sway and Ethan taste some craaazy foods including a cheeseburger in a tube and mac and cheese candy canes!",
     completed: true,
     currentProgress: 0,
+    link: "https://youtu.be/Nre80wbubxY",
   },
   {
     points: 250000,
@@ -101,7 +104,7 @@ export const goals = [
     description:
       "The Don't Laugh challenge is back! Submit your best clips and Sway will try not to laugh.",
     completed: false,
-    currentProgress: 207150,
+    currentProgress: 214950,
   },
   {
     points: 300000,
@@ -179,20 +182,5 @@ export const goals = [
     description: "Sway gets tattooed! On stream!",
     completed: false,
     currentProgress: 0,
-  },
-];
-
-export const recurringGoals = [
-  {
-    interval: 10000,
-    title: "Spin the Condiment Wheel",
-    description:
-      "Up to 5 times per day! Condiments include: ketchup, ranch, mayo, mustard, franks red hot sauce, bbq sauce, soy sauce, sriracha, chocolate syrup, fish sauce, gochujang sauce.",
-  },
-  {
-    interval: 20000,
-    title: "Song Request Power Hour",
-    description:
-      "1 hour of 10 channel point song requests! (Song requests must be family-friendly. If Sway at Nite goal is reached, song requests will be disabled during that time).",
   },
 ];

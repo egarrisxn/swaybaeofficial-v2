@@ -3,9 +3,24 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import { AnimatePresence, motion } from "motion/react";
-import { cn } from "@/lib/utils";
 import { CloseIcon, PlayIcon } from "@/components/icons";
-import type { VideoAnimationStyle, VideoAnimationVariants } from "@/types";
+import { cn } from "@/lib/utils";
+
+type VideoAnimationStyle =
+  | "from-bottom"
+  | "from-center"
+  | "from-top"
+  | "from-left"
+  | "from-right"
+  | "fade"
+  | "top-in-bottom-out"
+  | "left-in-right-out";
+
+interface VideoAnimationVariants {
+  initial: { [key: string]: string | number };
+  animate: { [key: string]: string | number };
+  exit: { [key: string]: string | number };
+}
 
 const videoAnimationVariants: Record<
   VideoAnimationStyle,
@@ -61,7 +76,7 @@ interface VideoProps {
   className?: string;
 }
 
-export function Video({
+function Video({
   videoAnimationStyle = "from-center",
   videoSrc,
   thumbnailSrc,
@@ -144,3 +159,5 @@ export function Video({
     </div>
   );
 }
+
+export { Video };

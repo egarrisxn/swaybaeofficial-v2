@@ -8,7 +8,35 @@ import {
   TwitterIcon,
   YoutubeIcon,
 } from "@/components/icons";
-import type { Brands, Links, Socials } from "@/types";
+import type { Links, Socials } from "@/types";
+
+// Calendar
+export const calendarDays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+// Footer
+export const quickLinks: Links[] = [
+  { href: "/about", label: "About" },
+  { href: "/calendar", label: "Calendar" },
+  { href: "/community", label: "Community" },
+  { href: "https://shop.swaybae.net/", label: "Merch", external: true },
+];
+export const moreLinks: Links[] = [
+  { href: "/blog", label: "Blog" },
+  { href: "/contact", label: "Contact" },
+  { href: "/faq", label: "FAQs" },
+  // { href: "/media", label: "Media Kit" },
+  {
+    href: "http://beacons.ai/sway_bae/mediakit",
+    label: "Media Kit",
+    external: true,
+  },
+];
+export const sharedLinks: Links[] = [
+  { href: "/accessibility", label: "Accessibility" },
+  { href: "/cookies", label: "Cookies" },
+  { href: "/privacy", label: "Privacy" },
+  { href: "/terms", label: "Terms" },
+];
 
 // Navbar
 export const navLinks: Links[] = [
@@ -20,31 +48,6 @@ export const navLinks: Links[] = [
   // { href: "/contact", label: "Contact" },
   // { href: "/about", label: "About" },
   // { href: "/community", label: "Community" },
-];
-
-// Footer
-export const footerLinksOne: Links[] = [
-  { href: "/about", label: "About" },
-  { href: "/calendar", label: "Calendar" },
-  { href: "/community", label: "Community" },
-  { href: "https://shop.swaybae.net/", label: "Merch", external: true },
-];
-export const footerLinksTwo: Links[] = [
-  { href: "/blog", label: "Blog" },
-  { href: "/contact", label: "Contact" },
-  { href: "/faq", label: "FAQs" },
-  // { href: "/media", label: "Media Kit" },
-  {
-    href: "http://beacons.ai/sway_bae/mediakit",
-    label: "Media Kit",
-    external: true,
-  },
-];
-export const sharedFooterLinks: Links[] = [
-  { href: "/accessibility", label: "Accessibility" },
-  { href: "/cookies", label: "Cookies" },
-  { href: "/privacy", label: "Privacy" },
-  { href: "/terms", label: "Terms" },
 ];
 
 // Social
@@ -105,51 +108,5 @@ export const socialData: Socials[] = [
     username: "swaybae",
     href: "https://discord.com/invite/K73uN9k",
     Icon: DiscordIcon,
-  },
-];
-
-export const brandsData: Brands[] = [
-  {
-    id: 1,
-    name: "YouTube",
-    src: "/brands/youtube.png",
-    href: "https://youtube.com",
-  },
-  { id: 2, name: "GCX", src: "/brands/gcx.png", href: "https://gcxevent.com" },
-  {
-    id: 3,
-    name: "Hello Fresh",
-    src: "/brands/hellofresh.png",
-    href: "https://hellofresh.com",
-  },
-  {
-    id: 4,
-    name: "Twitch",
-    src: "/brands/twitch.png",
-    href: "https://twitch.tv",
-  },
-  {
-    id: 5,
-    name: "1000 Dreams Fund",
-    src: "/brands/1000dreams.png",
-    href: "https://1000dreamsfund.org",
-  },
-  {
-    id: 6,
-    name: "Super Girl Gamer Pro",
-    src: "/brands/supergirl.png",
-    href: "https://supergirlgamerpro.com",
-  },
-  {
-    id: 7,
-    name: "Blizzard",
-    src: "/brands/blizzard.png",
-    href: "https://blizzard.com",
-  },
-  {
-    id: 8,
-    name: "Dreamhack",
-    src: "/brands/dreamhack.png",
-    href: "https://dreamhack.com",
   },
 ];

@@ -39,12 +39,7 @@ interface TweetGridProps extends HTMLAttributes<HTMLDivElement> {
   spacing?: VariantProps<typeof tweetItemVariants>["spacing"];
 }
 
-export const TweetGrid = ({
-  tweets,
-  columns,
-  spacing,
-  className,
-}: TweetGridProps) => {
+const TweetGrid = ({ tweets, columns, spacing, className }: TweetGridProps) => {
   return (
     <div className={cn(tweetGridVariants({ columns }), className)}>
       {tweets.map((tweetId, i) => (
@@ -58,3 +53,5 @@ export const TweetGrid = ({
     </div>
   );
 };
+
+export { TweetGrid };

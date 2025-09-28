@@ -2,12 +2,13 @@
 
 import { revalidatePath } from "next/cache";
 import { createAdminClient } from "@/lib/supabase/admin";
-import type { ServerActionResult } from "@/types";
+
+import type { ActionState } from "@/types";
 
 export async function adminApproveComment(
-  _prevState: ServerActionResult | undefined,
+  _prevState: ActionState | undefined,
   commentId: string
-): Promise<ServerActionResult> {
+): Promise<ActionState> {
   const supabaseAdmin = createAdminClient();
 
   const { error } = await supabaseAdmin
@@ -27,9 +28,9 @@ export async function adminApproveComment(
 }
 
 export async function adminDeleteComment(
-  _prevState: ServerActionResult | undefined,
+  _prevState: ActionState | undefined,
   commentId: string
-): Promise<ServerActionResult> {
+): Promise<ActionState> {
   const supabaseAdmin = createAdminClient();
 
   const { error } = await supabaseAdmin

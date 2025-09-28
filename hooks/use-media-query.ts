@@ -5,7 +5,6 @@ function useMediaQuery(query: string): boolean {
 
   useEffect(() => {
     if (typeof window === "undefined") {
-      // Don't run on the server side
       return;
     }
 

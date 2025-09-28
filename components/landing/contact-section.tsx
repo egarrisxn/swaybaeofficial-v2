@@ -1,7 +1,68 @@
 import Link from "next/link";
 import { UserContactForm } from "@/components/resend/user-contact-form";
+import {
+  MailsIcon,
+  MapPinIcon,
+  MessageCircleIcon,
+  TvPlayIcon,
+} from "@/components/icons";
 
-import { contactText, contactItems } from "@/data/landing";
+import type { TextBlurb, Links, IconComponent } from "@/types";
+
+export const contactText: TextBlurb = {
+  badge: `Let's connect`,
+  heading: `I'd love to hear from you!`,
+  body: `Please feel free to reach out below with any inquiries, collaborations, or thoughts!`,
+};
+
+interface Contact extends Links {
+  title: string;
+  description?: string;
+  Icon: IconComponent;
+}
+
+interface ContactLinks {
+  title: string;
+  links: Contact[];
+}
+
+const contactItems: ContactLinks = {
+  title: "Contact",
+  links: [
+    {
+      title: "Stream",
+      description: "Catch me live on Twitch :",
+      href: "https://www.twitch.tv/sway_bae",
+      label: "www.twitch.tv/sway_bae",
+      external: true,
+      Icon: TvPlayIcon,
+    },
+    {
+      title: "Chat",
+      description: "Keep up with me over at",
+      href: "https://discord.com/invite/K73uN9k",
+      label: "Our Discord Server",
+      external: true,
+      Icon: MessageCircleIcon,
+    },
+    {
+      title: "Email",
+      description: "Prefer direct communication?",
+      href: "mailto:sway.bae9000@gmail.com",
+      label: "sway.bae9000@gmail.com",
+      external: true,
+      Icon: MailsIcon,
+    },
+    {
+      title: "IRL",
+      description: "Cons and Events are always on",
+      href: "/calendar",
+      label: "The Calendar Page",
+      external: false,
+      Icon: MapPinIcon,
+    },
+  ],
+};
 
 export default function ContactSection() {
   return (
@@ -13,16 +74,16 @@ export default function ContactSection() {
       <div className='container mx-auto grid max-w-xl grid-cols-1 gap-12 px-4 lg:max-w-7xl lg:gap-8 lg:px-12 xl:gap-12 2xl:max-w-8xl 2xl:gap-16 2xl:px-0 4xl:max-w-10xl'>
         <div className='flex flex-col justify-center gap-3 px-4 xs:px-6 md:px-0 lg:gap-5'>
           <span className='text-sm font-extrabold tracking-wide text-muted-foreground uppercase xs:text-base'>
-            {contactText.b}
+            {contactText.badge}
           </span>
           <h2
             id='contact-heading'
             className='max-w-5xl font-serif text-3xl font-bold tracking-tight text-shadow-lg sm:text-4xl sm:leading-none lg:text-5xl 2xl:text-6xl'
           >
-            {contactText.h2}
+            {contactText.heading}
           </h2>
           <p className='max-w-5xl font-light text-muted-foreground sm:text-lg sm:leading-snug lg:text-xl 2xl:text-[1.35rem] 2xl:leading-snug'>
-            {contactText.p}
+            {contactText.body}
           </p>
         </div>
         <div className='mx-auto grid w-full gap-12 md:grid-cols-2 md:gap-2 xl:gap-0'>

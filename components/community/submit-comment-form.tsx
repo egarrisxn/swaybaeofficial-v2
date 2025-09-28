@@ -2,9 +2,9 @@
 
 import { useActionState } from "react";
 import { userSubmitComment } from "@/app/actions/user";
-import type { FormState } from "@/types";
+import type { ActionState } from "@/types";
 
-const initialState: FormState = {
+const initialState: ActionState = {
   success: undefined,
   message: "",
 };

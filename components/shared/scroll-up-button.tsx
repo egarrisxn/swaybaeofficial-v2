@@ -2,9 +2,9 @@
 
 import { useSmoothScroll } from "@/hooks/use-smooth-scroll";
 import { useScrollVisibility } from "@/hooks/use-scroll-visibility";
-import type { ScrollButtons } from "@/types";
+import type { TargetId } from "@/types";
 
-export function ScrollUpButton({ targetId }: ScrollButtons) {
+export function ScrollUpButton({ targetId }: TargetId) {
   const isVisible = useScrollVisibility("#hero");
   const scrollTo = useSmoothScroll();
 

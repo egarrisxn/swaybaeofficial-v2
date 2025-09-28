@@ -1,7 +1,7 @@
 import { TooltipSocialIcon } from "@/components/shared/tooltip-social-icon";
 import { CopyrightText } from "@/components/footer/copyright-text";
 import { LinkRenderer } from "@/components/footer/link-renderer";
-import { socialData, sharedFooterLinks } from "@/data/constants";
+import { socialData, sharedLinks } from "@/data/constants";
 
 export default function PagesFooter() {
   return (
@@ -9,7 +9,7 @@ export default function PagesFooter() {
       <div className='mx-auto flex w-full flex-col items-center justify-center gap-4 py-8 xl:grid xl:grid-cols-3 xl:gap-0 xl:px-6 xl:py-6 4xl:max-w-13xl'>
         <section className='flex justify-center lg:justify-start'>
           <ul className='flex flex-wrap items-center gap-1 xl:gap-1.5'>
-            {sharedFooterLinks.map(({ href, label, icon, external }, i) => (
+            {sharedLinks.map(({ href, label, icon, external }, i) => (
               <li
                 key={label}
                 className='flex items-center text-xs font-medium tracking-tight xl:text-base xl:tracking-tighter'
@@ -20,7 +20,7 @@ export default function PagesFooter() {
                   icon={icon}
                   external={external}
                 />
-                {i < sharedFooterLinks.length - 1 && (
+                {i < sharedLinks.length - 1 && (
                   <span className='pl-1 xl:pl-1.5' aria-hidden='true'>
                     •
                   </span>

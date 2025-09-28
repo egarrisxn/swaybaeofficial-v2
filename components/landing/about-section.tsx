@@ -3,7 +3,14 @@ import Link from "next/link";
 import { BlurText, BlurItem } from "@/components/ui/blur";
 import { Button } from "@/components/ui/button";
 
-import { aboutText } from "@/data/landing";
+import type { TextBlurb } from "@/types";
+
+const aboutText: TextBlurb = {
+  badge: "Welcome!",
+  heading: `I'm Sway!`,
+  body: `I am a full-time, family-friendly gaming creator and entertainer with a passion for community building, engagement, and mental health advocacy! I am partnered with Twitch and YouTube and you can find me streaming and releasing videoeos multiple times per week. Thank you for being here!`,
+  button: "Learn More",
+};
 
 export default function AboutSection() {
   return (
@@ -17,24 +24,24 @@ export default function AboutSection() {
             delay={0.1}
             className='text-lg font-extrabold tracking-wide text-muted-foreground uppercase 4xl:text-xl'
           >
-            {aboutText.b}
+            {aboutText.badge}
           </BlurText>
           <BlurText
             delay={0.2}
             className='font-serif text-7xl font-black tracking-tight text-shadow-lg lg:text-8xl lg:leading-none 2xl:text-[7rem] 4xl:text-[8.5rem]'
           >
-            <h2 id='about-heading'>{aboutText.h2}</h2>
+            <h2 id='about-heading'>{aboutText.heading}</h2>
           </BlurText>
           <BlurText
             delay={0.3}
             className='max-w-3xl text-lg font-light text-muted-foreground lg:text-xl 2xl:text-2xl 4xl:text-[1.65rem]'
           >
-            <p>{aboutText.p}</p>
+            <p>{aboutText.body}</p>
           </BlurText>
           <BlurItem delay={0.4} className='pt-2 lg:pt-0 4xl:pt-2'>
             <Link href='/about'>
               <Button size='lg' variant='contrast'>
-                {aboutText.btn}
+                {aboutText.button}
               </Button>
             </Link>
           </BlurItem>

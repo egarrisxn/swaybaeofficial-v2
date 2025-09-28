@@ -1,12 +1,11 @@
 import { useState, useEffect, useRef } from "react";
-import type { CalendarEvent, UseCalendarEventsResult } from "@/types";
 
-type EventsCache = Record<string, CalendarEvent[]>;
-
-type CalendarEventResponse = Omit<CalendarEvent, "start" | "end"> & {
-  start: string;
-  end: string;
-};
+import type {
+  CalendarEvent,
+  UseCalendarEventsResult,
+  EventsCache,
+  CalendarEventResponse,
+} from "@/types/calendar";
 
 export function useCalendarEvents(currentDate: Date): UseCalendarEventsResult {
   const [events, setEvents] = useState<CalendarEvent[]>([]);

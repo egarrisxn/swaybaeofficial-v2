@@ -1,6 +1,6 @@
 "use client";
 
-import { memo, ElementType, useRef } from "react";
+import { memo, useRef, type ElementType } from "react";
 import {
   motion,
   AnimatePresence,
@@ -11,6 +11,7 @@ import {
 import { cn } from "@/lib/utils";
 
 type AnimationType = "text" | "word" | "character" | "line";
+
 type AnimationVariant =
   | "fadeIn"
   | "blurIn"

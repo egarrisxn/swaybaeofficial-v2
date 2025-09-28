@@ -1,4 +1,4 @@
-import type { GoogleCalendarEvent, CalendarEvent } from "@/types";
+import type { CalendarEvent, GoogleCalendarEvent } from "@/types/calendar";
 
 function categorizeEvent(title: string): CalendarEvent["type"] {
   const lowerTitle = title.toLowerCase();

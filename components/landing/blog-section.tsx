@@ -3,7 +3,31 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ArrowRightIcon } from "@/components/icons";
 
-import { blogList, blogText } from "@/data/landing";
+import type { TextBlurb } from "@/types";
+
+const blogText: TextBlurb = {
+  heading: "Latest blog posts",
+  button: "Read More",
+};
+
+interface Blog {
+  id: string;
+  title: string;
+  href: string;
+}
+
+const blogList: Blog[] = [
+  {
+    id: "#2",
+    title: "The best FREE Ways to Support Your Favorite Content Creators!",
+    href: "#",
+  },
+  {
+    id: "#1",
+    title: "Sway Starts a BLOG!",
+    href: "#",
+  },
+];
 
 export default function BlogSection() {
   return (
@@ -14,7 +38,7 @@ export default function BlogSection() {
             id='blog-heading'
             className='px-3 pb-1 font-serif text-2xl font-bold tracking-tight text-muted-foreground text-shadow-lg xs:text-base sm:text-3xl sm:leading-none xl:text-4xl 2xl:pb-4 4xl:text-[2.6rem]'
           >
-            {blogText.h2}
+            {blogText.heading}
           </h2>
           <div>
             {blogList.map(({ id, title, href }, index) => (
@@ -46,7 +70,7 @@ export default function BlogSection() {
           </div>
           <Link href='/blog' className='mt-12 flex items-center px-4'>
             <Button variant='contrast' size='lg'>
-              {blogText.btn}
+              {blogText.button}
             </Button>
           </Link>
         </div>

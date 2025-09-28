@@ -13,7 +13,7 @@ const blurVariants = cva("will-change-transform", {
       lg: "blur-[10px]",
     },
     direction: {
-      up: "", // handled in motion variants
+      up: "",
       down: "",
       none: "",
     },

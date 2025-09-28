@@ -7,7 +7,7 @@ interface TweetsProps extends HTMLAttributes<HTMLDivElement> {
   tweets: string[];
 }
 
-export const Tweets = ({ tweets }: TweetsProps) => {
+const Tweets = ({ tweets }: TweetsProps) => {
   if (!tweets?.length) return null;
 
   return (
@@ -20,3 +20,5 @@ export const Tweets = ({ tweets }: TweetsProps) => {
     </div>
   );
 };
+
+export { Tweets };

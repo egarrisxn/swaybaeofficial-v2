@@ -1,7 +1,13 @@
 import Link from "next/link";
-import type { LinkLists } from "@/types";
 
-export function LinkList({ title, links }: LinkLists) {
+import type { Links } from "@/types";
+
+interface LinkListProps {
+  title: string;
+  links: Links[];
+}
+
+export function LinkList({ title, links }: LinkListProps) {
   return (
     <section>
       <h4 className='mb-6 text-sm font-medium'>{title}</h4>

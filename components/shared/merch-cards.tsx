@@ -3,7 +3,56 @@
 import Image from "next/image";
 import React, { useState, useEffect, useCallback, useRef } from "react";
 import { motion, PanInfo } from "motion/react";
-import { merchCards } from "@/data/landing";
+
+interface Merch {
+  id: string;
+  title: string;
+  src?: string;
+}
+
+const merchCards: Merch[] = [
+  {
+    id: "School of Math Sweatshirt",
+    title: "School of Math Sweatshirt",
+    src: "/merch/sweatshirt.webp",
+  },
+
+  {
+    id: "Pog Bottle",
+    title: "Pog Bottle",
+    src: "/merch/bottle.webp",
+  },
+  {
+    id: "Bae Squad Dad Cap",
+    title: "Bae Squad Dad Cap",
+    src: "/merch/cap.webp",
+  },
+  {
+    id: "School of Math Notebook",
+    title: "School of Math Notebook",
+    src: "/merch/notebook.webp",
+  },
+  {
+    id: "Pog Long Sleeve",
+    title: "Pog Long Sleeve",
+    src: "/merch/ls.webp",
+  },
+  {
+    id: "Not a Phase Crewneck",
+    title: "Not a Phase Crewneck",
+    src: "/merch/crew.webp",
+  },
+  {
+    id: "Bae Squad Band Hoodie",
+    title: "Bae Squad Band Hoodie",
+    src: "/merch/hood.webp",
+  },
+  {
+    id: "Blue Squad Band Tee",
+    title: "Blue Squad Band Tee",
+    src: "/merch/ss.webp",
+  },
+];
 
 export function MerchCards() {
   const [stack, setStack] = useState(merchCards);

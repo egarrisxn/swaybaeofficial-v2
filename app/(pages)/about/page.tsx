@@ -9,7 +9,7 @@ export default function AboutPage() {
 }
 
 // import AboutMeSwap from "@/components/about/about-me-swap";
-// import Stats from "@/components/about/stats";
+// import AboutStats from "@/components/about/about-stats";
 // import ProfessionalInfo from "@/components/about/about-info";
 // import Accomplishments from "@/components/about/accomplishments";
 // import BrandsCarousel from "@/components/about/brands-carousel";
@@ -18,7 +18,7 @@ export default function AboutPage() {
 //   return (
 //     <div className='w-full py-12'>
 //       <AboutMeSwap />
-//       <Stats />
+//       <AboutStats />
 //       <Accomplishments />
 //       <BrandsCarousel />
 //       <ProfessionalInfo />

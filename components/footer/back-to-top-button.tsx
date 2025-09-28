@@ -1,9 +1,9 @@
 "use client";
 
 import { useSmoothScroll } from "@/hooks/use-smooth-scroll";
-import type { ScrollButtons } from "@/types";
+import type { TargetId } from "@/types";
 
-export function BackToTopButton({ targetId }: ScrollButtons) {
+export function BackToTopButton({ targetId }: TargetId) {
   const scrollTo = useSmoothScroll();
 
   return (

@@ -2,9 +2,9 @@
 
 import { ArrowDownIcon } from "@/components/icons";
 import { useSmoothScroll } from "@/hooks/use-smooth-scroll";
-import type { ScrollButtons } from "@/types";
+import type { TargetId } from "@/types";
 
-export function ScrollDownButton({ targetId }: ScrollButtons) {
+export function ScrollDownButton({ targetId }: TargetId) {
   const scrollTo = useSmoothScroll();
 
   return (
