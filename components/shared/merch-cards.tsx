@@ -45,7 +45,7 @@ export function MerchCards() {
         return (
           <motion.div
             key={card.id}
-            className='absolute flex size-full flex-col justify-end overflow-hidden rounded-3xl border bg-white shadow-xl dark:bg-black'
+            className='absolute flex size-full flex-col justify-end overflow-hidden rounded-3xl border border-b-3 border-foreground border-b-foreground/90 bg-card shadow-xl'
             style={{ zIndex: stack.length - index }}
             animate={{
               scale: 1 - index * 0.03,
@@ -73,8 +73,8 @@ export function MerchCards() {
                 fill
                 className='pointer-events-none object-cover'
               />
-              <div className='absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/40 via-black/20 to-transparent p-4'>
-                <span className='justify start flex h-28 items-end font-semibold text-white'>
+              <div className='absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/30 via-black/10 to-transparent pr-4 pb-4'>
+                <span className='flex h-28 items-end justify-end font-semibold text-white'>
                   {card.title}
                 </span>
               </div>

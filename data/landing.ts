@@ -59,43 +59,43 @@ export const merchCards: Merch[] = [
   {
     id: "School of Math Sweatshirt",
     title: "School of Math Sweatshirt",
-    src: "/merch/sweatshirt.avif",
+    src: "/merch/sweatshirt.webp",
   },
 
   {
     id: "Pog Bottle",
     title: "Pog Bottle",
-    src: "/merch/bottle.avif",
+    src: "/merch/bottle.webp",
   },
   {
     id: "Bae Squad Dad Cap",
     title: "Bae Squad Dad Cap",
-    src: "/merch/cap.avif",
+    src: "/merch/cap.webp",
   },
   {
     id: "School of Math Notebook",
     title: "School of Math Notebook",
-    src: "/merch/notebook.avif",
+    src: "/merch/notebook.webp",
   },
   {
     id: "Pog Long Sleeve",
     title: "Pog Long Sleeve",
-    src: "/merch/ls.avif",
+    src: "/merch/ls.webp",
   },
   {
     id: "Not a Phase Crewneck",
     title: "Not a Phase Crewneck",
-    src: "/merch/crew.avif",
+    src: "/merch/crew.webp",
   },
   {
     id: "Bae Squad Band Hoodie",
     title: "Bae Squad Band Hoodie",
-    src: "/merch/hood.avif",
+    src: "/merch/hood.webp",
   },
   {
     id: "Blue Squad Band Tee",
     title: "Blue Squad Band Tee",
-    src: "/merch/ss.avif",
+    src: "/merch/ss.webp",
   },
 ];
 
