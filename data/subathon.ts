@@ -1,7 +1,7 @@
 export const currentStats = {
-  totalPoints: 177650,
-  hoursStreamed: 18,
-  daysRemaining: 4,
+  totalPoints: 207150,
+  hoursStreamed: 19,
+  daysRemaining: 3,
 };
 
 export const goals = [
@@ -92,8 +92,8 @@ export const goals = [
     title: "Crazy Food Tasting",
     description:
       "Sway and Ethan taste some craaazy foods including a cheeseburger in a tube and mac and cheese candy canes!",
-    completed: false,
-    currentProgress: 177650,
+    completed: true,
+    currentProgress: 0,
   },
   {
     points: 250000,
@@ -101,7 +101,7 @@ export const goals = [
     description:
       "The Don't Laugh challenge is back! Submit your best clips and Sway will try not to laugh.",
     completed: false,
-    currentProgress: 0,
+    currentProgress: 207150,
   },
   {
     points: 300000,
