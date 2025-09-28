@@ -1,5 +1,5 @@
 export const currentStats = {
-  totalPoints: 163200,
+  totalPoints: 177650,
   hoursStreamed: 18,
   daysRemaining: 4,
 };
@@ -93,7 +93,7 @@ export const goals = [
     description:
       "Sway and Ethan taste some craaazy foods including a cheeseburger in a tube and mac and cheese candy canes!",
     completed: false,
-    currentProgress: 163200,
+    currentProgress: 177650,
   },
   {
     points: 250000,
