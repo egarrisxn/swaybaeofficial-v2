@@ -12,6 +12,7 @@ export const subathonGoals = [
       "Let's look back at Sway's stream journey! We'll look back through all the clips ever created and enjoy them together.",
     completed: true,
     currentProgress: 0,
+    link: "https://youtu.be/WFCDU3BgML4",
   },
   {
     points: 30000,
@@ -62,6 +63,7 @@ export const subathonGoals = [
     description: "Sway plays peak with some friends!",
     completed: true,
     currentProgress: 0,
+    link: "https://youtu.be/hYj64DtL4R0",
   },
   {
     points: 90000,
