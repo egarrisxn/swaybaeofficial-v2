@@ -1,4 +1,5 @@
 import Link from "next/link";
+
 import type { ReusableLists } from "@/types";
 
 export default function ReusableList({

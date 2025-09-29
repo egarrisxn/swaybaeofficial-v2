@@ -2,24 +2,37 @@
 
 import type { ReactElement } from "react";
 import { Resend } from "resend";
+
 import { createClient } from "@/lib/supabase/server";
+import { ContactSchema, NewsletterSchema } from "@/lib/resend/schemas";
 import {
   ContactTemplate,
   MonthlyNewsletterTemplate,
   WelcomeNewsletterTemplate,
 } from "@/lib/resend/templates";
-import { ContactSchema, NewsletterSchema } from "@/lib/resend/schemas";
+import { simulateMockAction } from "@/lib/mock/actions";
 
 import type { ActionState, ActionResult } from "@/types";
 
 const RESEND = new Resend(process.env.RESEND_API_KEY);
 const CONTACT_EMAIL_TO = process.env.CONTACT_FORM_EMAIL_TO;
 const NEWSLETTER_EMAIL_FROM = process.env.NEWSLETTER_FORM_EMAIL_FROM;
+const USE_MOCK = process.env.USE_MOCK_ACTIONS === "true";
+
+// SEND CONTACT MESSAGE
 
 export async function sendContactMessage(
   _prevState: ActionState,
   formData: FormData
 ): Promise<ActionState> {
+  if (USE_MOCK) {
+    const mock = await simulateMockAction(formData);
+    return {
+      message: mock.message,
+      success: mock.success,
+      errors: mock.errors,
+    };
+  }
   if (!CONTACT_EMAIL_TO) {
     console.error("CONTACT_FORM_EMAIL_TO is not set in .env.local");
     return {
@@ -69,10 +82,21 @@ export async function sendContactMessage(
   };
 }
 
+// SUBSCRIBE TO NEWSLETTER
+
 export async function subscribeToNewsletter(
   _prevState: ActionState,
   formData: FormData
 ): Promise<ActionState> {
+  if (USE_MOCK) {
+    const mock = await simulateMockAction(formData);
+    return {
+      message: mock.success ? "Mock: subscribed (not really)." : mock.message,
+      success: mock.success,
+      errors: mock.errors,
+    };
+  }
+
   if (!NEWSLETTER_EMAIL_FROM) {
     console.error("NEWSLETTER_FORM_EMAIL_FROM is not set in .env.local");
     return {
@@ -130,7 +154,14 @@ export async function subscribeToNewsletter(
   };
 }
 
+// SEND NEWSLETTER
+
 export async function sendNewsletter(_: any, formData: FormData) {
+  if (USE_MOCK) {
+    const mock = await simulateMockAction(formData);
+    return { success: mock.success, message: mock.message };
+  }
+
   const newsletterContent = formData.get("newsletter") as string;
   if (!newsletterContent) {
     return { success: false, message: "Newsletter content cannot be empty." };

@@ -1,6 +1,8 @@
 import type { ReactNode } from "react";
 import Link from "next/link";
+
 import { getNowPlayingItem } from "@/app/actions/spotify";
+import { mockSpotifyNowPlaying } from "@/lib/mock/data";
 
 import type { Spotify } from "@/types/spotify";
 
@@ -128,7 +130,10 @@ function CurrentlyPlayingClient({ track }: { track: Spotify | null }) {
 }
 
 export async function CurrentlyPlayingSpotify() {
-  const track = await getNowPlayingItem();
+  if (process.env.NODE_ENV === "development") {
+    return <CurrentlyPlayingClient track={mockSpotifyNowPlaying} />;
+  }
 
+  const track = await getNowPlayingItem();
   return <CurrentlyPlayingClient track={track} />;
 }

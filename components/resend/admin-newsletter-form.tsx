@@ -1,9 +1,10 @@
 "use client";
 
 import { useActionState } from "react";
-import { sendNewsletter } from "@/app/actions/resend";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
+
+import { sendNewsletter } from "@/app/actions/resend";
 
 export function AdminNewsletterForm() {
   const [state, formAction] = useActionState(sendNewsletter, {

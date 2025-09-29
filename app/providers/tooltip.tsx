@@ -1,22 +1,20 @@
 "use client";
 
-import * as React from "react";
-import * as TooltipPrimitive from "@radix-ui/react-tooltip";
+import type { PropsWithChildren, ComponentProps } from "react";
+import { Provider } from "@radix-ui/react-tooltip";
 
 export function TooltipProvider({
   delayDuration = 0,
   children,
   ...props
-}: React.PropsWithChildren<
-  React.ComponentProps<typeof TooltipPrimitive.Provider>
->) {
+}: PropsWithChildren<ComponentProps<typeof Provider>>) {
   return (
-    <TooltipPrimitive.Provider
+    <Provider
       data-slot='tooltip-provider'
       delayDuration={delayDuration}
       {...props}
     >
       {children}
-    </TooltipPrimitive.Provider>
+    </Provider>
   );
 }

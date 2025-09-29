@@ -1,13 +1,11 @@
 import type { ComponentType, SVGProps, JSX, ReactNode } from "react";
 
-// Action State
+// Actions
 export interface ActionState {
-  success: boolean | undefined;
   message: string;
+  success: boolean | undefined;
   errors?: Record<string, string[] | undefined>;
 }
-
-// Form
 export type ActionResult =
   | { success: true; res: unknown }
   | { success: false; err: unknown };

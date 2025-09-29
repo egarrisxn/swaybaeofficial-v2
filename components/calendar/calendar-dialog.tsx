@@ -1,6 +1,6 @@
 "use client";
 
-import * as VisuallyHidden from "@radix-ui/react-visually-hidden";
+import { Root } from "@radix-ui/react-visually-hidden";
 import { ClockIcon, ExternalLinkIcon } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import {
@@ -10,6 +10,7 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
+
 import { cn } from "@/lib/utils";
 import { formatEventTime, getEventLabelColor } from "@/lib/calendar";
 
@@ -47,7 +48,7 @@ export function CalendarDialog({
         </DialogHeader>
 
         <DialogDescription aria-describedby='event-dialog-description'>
-          <VisuallyHidden.Root>Event for today.</VisuallyHidden.Root>
+          <Root>Event for today.</Root>
         </DialogDescription>
 
         <div className='flex flex-row items-center justify-between gap-4 border-t pt-2'>

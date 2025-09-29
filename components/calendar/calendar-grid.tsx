@@ -2,9 +2,9 @@
 
 import { useState } from "react";
 import { CalendarDialog } from "@/components/calendar/calendar-dialog";
-import { getEventLabelColor } from "@/lib/calendar";
-import { cn } from "@/lib/utils";
 
+import { cn } from "@/lib/utils";
+import { getEventLabelColor } from "@/lib/calendar";
 import { calendarDays } from "@/lib/constants";
 
 import type { CalendarEvent, CalendarEvents } from "@/types/calendar";

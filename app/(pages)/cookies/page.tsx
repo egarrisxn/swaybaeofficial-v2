@@ -3,13 +3,6 @@ import ContactMeSnippet from "@/components/shared/contact-me-snippet";
 
 import type { Lists } from "@/types";
 
-// interface Lists {
-//   title?: string;
-//   description?: string;
-//   link?: string;
-//   linkText?: string;
-// }
-
 const cookieData: Lists[] = [
   {
     description:

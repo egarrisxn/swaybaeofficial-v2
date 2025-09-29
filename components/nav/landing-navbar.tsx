@@ -1,6 +1,7 @@
 "use client";
 
 import { Navbar } from "@/components/nav/navbar";
+
 import { useScrollVisibility } from "@/hooks/use-scroll-visibility";
 
 export function LandingNavbar() {

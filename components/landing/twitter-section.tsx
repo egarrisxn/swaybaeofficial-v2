@@ -22,7 +22,7 @@ export default function TwitterSection() {
       className='py-24 4xl:py-40'
     >
       <div className='container mx-auto grid max-w-xl grid-cols-1 gap-6 px-4 lg:max-w-7xl lg:gap-8 lg:px-12 2xl:max-w-8xl 2xl:px-0 4xl:max-w-12xl'>
-        <div className='flex flex-col gap-3 px-4 xs:px-6 lg:gap-5 lg:px-0 4xl:px-6'>
+        <div className='flex flex-col gap-3 px-4 lg:gap-5 lg:px-0'>
           <span className='text-sm font-extrabold tracking-wide text-muted-foreground uppercase xs:text-base'>
             {twitterText.badge}
           </span>
@@ -36,7 +36,7 @@ export default function TwitterSection() {
             {twitterText.body}
           </p>
         </div>
-        <div className='xs:px-1'>
+        <div className='xs:px-1 lg:px-0'>
           <Tweets tweets={tweetGrid} />
         </div>
       </div>

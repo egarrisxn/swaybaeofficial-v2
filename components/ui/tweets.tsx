@@ -11,7 +11,7 @@ const Tweets = ({ tweets }: TweetsProps) => {
   if (!tweets?.length) return null;
 
   return (
-    <div className='mx-auto grid grid-cols-1 gap-1 lg:grid-cols-2 lg:gap-4 xl:grid-cols-3 xl:gap-6'>
+    <div className='mx-auto grid grid-cols-1 gap-1 lg:grid-cols-3 lg:gap-1 xl:gap-6'>
       {tweets.map((tweetId, i) => (
         <div key={`${tweetId}-${i}`}>
           <Tweet id={tweetId} />

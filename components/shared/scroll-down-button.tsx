@@ -1,7 +1,9 @@
 "use client";
 
 import { ArrowDownIcon } from "@/components/icons";
+
 import { useSmoothScroll } from "@/hooks/use-smooth-scroll";
+
 import type { TargetId } from "@/types";
 
 export function ScrollDownButton({ targetId }: TargetId) {

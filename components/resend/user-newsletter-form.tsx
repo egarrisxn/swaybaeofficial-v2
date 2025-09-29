@@ -2,9 +2,11 @@
 
 import { useActionState, useEffect, useRef } from "react";
 import { toast } from "sonner";
-import { subscribeToNewsletter } from "@/app/actions/resend";
 import { Input } from "@/components/ui/input";
 import { AnimatedSendIcon } from "@/components/icons";
+import { MockModeBanner } from "@/components/shared/mock-mode-banner";
+
+import { subscribeToNewsletter } from "@/app/actions/resend";
 
 import type { ActionState } from "@/types";
 
@@ -13,7 +15,7 @@ function FieldMessage({ id, errors }: { id: string; errors?: string[] }) {
   return (
     <p
       id={`${id}-error`}
-      className='mt-1.5 text-xs leading-tight tracking-tight text-destructive'
+      className='mt-1.5 text-xs leading-tight text-destructive'
     >
       {errors.join(", ")}
     </p>
@@ -46,6 +48,8 @@ export function UserNewsletterForm() {
         action={formAction}
         className='relative flex items-center rounded-full'
       >
+        {/* toggle: "error" or "fail" for testing */}
+        <input type='hidden' name='_mock' value='' />
         <label htmlFor='newsletter-email' className='sr-only'>
           Email address
         </label>
@@ -53,7 +57,7 @@ export function UserNewsletterForm() {
           id='newsletter-email'
           type='email'
           name='email'
-          placeholder='email@aol.com'
+          placeholder='email@example.com'
           aria-invalid={!!state.errors?.email}
           aria-describedby='newsletter-email-error'
           className='h-11 rounded-full border-2 border-shaded-foreground/70 bg-foreground/30 pr-16 pl-4 placeholder:text-shaded-foreground/60 dark:bg-transparent'
@@ -71,6 +75,9 @@ export function UserNewsletterForm() {
         </button>
       </form>
       <FieldMessage id='newsletter-email' errors={state.errors?.email} />
+      <div className='flex justify-end pt-0.5 pr-1'>
+        <MockModeBanner />
+      </div>
     </div>
   );
 }

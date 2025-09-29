@@ -16,6 +16,7 @@ const badgeVariants = cva(
           "border-transparent bg-destructive text-white [a&]:hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/60",
         outline:
           "text-foreground [a&]:hover:bg-accent [a&]:hover:text-accent-foreground",
+        mock: "border-yellow-400 bg-yellow-300 text-pink-500 [a&]:hover:bg-yellow-500/90 focus-visible:ring-pink-500/20 dark:focus-visible:ring-pink-500/40 dark:bg-pink-500/60",
         time: "rounded-sm w-fit mt-0.5 border-transparent tracking-tight bg-slate-100 dark:bg-slate-800 text-foreground line-clamp-1",
       },
     },

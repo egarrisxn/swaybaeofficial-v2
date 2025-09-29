@@ -1,10 +1,11 @@
-import { getLatestYouTube } from "@/app/actions/youtube";
 import {
   Card,
   CardHeader,
   CardTitle,
   CardDescription,
 } from "@/components/ui/card";
+
+import { getLatestYouTube } from "@/app/actions/youtube";
 
 export async function YouTubeFeed() {
   const youtubeData = await getLatestYouTube();

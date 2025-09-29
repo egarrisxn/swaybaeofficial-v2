@@ -13,7 +13,8 @@ import {
 import { CalendarGrid } from "@/components/calendar/calendar-grid";
 import { CalendarList } from "@/components/calendar/calendar-list";
 import { CalendarSubscribe } from "@/components/calendar/calendar-subscribe";
-import { useCalendarEvents } from "@/hooks/use-calendar-events";
+
+import { useCalendar } from "@/hooks/use-calendar";
 
 import { calendarDays } from "@/lib/constants";
 
@@ -29,7 +30,7 @@ export default function HybridCalendar({
   showMonthNav = true,
 }: HybridCalendarProps) {
   const [currentDate, setCurrentDate] = useState(initialDate ?? new Date());
-  const { events, loading, error, refetch } = useCalendarEvents(currentDate);
+  const { events, loading, error, refetch } = useCalendar(currentDate);
 
   const navigateMonth = (delta: number) =>
     setCurrentDate(

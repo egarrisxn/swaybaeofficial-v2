@@ -2,6 +2,7 @@
 
 import { useSmoothScroll } from "@/hooks/use-smooth-scroll";
 import { useScrollVisibility } from "@/hooks/use-scroll-visibility";
+
 import type { TargetId } from "@/types";
 
 export function ScrollUpButton({ targetId }: TargetId) {

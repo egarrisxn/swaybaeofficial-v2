@@ -2,12 +2,14 @@
 
 import { ClockIcon, ExternalLinkIcon } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
+
 import { cn } from "@/lib/utils";
 import {
   getEventLabelColor,
   getEventLabelType,
   formatEventTime,
 } from "@/lib/calendar";
+
 import type { CalendarEvent, CalendarEvents } from "@/types/calendar";
 
 export function CalendarList({ currentDate, events }: CalendarEvents) {
