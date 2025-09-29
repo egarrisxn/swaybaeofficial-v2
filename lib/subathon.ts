@@ -1,7 +1,7 @@
 export const subathonStats = {
   totalPoints: 215580,
   hoursStreamed: 27,
-  daysRemaining: 3,
+  daysRemaining: 2,
 };
 
 export const subathonGoals = [
