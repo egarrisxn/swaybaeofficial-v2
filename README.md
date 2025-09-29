@@ -8,7 +8,7 @@
 
 The **NEW** online space for full-time streamer and content creator, Sway Bae.
 <br/>
-For the previous version, please visit [swaybaeofficial-v2](https://github.com/egarrisxn/swaybaeofficial-v1) to check it out.
+For the previous version, please visit the [Sway Bae Official v1 GitHub](https://github.com/egarrisxn/swaybaeofficial-v1) or [Sway Bae Official v1 Page](https://swaybae-v1.vercel.app)to check it out.
 
 ## Technologies
 

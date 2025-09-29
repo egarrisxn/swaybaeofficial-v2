@@ -1,6 +1,6 @@
 export const subathonStats = {
-  totalPoints: 248680,
-  hoursStreamed: 33,
+  totalPoints: 264280,
+  hoursStreamed: 38,
   daysRemaining: 2,
 };
 
@@ -105,7 +105,7 @@ export const subathonGoals = [
     description:
       "The Don't Laugh challenge is back! Submit your best clips and Sway will try not to laugh.",
     completed: false,
-    currentProgress: 248680,
+    currentProgress: 264280,
   },
   {
     points: 300000,
