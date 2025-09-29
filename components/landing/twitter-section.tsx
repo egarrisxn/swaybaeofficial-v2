@@ -19,7 +19,7 @@ export default function TwitterSection() {
     <section
       id='twitter'
       aria-labelledby='twitter-heading'
-      className='py-24 4xl:pt-40'
+      className='py-24 4xl:py-40'
     >
       <div className='container mx-auto grid max-w-xl grid-cols-1 gap-6 px-4 lg:max-w-7xl lg:gap-8 lg:px-12 2xl:max-w-8xl 2xl:px-0 4xl:max-w-12xl'>
         <div className='flex flex-col gap-3 px-4 xs:px-6 lg:gap-5 lg:px-0 4xl:px-6'>

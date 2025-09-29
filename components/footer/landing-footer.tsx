@@ -16,29 +16,29 @@ import {
 
 export function LandingFooter() {
   return (
-    <footer className='mx-auto w-full max-w-13xl md:mb-6 md:px-6 2xl:mb-8 2xl:px-8 4xl:px-0'>
-      <div className='rounded-t-3xl bg-shaded bg-[url(/graphics/grainy.png)] bg-repeat p-6 md:rounded-3xl md:shadow-lg'>
+    <footer className='mx-auto w-full max-w-13xl lg:mb-6 lg:px-6 2xl:mb-8 2xl:px-8 4xl:px-0'>
+      <div className='rounded-t-3xl bg-shaded bg-[url(/graphics/grainy.png)] bg-repeat p-6 lg:rounded-3xl lg:shadow-lg'>
         <div className='mx-auto w-full max-w-12xl'>
-          <div className='px-4 pt-8 sm:px-6 md:pb-16 lg:px-8 lg:pb-0 xl:px-16 4xl:px-24'>
+          <div className='px-4 pt-8 sm:px-6 md:pb-0 lg:px-8 xl:px-16 4xl:px-24'>
             <div className='flex flex-wrap gap-12 md:justify-between md:gap-0'>
               {/* Column 1 */}
 
-              <section className='flex w-full flex-col justify-between pb-4 md:w-[75%] md:items-start md:pb-6 lg:w-[30%] lg:pb-0 xl:w-[25%]'>
+              <section className='flex w-full flex-col justify-between pb-4 md:mx-auto md:items-center md:pb-6 lg:w-[35%] lg:items-start lg:pb-0'>
                 <Link
                   href='/'
                   className='text-6xl font-black tracking-[-0.1em] text-primary text-shadow-black text-shadow-sm md:mb-5'
                 >
                   Sway Bae
                 </Link>
-                <div className='hidden lg:block'>
+                <div className='hidden w-full max-w-md lg:block lg:pr-16'>
                   <CurrentlyPlayingSpotify />
                 </div>
               </section>
 
               {/* Column 2 */}
 
-              <section className='flex w-full flex-col gap-8 text-shaded-foreground md:flex-row md:justify-between md:gap-0 lg:w-[65%] xl:w-[60%]'>
-                <div className='mb-6 md:hidden'>
+              <section className='flex w-full flex-col gap-8 text-shaded-foreground lg:w-[65%] lg:flex-row lg:justify-between lg:gap-0'>
+                <div className='mb-6 md:mx-auto lg:hidden'>
                   <h4 className='mb-6 text-sm font-medium'>Newsletter</h4>
                   <p className='mb-1.5 text-sm'>
                     Subscribe for the <span className='font-bold'>latest</span>{" "}
@@ -46,10 +46,13 @@ export function LandingFooter() {
                   </p>
                   <UserNewsletterForm />
                 </div>
-                <LinkList title='Quick Links' links={quickLinks} />
-                <LinkList title='More Links' links={moreLinks} />
+                <div className='flex w-full flex-col gap-8 md:mx-auto md:w-[47.5%] md:flex-row md:justify-between md:gap-0 lg:mx-0 lg:pr-8 4xl:pr-0'>
+                  <LinkList title='Quick Links' links={quickLinks} />
+                  <LinkList title='More Links' links={moreLinks} />
+                </div>
+
                 <div>
-                  <div className='hidden md:block'>
+                  <div className='hidden lg:block'>
                     <h4 className='mb-6 text-sm font-medium'>Newsletter</h4>
                     <p className='mb-1.5 text-sm'>
                       Subscribe for the{" "}
@@ -69,10 +72,10 @@ export function LandingFooter() {
                       />
                     ))}
                   </div>
-                  <div className='md:hidden'>
+                  <div className='mx-auto md:w-full md:max-w-100 md:text-center lg:hidden'>
                     <CurrentlyPlayingSpotify />
                   </div>
-                  <div className='hidden md:mt-11 md:flex lg:mt-13 lg:mr-1 lg:justify-end'>
+                  <div className='hidden lg:mt-13 lg:mr-1 lg:flex lg:justify-end'>
                     <BackToTopButton targetId='hero' />
                   </div>
                 </div>

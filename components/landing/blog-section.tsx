@@ -31,7 +31,11 @@ const blogList: Blog[] = [
 
 export default function BlogSection() {
   return (
-    <section id='blog' aria-labelledby='blog-heading' className='pt-24'>
+    <section
+      id='blog'
+      aria-labelledby='blog-heading'
+      className='pt-24 4xl:pt-40'
+    >
       <div className='container mx-auto grid max-w-lg grid-cols-1 gap-24 px-4 md:max-w-7xl md:grid-cols-2 md:gap-8 md:px-8 2xl:gap-12 2xl:px-16'>
         <div className='order-1 mx-auto flex w-full max-w-lg flex-col justify-center gap-3 px-4 md:order-2 lg:justify-start lg:gap-2 lg:pt-20 4xl:max-w-[34rem]'>
           <h2
