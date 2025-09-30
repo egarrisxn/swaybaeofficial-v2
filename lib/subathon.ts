@@ -1,6 +1,6 @@
 export const subathonStats = {
-  totalPoints: 269080,
-  hoursStreamed: 38,
+  totalPoints: 300180,
+  hoursStreamed: 43,
   daysRemaining: 1,
 };
 
@@ -111,8 +111,8 @@ export const subathonGoals = [
     points: 300000,
     title: "Bread & Fred with Ethan",
     description: "Sway and Ethan do a penguin cosplay and play Bread and Fred!",
-    completed: false,
-    currentProgress: 269080,
+    completed: true,
+    currentProgress: 0,
   },
   {
     points: 350000,
@@ -120,7 +120,7 @@ export const subathonGoals = [
     description:
       "Evil Sway is back, and wants to play some games with y'all 😈",
     completed: false,
-    currentProgress: 0,
+    currentProgress: 300180,
   },
   {
     points: 400000,

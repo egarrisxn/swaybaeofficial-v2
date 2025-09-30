@@ -6,10 +6,10 @@ import type { TextBlurb } from "@/types";
 
 const youTubeText: TextBlurb = {
   badge: "Check this out",
-  heading: `Watch some of my most recent YouTube videoeos.`,
+  heading: `Watch some of my most recent YouTube videos.`,
   body: `Make sure to like and subscribe to the channel for all my new videoeo updates!`,
   button: "Subscribe!",
-  video: "Latest Videoeos",
+  video: "Latest Videos",
 };
 
 export default function YouTubeSection() {
@@ -20,27 +20,29 @@ export default function YouTubeSection() {
       className='w-full border-2 border-border bg-muted pt-24 pb-20 text-muted-foreground 2xl:py-20 4xl:mx-auto 4xl:max-w-[112rem] 4xl:rounded-3xl 4xl:py-18'
     >
       <div className='container mx-auto max-w-xl px-4 lg:max-w-8xl lg:px-8 2xl:max-w-9xl 4xl:max-w-11xl 4xl:px-0'>
-        <div className='flex flex-col gap-10 lg:flex-row lg:items-center lg:gap-12 4xl:gap-16'>
-          <div className='order-1 flex flex-col justify-center gap-3 px-4 lg:order-2 lg:px-0 xl:gap-5 4xl:w-[60%]'>
+        <div className='flex flex-col gap-10 lg:flex-row lg:items-center xl:gap-12 4xl:gap-16'>
+          <div className='order-1 flex flex-col justify-center gap-3 px-4 lg:order-2 lg:px-0 xl:gap-4 4xl:w-[60%]'>
             <span className='text-sm font-extrabold tracking-wide text-muted-foreground uppercase xs:text-base'>
               {youTubeText.badge}
             </span>
             <h2
-              id='youtube-heading '
-              className='max-w-3xl font-serif text-3xl font-bold tracking-tight text-shadow-lg sm:text-4xl sm:leading-none 2xl:text-6xl'
+              id='youtube-heading'
+              className='font-serif text-3xl font-bold tracking-tight text-shadow-lg sm:text-4xl sm:leading-none 2xl:text-6xl'
             >
               {youTubeText.heading}
             </h2>
-            <p className='max-w-3xl font-light text-muted-foreground sm:text-lg sm:leading-snug 2xl:text-2xl'>
+            <p className='max-w-xl font-light text-muted-foreground sm:text-lg sm:leading-snug 2xl:text-2xl'>
               {youTubeText.body}
             </p>
             <a
               href='https://www.youtube.com/swaybaetv'
               rel='noopener noreferrer'
               target='_blank'
-              className='hidden lg:flex'
+              className='hidden pt-2 lg:flex'
             >
-              <Button variant='contrast'>{youTubeText.button}</Button>
+              <Button variant='contrast' size='dynamic'>
+                {youTubeText.button}
+              </Button>
             </a>
           </div>
           <div className='order-2 mx-auto w-full max-w-2xl lg:order-1 4xl:w-[40%]'>

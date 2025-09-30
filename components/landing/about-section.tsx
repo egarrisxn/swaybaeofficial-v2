@@ -8,7 +8,7 @@ import type { TextBlurb } from "@/types";
 const aboutText: TextBlurb = {
   badge: "Welcome!",
   heading: `I'm Sway!`,
-  body: `I am a full-time, family-friendly gaming creator and entertainer with a passion for community building, engagement, and mental health advocacy! I am partnered with Twitch and YouTube and you can find me streaming and releasing videoeos multiple times per week. Thank you for being here!`,
+  body: `I am a full-time, family-friendly gaming creator and entertainer with a passion for community building, engagement, and mental health advocacy! I am partnered with Twitch and YouTube and you can find me streaming and releasing videos multiple times per week. Thank you for being here!`,
   button: "Learn More",
 };
 
@@ -19,7 +19,7 @@ export default function AboutSection() {
         id='about-container'
         className='container mx-auto grid max-w-xl grid-cols-1 gap-12 px-4 lg:max-w-7xl lg:grid-cols-2 lg:px-12 4xl:px-0'
       >
-        <div className='mx-auto flex flex-col justify-center gap-3 px-4 lg:gap-5 lg:px-0'>
+        <div className='mx-auto flex flex-col justify-center gap-3 px-4 lg:px-0 xl:gap-5'>
           <BlurText
             delay={0.1}
             className='text-lg font-extrabold tracking-wide text-muted-foreground uppercase 4xl:text-xl'
@@ -38,7 +38,7 @@ export default function AboutSection() {
           >
             <p>{aboutText.body}</p>
           </BlurText>
-          <BlurItem delay={0.4} className='pt-2 lg:pt-0 4xl:pt-2'>
+          <BlurItem delay={0.4} className='pt-2'>
             <Link href='/about'>
               <Button size='lg' variant='contrast'>
                 {aboutText.button}

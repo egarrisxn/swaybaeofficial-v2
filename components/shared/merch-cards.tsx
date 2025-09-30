@@ -88,7 +88,7 @@ export function MerchCards() {
   }, [handleSwipeComplete]);
 
   return (
-    <div className='relative h-96 w-72 sm:h-120 sm:w-96'>
+    <div className='lg:h- relative h-90 w-72 sm:h-120 sm:w-96 xl:h-150 xl:w-120'>
       {stack.map((card, index) => {
         const isTopCard = index === 0;
         return (
