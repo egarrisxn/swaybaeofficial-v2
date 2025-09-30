@@ -6,7 +6,7 @@ export function SubathonHeader() {
   return (
     <section className='relative overflow-hidden'>
       <div className='absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent dark:from-transparent dark:via-accent/5 dark:to-transparent' />
-      <div className='relative px-6 pb-24 md:pb-32 lg:pb-40'>
+      <div className='relative px-6 pt-12 pb-24 md:pt-16 md:pb-32 lg:pt-20 lg:pb-40'>
         <div className='mx-auto max-w-4xl text-center'>
           <div className='mx:py-2 mb-6 inline-flex items-center gap-1.5 rounded-full border bg-card px-3 py-1.5 text-xs font-medium text-card-foreground md:mb-8 md:gap-2 md:px-4 md:text-sm'>
             <Clock className='size-3 text-accent md:size-3.5' />

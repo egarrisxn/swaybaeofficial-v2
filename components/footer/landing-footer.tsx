@@ -90,7 +90,7 @@ export function LandingFooter() {
               {sharedLinks.map(({ href, label, icon, external }, i) => (
                 <li
                   key={label}
-                  className='flex items-center text-xs font-medium tracking-tight lg:text-base 4xl:text-lg'
+                  className='flex items-center text-sm font-medium tracking-tight lg:text-base 4xl:text-lg'
                 >
                   <LinkRenderer
                     href={href}
@@ -117,11 +117,11 @@ export function LandingFooter() {
                   title={title}
                   href={href}
                   Icon={Icon}
-                  className={`size-4 ${className ?? ""}`}
+                  className={`size-4.5 ${className ?? ""}`}
                 />
               ))}
             </div>
-            <p className='text-xs font-medium tracking-tight lg:text-base 4xl:text-lg'>
+            <p className='text-sm font-medium tracking-tight lg:text-base 4xl:text-lg'>
               <CopyrightText />
             </p>
           </section>
