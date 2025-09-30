@@ -20,7 +20,7 @@ export default function HeroSection() {
         <source src='/hero/desktop.mp4' type='video/mp4' />
       </video>
       <div className='absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_10%,black_100%)]' />
-      <div className='absolute z-10 flex size-full flex-col items-center justify-center border px-4 pb-16 text-center'>
+      <div className='absolute z-10 flex size-full flex-col items-center justify-center border px-4 pb-20 text-center'>
         <TextAnimate
           animation='blurInDown'
           by='word'

@@ -1,16 +1,12 @@
 "use client";
 
+import { useState } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import {
-  NavigationMenu,
-  NavigationMenuItem,
-  NavigationMenuList,
-} from "@/components/ui/navigation-menu";
-import {
   Popover,
-  PopoverContent,
   PopoverTrigger,
+  PopoverContent,
 } from "@/components/ui/popover";
 import { DropdownToggle } from "@/components/nav/dropdown-toggle";
 
@@ -19,10 +15,11 @@ import { navLinks } from "@/lib/constants";
 export function MobileMenu() {
   const pathname = usePathname();
   const activeStyle = { color: "var(--link)" };
+  const [open, setOpen] = useState(false);
 
   return (
     <div className='lg:hidden'>
-      <Popover>
+      <Popover open={open} onOpenChange={setOpen}>
         <PopoverTrigger asChild>
           <DropdownToggle />
         </PopoverTrigger>
@@ -31,66 +28,32 @@ export function MobileMenu() {
           side='top'
           className='inset-0 mt-3 h-screen w-screen max-w-none rounded-none border-none bg-background p-6'
         >
-          <NavigationMenu className='w-full'>
-            <NavigationMenuList className='flex flex-col items-start justify-start gap-6'>
-              {navLinks.map((link, index) => (
-                <NavigationMenuItem
-                  key={index}
-                  className='w-full text-lg font-medium'
-                >
-                  {link.external ? (
-                    <a
-                      href={link.href}
-                      target='_blank'
-                      rel='noreferrer noopener'
-                      className='block w-full'
-                    >
-                      {link.label}
-                    </a>
-                  ) : (
-                    <Link
-                      href={link.href}
-                      style={pathname === link.href ? activeStyle : {}}
-                      className='block w-full'
-                    >
-                      {link.label}
-                    </Link>
-                  )}
-                </NavigationMenuItem>
-              ))}
-            </NavigationMenuList>
-          </NavigationMenu>
+          <div className='flex flex-col gap-6'>
+            {navLinks.map((link, index) => (
+              <div key={index} className='w-full text-lg font-medium'>
+                {link.external ? (
+                  <a
+                    href={link.href}
+                    target='_blank'
+                    rel='noreferrer noopener'
+                    className='block w-full'
+                  >
+                    {link.label}
+                  </a>
+                ) : (
+                  <Link
+                    href={link.href}
+                    style={pathname === link.href ? activeStyle : {}}
+                    className='block w-full'
+                    onClick={() => setOpen(false)} // <-- close popover
+                  >
+                    {link.label}
+                  </Link>
+                )}
+              </div>
+            ))}
+          </div>
         </PopoverContent>
-
-        {/* <PopoverContent align='start' className='w-32'>
-          <NavigationMenu className='max-w-none'>
-            <NavigationMenuList className='flex flex-col items-start justify-start gap-1'>
-              {navLinks.map((link, index) => (
-                <NavigationMenuItem
-                  key={index}
-                  className='w-full cursor-pointer text-sm font-medium transition-all hover:text-link'
-                >
-                  {link.external ? (
-                    <a
-                      href={link.href}
-                      target='_blank'
-                      rel='noreferrer noopener'
-                    >
-                      {link.label}
-                    </a>
-                  ) : (
-                    <Link
-                      href={link.href}
-                      style={pathname === link.href ? activeStyle : {}}
-                    >
-                      {link.label}
-                    </Link>
-                  )}
-                </NavigationMenuItem>
-              ))}
-            </NavigationMenuList>
-          </NavigationMenu>
-        </PopoverContent> */}
       </Popover>
     </div>
   );

@@ -68,7 +68,7 @@ export function UserContactForm() {
         </CardHeader>
         <CardContent>
           <form ref={formRef} action={formAction} className='w-full space-y-6'>
-            {/* toggle: "error" or "fail" for testing */}
+            {/* toggle: "error" for testing */}
             <input type='hidden' name='_mock' value='' />
 
             <div className='flex flex-col gap-6 sm:flex-row sm:gap-8'>

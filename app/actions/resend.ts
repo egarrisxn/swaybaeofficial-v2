@@ -20,7 +20,6 @@ const NEWSLETTER_EMAIL_FROM = process.env.NEWSLETTER_FORM_EMAIL_FROM;
 const USE_MOCK = process.env.USE_MOCK_ACTIONS === "true";
 
 // SEND CONTACT MESSAGE
-
 export async function sendContactMessage(
   _prevState: ActionState,
   formData: FormData
@@ -33,6 +32,7 @@ export async function sendContactMessage(
       errors: mock.errors,
     };
   }
+
   if (!CONTACT_EMAIL_TO) {
     console.error("CONTACT_FORM_EMAIL_TO is not set in .env.local");
     return {
@@ -83,7 +83,6 @@ export async function sendContactMessage(
 }
 
 // SUBSCRIBE TO NEWSLETTER
-
 export async function subscribeToNewsletter(
   _prevState: ActionState,
   formData: FormData
@@ -155,7 +154,6 @@ export async function subscribeToNewsletter(
 }
 
 // SEND NEWSLETTER
-
 export async function sendNewsletter(_: any, formData: FormData) {
   if (USE_MOCK) {
     const mock = await simulateMockAction(formData);

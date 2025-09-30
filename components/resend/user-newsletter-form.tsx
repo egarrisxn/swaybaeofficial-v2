@@ -48,7 +48,7 @@ export function UserNewsletterForm() {
         action={formAction}
         className='relative flex items-center rounded-full'
       >
-        {/* toggle: "error" or "fail" for testing */}
+        {/* toggle: "error" for testing */}
         <input type='hidden' name='_mock' value='' />
         <label htmlFor='newsletter-email' className='sr-only'>
           Email address

@@ -38,7 +38,7 @@ export function LandingFooter() {
               {/* Column 2 */}
 
               <section className='flex w-full flex-col gap-8 text-shaded-foreground lg:w-[65%] lg:flex-row lg:justify-between lg:gap-0'>
-                <div className='mb-6 md:mx-auto lg:hidden'>
+                <div className='mb-6 w-full max-w-68 md:mx-auto lg:hidden'>
                   <h4 className='mb-6 text-sm font-medium'>Newsletter</h4>
                   <p className='mb-1.5 text-sm'>
                     Subscribe for the <span className='font-bold'>latest</span>{" "}

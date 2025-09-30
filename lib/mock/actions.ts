@@ -7,14 +7,13 @@ export type MockResult = {
 const wait = (ms = 700) => new Promise((resolve) => setTimeout(resolve, ms));
 
 /**
- * Decide result based on form values or hidden "_mock" field:
- * - "_mock" = "error" -> field validation errors
- * - "_mock" = "fail"  -> server failure
- * - otherwise success
+ * Simulate form action for development/testing.
+ * Only supports validation errors triggered by "_mock"="error"
+ * or typing "error" in email, name, or message.
  */
 export async function simulateMockAction(
   form: FormData,
-  opts?: { delay?: number; forceError?: boolean }
+  opts?: { delay?: number }
 ): Promise<MockResult> {
   await wait(opts?.delay ?? 700);
 
@@ -22,11 +21,6 @@ export async function simulateMockAction(
   const name = String(form.get("name") ?? "").toLowerCase();
   const message = String(form.get("message") ?? "").toLowerCase();
   const mockControl = String(form.get("_mock") ?? "").toLowerCase();
-
-  // Forced server error
-  if (opts?.forceError || mockControl === "fail") {
-    return { message: "Simulated server error.", success: false };
-  }
 
   // Validation error
   if (
@@ -52,5 +46,6 @@ export async function simulateMockAction(
     };
   }
 
+  // Success
   return { message: "Mock: action processed successfully.", success: true };
 }

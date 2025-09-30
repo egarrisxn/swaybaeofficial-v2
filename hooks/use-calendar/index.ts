@@ -1,12 +1,12 @@
 import { useMockCalendarEvents } from "./mock-calendar-events";
 import { useCalendarEvents } from "./calendar-events";
 
-export function useCalendar(currentDate: Date) {
-  const mock = useMockCalendarEvents(currentDate);
-  const real = useCalendarEvents(currentDate);
+const useCalendarImplementation =
+  process.env.NODE_ENV === "development" &&
+  process.env.NEXT_PUBLIC_USE_MOCK_EVENTS === "true"
+    ? useMockCalendarEvents
+    : useCalendarEvents;
 
-  if (process.env.NODE_ENV === "development") {
-    return mock;
-  }
-  return real;
+export function useCalendar(currentDate: Date) {
+  return useCalendarImplementation(currentDate);
 }
