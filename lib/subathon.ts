@@ -1,7 +1,7 @@
 export const subathonStats = {
-  totalPoints: 264280,
+  totalPoints: 269080,
   hoursStreamed: 38,
-  daysRemaining: 2,
+  daysRemaining: 1,
 };
 
 export const subathonGoals = [
@@ -104,15 +104,15 @@ export const subathonGoals = [
     title: "Don't Laugh Challenge",
     description:
       "The Don't Laugh challenge is back! Submit your best clips and Sway will try not to laugh.",
-    completed: false,
-    currentProgress: 264280,
+    completed: true,
+    currentProgress: 0,
   },
   {
     points: 300000,
     title: "Bread & Fred with Ethan",
     description: "Sway and Ethan do a penguin cosplay and play Bread and Fred!",
     completed: false,
-    currentProgress: 0,
+    currentProgress: 269080,
   },
   {
     points: 350000,
