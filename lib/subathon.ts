@@ -1,6 +1,6 @@
 export const subathonStats = {
-  totalPoints: 300180,
-  hoursStreamed: 43,
+  totalPoints: 357280,
+  hoursStreamed: 46,
   daysRemaining: 1,
 };
 
@@ -119,8 +119,8 @@ export const subathonGoals = [
     title: "Evil Sway Takeover",
     description:
       "Evil Sway is back, and wants to play some games with y'all 😈",
-    completed: false,
-    currentProgress: 300180,
+    completed: true,
+    currentProgress: 0,
   },
   {
     points: 400000,
@@ -128,7 +128,7 @@ export const subathonGoals = [
     description:
       "Sway and Ethan play some party games that require some level of coordination...yikes. This will be a disaster.",
     completed: false,
-    currentProgress: 0,
+    currentProgress: 357280,
   },
   {
     points: 450000,
