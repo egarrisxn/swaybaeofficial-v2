@@ -87,7 +87,7 @@ export default function ContactSection() {
           </p>
         </div>
         <div className='mx-auto grid w-full gap-12 md:grid-cols-2 md:place-items-start md:gap-0 lg:place-items-stretch'>
-          <div className='order-2 grid grid-cols-1 items-center gap-y-10 px-4 xs:px-6 sm:grid-cols-2 sm:gap-x-4 sm:gap-y-4 sm:px-4 md:order-1 md:grid-cols-1 md:gap-y-10 md:px-0 lg:mb-8 lg:grid-cols-2 lg:gap-y-0 lg:pr-4'>
+          <div className='grid grid-cols-1 items-center gap-y-10 px-4 xs:px-6 sm:grid-cols-2 sm:gap-x-4 sm:gap-y-4 sm:px-4 md:grid-cols-1 md:gap-y-10 md:px-0 lg:mb-8 lg:grid-cols-2 lg:gap-y-0 lg:pr-4'>
             {contactItems.links.map(
               ({ title, description, href, label, external, Icon }) => (
                 <div key={title}>
@@ -123,7 +123,7 @@ export default function ContactSection() {
               )
             )}
           </div>
-          <div className='order-1 w-full pt-8 xs:px-1 md:px-0 md:pt-0 lg:order-2'>
+          <div className='w-full pt-8 xs:px-1 md:px-0 md:pt-0'>
             <UserContactForm />
           </div>
         </div>

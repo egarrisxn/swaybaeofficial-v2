@@ -33,7 +33,13 @@ function FieldError({ id, errors }: { id: string; errors?: string[] }) {
 function SubmitButton() {
   const { pending } = useFormStatus();
   return (
-    <Button type='submit' size='md' disabled={pending}>
+    <Button
+      type='submit'
+      variant='contrast'
+      size='dynamic'
+      className='w-full'
+      disabled={pending}
+    >
       {pending ? "Submitting…" : "Send Message"}
     </Button>
   );
@@ -57,21 +63,25 @@ export function UserContactForm() {
 
   return (
     <>
-      <Card className='px-2 pt-2 pb-4 sm:px-4 sm:pt-5 sm:pb-5 md:px-8 md:pt-8 md:pb-9'>
-        <CardHeader className='mt-4 mb-6'>
-          <CardTitle className='text-3xl font-bold tracking-tight lg:text-4xl'>
-            Contact Me
+      <Card>
+        <CardHeader className='px-7'>
+          <CardTitle className='text-2xl font-bold tracking-tight lg:text-3xl'>
+            Contact me
           </CardTitle>
           <CardDescription className='tracking-wide text-wrap'>
-            Please fill out the form below.
+            {`Fill out the form below and I'll be in touch.`}
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <form ref={formRef} action={formAction} className='w-full space-y-6'>
+          <form
+            ref={formRef}
+            action={formAction}
+            className='w-full space-y-4 sm:space-y-6'
+          >
             {/* toggle: "error" for testing */}
             <input type='hidden' name='_mock' value='' />
 
-            <div className='flex flex-col gap-6 sm:flex-row sm:gap-8'>
+            <div className='flex flex-col gap-4 sm:flex-row sm:gap-6'>
               <div className='w-full'>
                 <Label
                   htmlFor='name'
@@ -86,6 +96,7 @@ export function UserContactForm() {
                   name='name'
                   type='text'
                   placeholder='Name'
+                  className='rounded-[0.9rem]'
                   aria-invalid={!!state.errors?.name}
                   aria-describedby='name-error'
                 />
@@ -106,6 +117,7 @@ export function UserContactForm() {
                   name='email'
                   type='email'
                   placeholder='Email'
+                  className='rounded-[0.9rem]'
                   aria-invalid={!!state.errors?.email}
                   aria-describedby='email-error'
                 />
@@ -126,22 +138,21 @@ export function UserContactForm() {
                 id='message'
                 name='message'
                 placeholder='Message'
-                rows={6}
                 required
-                className='rounded-[1.25rem]'
+                className='rounded-[0.9rem]'
                 aria-invalid={!!state.errors?.message}
                 aria-describedby='message-error'
               />
               <FieldError id='message' errors={state.errors?.message} />
             </div>
 
-            <CardFooter className='justify-end px-0 pt-2'>
+            <CardFooter className='x'>
               <SubmitButton />
             </CardFooter>
           </form>
         </CardContent>
       </Card>
-      <div className='flex items-end justify-end pt-1 pr-1'>
+      <div className='flex items-end justify-end pt-2 pr-2'>
         <MockModeBanner />
       </div>
     </>

@@ -82,7 +82,7 @@ const buttonVariants = cva(
         xl: "h-12 text-base px-9 has-[>svg]:px-5",
         icon: "size-9",
         dynamic:
-          "h-9 px-4 py-2 text-sm md:h-11 md:px-7.5 md:text-base has-[>svg]:px-3 md:has-[>svg]:px-4.5",
+          "h-9 px-4 py-2 text-sm md:h-10 md:px-6 md:text-base has-[>svg]:px-3 md:has-[>svg]:px-4 ",
       },
     },
     defaultVariants: {
