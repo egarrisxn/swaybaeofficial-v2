@@ -17,7 +17,7 @@ export default function MerchSection() {
       aria-labelledby='merch-heading'
       className='py-24 4xl:py-40'
     >
-      <div className='container mx-auto grid w-full max-w-xl grid-cols-1 gap-12 px-4 lg:max-w-6xl lg:grid-cols-2 lg:place-items-start lg:gap-4 lg:px-16 xl:max-w-6xl 2xl:px-0'>
+      <div className='container mx-auto grid w-full max-w-xl grid-cols-1 gap-12 px-4 lg:max-w-6xl lg:grid-cols-2 lg:place-items-start lg:gap-4 lg:px-16 xl:max-w-6xl 2xl:px-0 4xl:max-w-8xl 4xl:gap-0'>
         <div className='mx-auto flex w-full flex-col items-center justify-center gap-3 text-center lg:mt-14 lg:items-start lg:text-start xl:gap-4 2xl:mt-20'>
           <span className='text-sm font-extrabold tracking-wide text-muted-foreground uppercase xs:text-base'>
             {merchText.badge}

@@ -139,7 +139,7 @@ export function UserContactForm() {
                 name='message'
                 placeholder='Message'
                 required
-                className='rounded-[0.9rem]'
+                className='min-h-40 rounded-[0.9rem]'
                 aria-invalid={!!state.errors?.message}
                 aria-describedby='message-error'
               />

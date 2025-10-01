@@ -69,9 +69,9 @@ export default function ContactSection() {
     <section
       id='contact'
       aria-labelledby='contact-heading'
-      className='pt-24 pb-16'
+      className='pt-24 lg:pb-16'
     >
-      <div className='container mx-auto grid max-w-xl grid-cols-1 gap-12 px-4 md:max-w-3xl lg:max-w-7xl lg:gap-8 lg:px-12 xl:gap-12 2xl:max-w-8xl 2xl:gap-16 2xl:px-0 4xl:max-w-10xl'>
+      <div className='container mx-auto grid max-w-xl grid-cols-1 gap-8 px-4 sm:gap-12 md:max-w-3xl lg:max-w-7xl lg:px-12 xl:gap-12 2xl:max-w-8xl 2xl:gap-16 2xl:px-0 4xl:max-w-10xl'>
         <div className='flex flex-col justify-center gap-3 px-4 xs:px-6 md:px-0 lg:gap-5'>
           <span className='text-sm font-extrabold tracking-wide text-muted-foreground uppercase xs:text-base'>
             {contactText.badge}
@@ -86,8 +86,8 @@ export default function ContactSection() {
             {contactText.body}
           </p>
         </div>
-        <div className='mx-auto grid w-full gap-12 md:grid-cols-2 md:place-items-start md:gap-0 lg:place-items-stretch'>
-          <div className='grid grid-cols-1 items-center gap-y-10 px-4 xs:px-6 sm:grid-cols-2 sm:gap-x-4 sm:gap-y-4 sm:px-4 md:grid-cols-1 md:gap-y-10 md:px-0 lg:mb-8 lg:grid-cols-2 lg:gap-y-0 lg:pr-4'>
+        <div className='mx-auto grid w-full grid-cols-1 gap-12 md:grid-cols-3 md:place-items-start md:gap-0 lg:grid-cols-2'>
+          <div className='r order-2 grid grid-cols-1 items-center gap-y-10 px-4 xs:px-6 sm:order-1 sm:grid-cols-2 sm:gap-x-4 sm:gap-y-4 sm:px-4 md:col-span-1 md:grid-cols-1 md:gap-y-10 md:px-0 lg:col-span-1 lg:size-full lg:grid-cols-2 lg:gap-y-0 lg:pr-4 lg:pb-12 xl:pr-0'>
             {contactItems.links.map(
               ({ title, description, href, label, external, Icon }) => (
                 <div key={title}>
@@ -123,7 +123,7 @@ export default function ContactSection() {
               )
             )}
           </div>
-          <div className='w-full pt-8 xs:px-1 md:px-0 md:pt-0'>
+          <div className='order-1 w-full pt-8 xs:px-1 sm:order-2 sm:pt-0 md:col-span-2 md:px-0 lg:col-span-1'>
             <UserContactForm />
           </div>
         </div>

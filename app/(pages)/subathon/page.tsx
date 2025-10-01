@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 
 export default function SubathonPage() {
   return (
-    <section className='pb-40'>
+    <section>
       <SubathonHeader />
       <div className='mx-auto max-w-7xl space-y-16 px-6'>
         <ProgressOverview />

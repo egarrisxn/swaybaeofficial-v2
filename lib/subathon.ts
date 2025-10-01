@@ -113,6 +113,7 @@ export const subathonGoals = [
     description: "Sway and Ethan do a penguin cosplay and play Bread and Fred!",
     completed: true,
     currentProgress: 0,
+    link: "https://youtu.be/0XflSjgj2kY",
   },
   {
     points: 350000,

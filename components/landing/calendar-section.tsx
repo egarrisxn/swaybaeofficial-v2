@@ -17,7 +17,7 @@ export default function CalendarSection() {
       aria-labelledby='calendar-heading'
       className='py-24 4xl:py-40'
     >
-      <div className='container mx-auto grid w-full max-w-xl grid-cols-1 gap-12 px-4 lg:max-w-6xl lg:grid-cols-2 lg:place-items-start lg:px-8 xl:max-w-7xl 2xl:gap-20'>
+      <div className='container mx-auto grid w-full max-w-xl grid-cols-1 gap-12 px-4 lg:max-w-6xl lg:grid-cols-2 lg:place-items-start lg:px-8 xl:max-w-7xl 2xl:gap-20 4xl:max-w-9xl 4xl:px-0'>
         <div className='order-1 mx-auto flex w-full flex-col justify-center gap-3 lg:order-2 lg:mt-24 lg:max-w-2xl xl:gap-4 2xl:mt-32'>
           <span className='text-sm font-extrabold tracking-wide text-muted-foreground uppercase xs:text-base'>
             {calendarText.badge}
