@@ -1,6 +1,6 @@
 import { useCallback } from "react";
 
-export function useSmoothScroll() {
+function useSmoothScroll() {
   return useCallback((targetId: string, duration?: number, offset = 20) => {
     const target = document.getElementById(targetId);
     if (!target) return;
@@ -39,3 +39,5 @@ export function useSmoothScroll() {
     requestAnimationFrame(step);
   }, []);
 }
+
+export { useSmoothScroll };

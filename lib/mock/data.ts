@@ -4,7 +4,7 @@ import type { Spotify } from "@/types/spotify";
 
 // Mock Calendar Titles
 const calendarMockTitles = [
-  "Family Dinner",
+  "Personal Dinner",
   "Content Recording",
   "Live Stream",
   "Weekend Trip",
@@ -19,8 +19,8 @@ const calendarMockTitles = [
 // Mock Calendar Types
 const calendarMockTypes: CalendarEvent["type"][] = [
   "stream",
-  "family",
   "content",
+  "personal",
   "other",
 ];
 
@@ -62,7 +62,7 @@ export const mockCalendarEvents: CalendarEvent[] = [
   {
     id: "1",
     title: "Weekly Family Dinner",
-    type: "family",
+    type: "personal",
     start: new Date(2025, 8, 18, 19, 0),
     end: new Date(2025, 8, 18, 21, 0),
   },

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { createClient } from "@/lib/supabase/client";
 
-export const useImage = () => {
+const useImage = () => {
   const [image, setImage] = useState<string | null>(null);
 
   useEffect(() => {
@@ -18,3 +18,5 @@ export const useImage = () => {
 
   return image;
 };
+
+export { useImage };

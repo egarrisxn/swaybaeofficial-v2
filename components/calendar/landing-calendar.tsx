@@ -1,8 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { ChevronLeftIcon, ChevronRightIcon, RefreshCwIcon } from "lucide-react";
-import { Skeleton } from "@/components/ui/skeleton";
+import { ChevronLeftIcon, ChevronRightIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -10,6 +9,8 @@ import {
   CardContent,
   CardFooter,
 } from "@/components/ui/card";
+import { LandingSkeleton } from "@/components/calendar/calendar-skeletons";
+import { CalendarError } from "@/components/calendar/calendar-error";
 import { CalendarList } from "@/components/calendar/calendar-list";
 import { CalendarSubscribe } from "@/components/calendar/calendar-subscribe";
 
@@ -41,7 +42,6 @@ export function LandingCalendar({
           <Button
             size='icon'
             variant='contrast'
-            className='x'
             onClick={() => navigateMonth(-1)}
           >
             <ChevronLeftIcon className='size-4.5' aria-hidden />
@@ -62,7 +62,6 @@ export function LandingCalendar({
           <Button
             size='icon'
             variant='contrast'
-            className='x'
             onClick={() => navigateMonth(1)}
           >
             <ChevronRightIcon className='size-4.5' aria-hidden />
@@ -72,35 +71,9 @@ export function LandingCalendar({
       )}
       <CardContent className='mb-0 px-4 pt-1 pb-0'>
         {loading ? (
-          <div
-            className='space-y-4 overflow-y-auto pr-2'
-            style={{ maxHeight }}
-            aria-busy='true'
-          >
-            {Array.from({ length: 8 }).map((_, i) => (
-              <div key={i} className='space-y-2 pt-1'>
-                <Skeleton className='h-6 w-40' />
-                <Skeleton className='h-24 w-full rounded-xl' />
-              </div>
-            ))}
-          </div>
+          <LandingSkeleton maxHeight={maxHeight} />
         ) : error ? (
-          <div
-            className='grid place-items-center text-center'
-            style={{ minHeight: maxHeight }}
-            role='alert'
-          >
-            <div>
-              <p className='mb-2 text-lg font-medium text-destructive'>
-                Error loading events
-              </p>
-              <p className='mb-4 text-sm text-muted-foreground'>{error}</p>
-              <Button onClick={refetch}>
-                <RefreshCwIcon className='mr-2 size-4' aria-hidden />
-                Try Again
-              </Button>
-            </div>
-          </div>
+          <CalendarError refetch={refetch} maxHeight={maxHeight} />
         ) : (
           <div
             className='overflow-y-auto border-b pr-2'

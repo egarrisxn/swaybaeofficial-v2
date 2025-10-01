@@ -5,7 +5,7 @@ export interface CalendarEvent {
   start: Date;
   end: Date;
   location?: string;
-  type: "stream" | "family" | "content" | "other";
+  type: "stream" | "content" | "personal" | "other";
   url?: string;
 }
 

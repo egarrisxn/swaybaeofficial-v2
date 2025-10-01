@@ -6,26 +6,31 @@ function categorizeEvent(title: string): CalendarEvent["type"] {
   if (
     lowerTitle.includes("stream") ||
     lowerTitle.includes("twitch") ||
+    lowerTitle.includes("live") ||
     lowerTitle.includes("gaming")
   ) {
     return "stream";
   }
 
   if (
-    lowerTitle.includes("family") ||
-    lowerTitle.includes("movie") ||
-    lowerTitle.includes("dinner")
-  ) {
-    return "family";
-  }
-
-  if (
     lowerTitle.includes("content") ||
     lowerTitle.includes("video") ||
     lowerTitle.includes("planning") ||
-    lowerTitle.includes("collab")
+    lowerTitle.includes("recording") ||
+    lowerTitle.includes("youtube")
   ) {
     return "content";
+  }
+
+  if (
+    lowerTitle.includes("personal") ||
+    lowerTitle.includes("family") ||
+    lowerTitle.includes("friend") ||
+    lowerTitle.includes("family") ||
+    lowerTitle.includes("trip") ||
+    lowerTitle.includes("weekend")
+  ) {
+    return "personal";
   }
 
   return "other";
@@ -107,10 +112,10 @@ export const getEventLabelType = (type: string) => {
   switch (type) {
     case "stream":
       return "Stream";
-    case "family":
-      return "Family";
     case "content":
       return "Content";
+    case "personal":
+      return "Personal";
     default:
       return "Event";
   }
@@ -120,10 +125,10 @@ export const getEventLabelColor = (type: string) => {
   switch (type) {
     case "stream":
       return "bg-primary text-primary-foreground";
-    case "family":
-      return "bg-secondary text-secondary-foreground";
     case "content":
-      return "bg-accent text-foreground";
+      return "bg-secondary text-secondary-foreground";
+    case "personal":
+      return "bg-accent text-accent-foreground";
     default:
       return "bg-muted text-muted-foreground";
   }

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-export function useScrollVisibility(targetId: string, rootMargin = "0px") {
+function useScrollVisibility(targetId: string, rootMargin = "0px") {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -18,3 +18,5 @@ export function useScrollVisibility(targetId: string, rootMargin = "0px") {
 
   return isVisible;
 }
+
+export { useScrollVisibility };

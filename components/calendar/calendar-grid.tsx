@@ -57,10 +57,12 @@ export function CalendarGrid({ currentDate, events }: CalendarEvents) {
         ))}
       </div>
 
-      <div className='grid grid-cols-7'>
+      <div className='grid grid-cols-7 gap-2'>
         {days.map((day, idx) => {
           if (day === null)
-            return <div key={`empty-${idx}`} className='aspect-square' />;
+            return (
+              <div key={`empty-${idx}`} className='aspect-square rounded-xl' />
+            );
 
           const dayEvents = getEventsForDate(day);
           const isToday =
@@ -71,7 +73,7 @@ export function CalendarGrid({ currentDate, events }: CalendarEvents) {
             <div
               key={`day-${day}-${idx}`}
               className={cn(
-                "flex aspect-square flex-col border border-foreground/20 p-2 transition-all duration-200",
+                "flex aspect-square flex-col rounded-xl border border-border p-2 text-card-foreground transition-all duration-200",
                 isToday &&
                   "border-secondary bg-background/80 text-secondary dark:bg-background/30"
               )}
@@ -79,7 +81,7 @@ export function CalendarGrid({ currentDate, events }: CalendarEvents) {
               <span className='text-sm font-semibold'>{day}</span>
               <div className='flex flex-1 flex-col gap-2 overflow-hidden'>
                 {dayEvents.length === 0 ? (
-                  <p className='truncate py-1 text-xs text-foreground/80'>
+                  <p className='truncate py-1 text-xs text-card-foreground/80'>
                     No events today
                   </p>
                 ) : (
@@ -91,7 +93,7 @@ export function CalendarGrid({ currentDate, events }: CalendarEvents) {
                         tabIndex={0}
                         onClick={() => handleEventClick(event)}
                         className={cn(
-                          "cursor-pointer rounded-[0.35rem] border-2 border-background px-2 py-1 text-xs font-medium text-black shadow-lg transition-opacity hover:opacity-80 dark:text-black",
+                          "cursor-pointer rounded-[0.35rem] border-2 border-background px-2 py-1 text-xs font-medium shadow-lg transition-opacity hover:opacity-80",
                           getEventLabelColor(event.type)
                         )}
                         title={event.title}

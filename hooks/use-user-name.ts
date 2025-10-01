@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { createClient } from "@/lib/supabase/client";
 
-export const useName = () => {
+const useName = () => {
   const [name, setName] = useState<string | null>(null);
 
   useEffect(() => {
@@ -19,3 +19,5 @@ export const useName = () => {
 
   return name || "?";
 };
+
+export { useName };
