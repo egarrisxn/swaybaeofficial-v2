@@ -41,7 +41,7 @@ export function LandingCalendar({
           <Button
             size='icon'
             variant='contrast'
-            className='rounded-xl'
+            className='x'
             onClick={() => navigateMonth(-1)}
           >
             <ChevronLeftIcon className='size-4.5' aria-hidden />
@@ -62,7 +62,7 @@ export function LandingCalendar({
           <Button
             size='icon'
             variant='contrast'
-            className='rounded-xl'
+            className='x'
             onClick={() => navigateMonth(1)}
           >
             <ChevronRightIcon className='size-4.5' aria-hidden />

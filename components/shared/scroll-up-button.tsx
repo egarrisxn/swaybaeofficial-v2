@@ -13,7 +13,7 @@ export function ScrollUpButton({ targetId }: TargetId) {
     <button
       type='button'
       onClick={() => scrollTo(targetId)}
-      className={`fixed right-4 bottom-4 z-40 cursor-pointer rounded-full border border-b-3 border-foreground border-b-foreground/90 bg-card p-2.5 text-card-foreground shadow-2xl transition-all duration-300 ease-in-out lg:p-3 5xl:right-72 ${
+      className={`fixed right-4 bottom-4 z-40 cursor-pointer rounded-full border border-b-2 border-border border-b-border/90 bg-card p-2.5 text-card-foreground shadow-2xl transition-all duration-300 ease-in-out lg:p-3 5xl:right-72 ${
         isVisible
           ? "pointer-events-auto translate-y-0 opacity-100"
           : "pointer-events-none translate-y-2 opacity-0"

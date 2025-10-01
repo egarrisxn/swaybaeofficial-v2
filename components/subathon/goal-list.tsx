@@ -21,8 +21,8 @@ export function GoalsList() {
         {/* Active Goals */}
         <div className='space-y-4'>
           <div className='flex items-center gap-3'>
-            <div className='rounded-full bg-accent p-1.5'>
-              <Clock className='size-4 text-accent-foreground' />
+            <div className='rounded-full bg-primary p-1.5'>
+              <Clock className='size-4 text-success-foreground' />
             </div>
             <h3 className='text-xl font-medium tracking-tight md:text-2xl lg:text-3xl'>
               Upcoming Goals
@@ -46,7 +46,7 @@ export function GoalsList() {
                       >
                         {goal.points.toLocaleString()} pts
                       </Badge>
-                      <Badge className='shrink-0 bg-accent text-accent-foreground'>
+                      <Badge className='shrink-0 bg-primary text-success-foreground'>
                         <Clock className='mr-1 size-3' />
                         Locked
                       </Badge>
@@ -68,7 +68,7 @@ export function GoalsList() {
                       </div>
                       <div className='h-2 overflow-hidden rounded-full bg-muted'>
                         <div
-                          className='h-full bg-gradient-to-r from-accent to-primary transition-all duration-500'
+                          className='h-full bg-gradient-to-r from-primary/20 via-primary/50 to-primary/80 transition-all duration-500'
                           style={{
                             width: `${Math.min(progressPercentage, 100)}%`,
                           }}

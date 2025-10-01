@@ -44,7 +44,7 @@ export default function HybridCalendar({
           <Button
             size='icon'
             variant='contrast'
-            className='rounded-xl lg:size-10.5'
+            className='lg:size-10.5'
             onClick={() => navigateMonth(-1)}
           >
             <ChevronLeftIcon className='size-4.5 lg:size-5' aria-hidden />
@@ -64,7 +64,7 @@ export default function HybridCalendar({
           <Button
             size='icon'
             variant='contrast'
-            className='rounded-xl lg:size-10.5'
+            className='lg:size-10.5'
             onClick={() => navigateMonth(1)}
           >
             <ChevronRightIcon className='size-4.5 lg:size-5' aria-hidden />

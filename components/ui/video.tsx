@@ -108,9 +108,9 @@ function Video({
           width={1920}
           height={1080}
           unoptimized
-          className='w-full rounded-3xl border border-b-2 border-foreground border-b-foreground/90 bg-card p-0.5 shadow-xl transition-all duration-200 ease-out group-hover:brightness-[0.8] hover:shadow-2xl'
+          className='w-full rounded-2xl border border-b-2 border-border border-b-border/90 bg-card p-0.5 shadow-2xl transition-all duration-200 ease-out group-hover:brightness-[0.85]'
         />
-        <div className='absolute inset-0 flex scale-[0.9] items-center justify-center rounded-[1.25rem] transition-all duration-200 ease-out group-hover:scale-100'>
+        <div className='absolute inset-0 flex scale-[0.9] items-center justify-center rounded-[1.35rem] transition-all duration-200 ease-out group-hover:scale-100'>
           <div className='flex size-28 items-center justify-center rounded-full bg-primary/10 backdrop-blur-md'>
             <div className='relative flex size-20 scale-100 items-center justify-center rounded-full bg-linear-to-b from-primary/20 to-primary shadow-md transition-all duration-200 ease-out group-hover:scale-[1.2]'>
               <PlayIcon className='size-7 scale-100 fill-white text-white transition-transform duration-200 ease-out group-hover:scale-105 dark:fill-slate-900 dark:text-slate-900' />

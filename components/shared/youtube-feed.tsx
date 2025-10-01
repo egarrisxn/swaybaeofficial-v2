@@ -19,7 +19,7 @@ export async function YouTubeFeed() {
   }
 
   return (
-    <ul className='grid grid-cols-1 gap-6 md:grid-cols-3 md:gap-4 2xl:gap-6'>
+    <ul className='grid grid-cols-1 gap-6 lg:grid-cols-3'>
       {youtubeData.map((video) => (
         <li key={video.post_id}>
           <a
@@ -28,23 +28,21 @@ export async function YouTubeFeed() {
             rel='noopener noreferrer'
             className='group block h-full'
           >
-            <Card className='0 h-full gap-1 overflow-hidden px-0.5 pt-0.5 transition group-hover:scale-102'>
+            <Card className='h-full gap-1 overflow-hidden px-1 pt-1 transition group-hover:scale-102'>
               {video.thumbnail_url && (
                 <img
                   src={video.thumbnail_url}
                   alt='Video thumbnail'
-                  className='w-full rounded-[1.25rem] object-cover'
+                  className='w-full rounded-[0.8rem] object-cover'
                 />
               )}
 
               <CardHeader className='space-y-4 px-4 pt-6'>
-                <CardTitle className='line-clamp-2 text-sm leading-tight'>
+                <CardTitle className='line-clamp-2 min-h-20 text-sm leading-tight'>
                   {video.title}
                 </CardTitle>
-                <CardDescription>
-                  <p className='text-xs text-muted-foreground'>
-                    {new Date(video.published_at).toLocaleDateString()}
-                  </p>
+                <CardDescription className='text-xs'>
+                  {new Date(video.published_at).toLocaleDateString()}
                 </CardDescription>
               </CardHeader>
             </Card>

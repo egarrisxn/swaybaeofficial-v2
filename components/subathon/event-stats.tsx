@@ -15,25 +15,27 @@ export function EventStats() {
         </div>
         <div className='grid gap-6 sm:grid-cols-2 lg:grid-cols-4'>
           <div className='text-center'>
-            <div className='mb-1 text-3xl font-bold text-accent'>22</div>
+            <div className='mb-1 text-3xl font-bold text-secondary'>22</div>
             <div className='font-serif text-sm leading-relaxed font-medium text-foreground'>
               Goals to Finish
             </div>
           </div>
           <div className='text-center'>
-            <div className='mb-1 text-3xl font-bold text-accent'>6,790,000</div>
+            <div className='mb-1 text-3xl font-bold text-secondary'>
+              6,790,000
+            </div>
             <div className='font-serif text-sm leading-relaxed font-medium text-foreground'>
               Points to Hit
             </div>
           </div>
           <div className='text-center'>
-            <div className='mb-1 text-3xl font-bold text-accent'>5</div>
+            <div className='mb-1 text-3xl font-bold text-secondary'>5</div>
             <div className='font-serif text-sm leading-relaxed font-medium text-foreground'>
               Epic Days
             </div>
           </div>
           <div className='text-center'>
-            <div className='mb-1 text-3xl font-bold text-accent'>∞</div>
+            <div className='mb-1 text-3xl font-bold text-secondary'>∞</div>
             <div className='font-serif text-sm leading-relaxed font-medium text-foreground'>
               Memories to Make
             </div>

@@ -1,7 +1,7 @@
 export const subathonStats = {
-  totalPoints: 357280,
-  hoursStreamed: 46,
-  daysRemaining: 1,
+  totalPoints: 357880,
+  hoursStreamed: 48,
+  daysRemaining: 0,
 };
 
 export const subathonGoals = [
@@ -128,7 +128,7 @@ export const subathonGoals = [
     description:
       "Sway and Ethan play some party games that require some level of coordination...yikes. This will be a disaster.",
     completed: false,
-    currentProgress: 357280,
+    currentProgress: 357880,
   },
   {
     points: 450000,

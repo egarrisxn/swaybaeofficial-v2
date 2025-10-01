@@ -32,7 +32,7 @@ export function ProgressOverview() {
             </div>
             <div className='h-3 overflow-hidden rounded-full bg-muted'>
               <div
-                className='h-full bg-gradient-to-r from-accent to-primary transition-all duration-500'
+                className='h-full bg-gradient-to-r from-primary/20 via-primary/50 to-primary/80 transition-all duration-500'
                 style={{ width: `${Math.min(nextGoalProgress, 100)}%` }}
               />
             </div>
@@ -40,7 +40,7 @@ export function ProgressOverview() {
         )}
         <div className='grid gap-4 sm:grid-cols-3'>
           <div className='text-center'>
-            <div className='mb-1 text-2xl font-bold text-accent'>
+            <div className='mb-1 text-2xl font-bold text-secondary'>
               {subathonStats.totalPoints.toLocaleString()}
             </div>
             <div className='font-serif text-sm leading-relaxed font-medium text-foreground'>
@@ -48,7 +48,7 @@ export function ProgressOverview() {
             </div>
           </div>
           <div className='text-center'>
-            <div className='mb-1 text-2xl font-bold text-accent'>
+            <div className='mb-1 text-2xl font-bold text-secondary'>
               {subathonGoals.filter((g) => g.completed).length}
             </div>
             <div className='font-serif text-sm leading-relaxed font-medium text-foreground'>
@@ -56,7 +56,7 @@ export function ProgressOverview() {
             </div>
           </div>
           <div className='text-center'>
-            <div className='mb-1 text-2xl font-bold text-accent'>
+            <div className='mb-1 text-2xl font-bold text-secondary'>
               {subathonStats.hoursStreamed}
             </div>
             <div className='font-serif text-sm leading-relaxed font-medium text-foreground'>
