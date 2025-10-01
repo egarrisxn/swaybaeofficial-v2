@@ -1,10 +1,11 @@
 import type { MetadataRoute } from "next";
+import { SITE_TITLE, SITE_DESC } from "@/lib/config";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Sway Bae Official",
-    short_name: "SWAY BAE",
-    description: "The official Page for Sway Bae & The Bae Squad!",
+    name: SITE_TITLE,
+    description: SITE_DESC,
+    short_name: SITE_TITLE,
     theme_color: "#ffffff",
     background_color: "#ffffff",
     id: "/",

@@ -1,81 +1,80 @@
 import type { MetadataRoute } from "next";
+import { SITE_URL } from "@/lib/config";
 // import { sitemapData } from "@/lib/sanity/sitemap";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // const { posts, tags } = await sitemapData();
 
-  const BASE_URL = "https://swaybae.net";
-
   const staticRoutes = [
     {
-      url: BASE_URL,
+      url: SITE_URL,
       lastModified: new Date(),
     },
     {
-      url: `${BASE_URL}/auth`,
+      url: `${SITE_URL}/auth`,
       lastModified: new Date(),
     },
     {
-      url: `${BASE_URL}/about`,
+      url: `${SITE_URL}/about`,
       lastModified: new Date(),
     },
     {
-      url: `${BASE_URL}/accessibility`,
+      url: `${SITE_URL}/accessibility`,
       lastModified: new Date(),
     },
     {
-      url: `${BASE_URL}/blog`,
+      url: `${SITE_URL}/blog`,
       lastModified: new Date(),
     },
     {
-      url: `${BASE_URL}/calendar`,
+      url: `${SITE_URL}/calendar`,
       lastModified: new Date(),
     },
     {
-      url: `${BASE_URL}/community`,
+      url: `${SITE_URL}/community`,
       lastModified: new Date(),
     },
     {
-      url: `${BASE_URL}/contact`,
+      url: `${SITE_URL}/contact`,
       lastModified: new Date(),
     },
     {
-      url: `${BASE_URL}/cookies`,
+      url: `${SITE_URL}/cookies`,
       lastModified: new Date(),
     },
     {
-      url: `${BASE_URL}/faq`,
+      url: `${SITE_URL}/faq`,
       lastModified: new Date(),
     },
     {
-      url: `${BASE_URL}/media`,
+      url: `${SITE_URL}/media`,
       lastModified: new Date(),
     },
     {
-      url: `${BASE_URL}/portfolio`,
+      url: `${SITE_URL}/portfolio`,
       lastModified: new Date(),
     },
     {
-      url: `${BASE_URL}/privacy`,
+      url: `${SITE_URL}/privacy`,
       lastModified: new Date(),
     },
     {
-      url: `${BASE_URL}/subathon`,
+      url: `${SITE_URL}/subathon`,
       lastModified: new Date(),
     },
     {
-      url: `${BASE_URL}/terms`,
+      url: `${SITE_URL}/terms`,
       lastModified: new Date(),
     },
   ];
 
   // const postRoutes = posts.map((post: { slug: any; _updatedAt: any }) => ({
-  //   url: `${BASE_URL}/blog/post/${post.slug}`,
+  //   url: `${SITE_URL}/blog/post/${post.slug}`,
   //   lastModified: post._updatedAt,
   // }));
 
   // const tagRoutes = tags.map((tag: { slug: any; _updatedAt: any }) => ({
-  //   url: `${BASE_URL}/blog/tag/${tag.slug}`,
+  //   url: `${SITE_URL}/blog/tag/${tag.slug}`,
   //   lastModified: tag._updatedAt,
   // }));
 

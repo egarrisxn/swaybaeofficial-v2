@@ -1,6 +1,6 @@
 // "use client";
 
-// import Link from "next/link";
+// import { Link } from "next-view-transitions";
 // import { useSearchParams, usePathname, useRouter } from "next/navigation";
 // import { useState, useEffect, ChangeEvent } from "react";
 // import { useDebouncedCallback } from "use-debounce";

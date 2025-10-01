@@ -3,12 +3,12 @@ import type { Metadata, Viewport } from "next";
 import { Poppins, Fira_Sans } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-// import { ViewTransitions } from "next-view-transitions";
+import { ViewTransitions } from "next-view-transitions";
 import { ThemeProvider } from "@/app/providers/theme";
 import { TooltipProvider } from "@/app/providers/tooltip";
 import { CookieBanner } from "@/components/cookie-banner";
 import { Toaster } from "@/components/ui/sonner";
-import { SITE } from "@/lib/config";
+import { SITE_URL, SITE_TITLE, SITE_DESC, SITE_HANDLE } from "@/lib/config";
 import Script from "next/script";
 import "./globals.css";
 
@@ -29,12 +29,15 @@ const firaSans = Fira_Sans({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(SITE.url),
-  title: {
-    default: `${SITE.name} | Creator of Chaos`,
-    template: `${SITE.name} | %s`,
+  metadataBase: new URL(SITE_URL),
+  alternates: {
+    canonical: "/",
   },
-  description: SITE.description,
+  title: {
+    default: `${SITE_TITLE} | Creator of Chaos`,
+    template: `${SITE_TITLE} | %s`,
+  },
+  description: SITE_DESC,
   referrer: "origin-when-cross-origin",
   creator: "https://egxo.dev.",
   keywords: [
@@ -43,19 +46,19 @@ export const metadata: Metadata = {
   openGraph: {
     locale: "en_US",
     type: "website",
-    title: SITE.name,
-    description: SITE.description,
-    url: SITE.url,
-    siteName: SITE.name,
+    title: SITE_TITLE,
+    description: SITE_DESC,
+    url: SITE_URL,
+    siteName: SITE_TITLE,
   },
   twitter: {
     card: "summary_large_image",
-    title: SITE.name,
-    description: SITE.description,
-    creator: SITE.social,
-    site: SITE.social,
+    title: SITE_TITLE,
+    description: SITE_DESC,
+    creator: SITE_HANDLE,
+    site: SITE_HANDLE,
   },
-  verification: {},
+  // verification: {},
 };
 
 export const viewport: Viewport = {
@@ -65,21 +68,21 @@ export const viewport: Viewport = {
   ],
 };
 
-export default async function RootLayout({
+export default function RootLayout({
   children,
-}: {
+}: Readonly<{
   children: ReactNode;
-}) {
+}>) {
   return (
-    // <ViewTransitions>
-    <html lang='en' suppressHydrationWarning>
-      <head>
-        <meta name='apple-mobile-web-app-title' content='Sway Bae Official' />
-        <Script
-          id='gtag-init'
-          strategy='afterInteractive'
-          dangerouslySetInnerHTML={{
-            __html: `
+    <ViewTransitions>
+      <html lang='en' suppressHydrationWarning>
+        <head>
+          <meta name='apple-mobile-web-app-title' content='Sway Bae' />
+          <Script
+            id='gtag-init'
+            strategy='afterInteractive'
+            dangerouslySetInnerHTML={{
+              __html: `
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag('consent', 'default', {
@@ -88,25 +91,26 @@ export default async function RootLayout({
               gtag('js', new Date());
               gtag('config', 'G-823SZT7XNY', { anonymize_ip: true });
             `,
-          }}
-        />
-      </head>
-      <body
-        className={`${poppins.variable} ${firaSans.variable} font-sans antialiased`}
-      >
-        <ThemeProvider
-          attribute='class'
-          defaultTheme='system'
-          enableSystem
-          disableTransitionOnChange
+            }}
+          />
+        </head>
+        <body
+          className={`${poppins.variable} ${firaSans.variable} font-sans antialiased`}
         >
-          <TooltipProvider delayDuration={0}>{children}</TooltipProvider>
-          <CookieBanner />
-          <Toaster richColors position='bottom-center' />
-        </ThemeProvider>
-        <Analytics />
-        <SpeedInsights />
-      </body>
-    </html>
+          <ThemeProvider
+            attribute='class'
+            defaultTheme='system'
+            enableSystem
+            disableTransitionOnChange
+          >
+            <TooltipProvider delayDuration={0}>{children}</TooltipProvider>
+            <CookieBanner />
+            <Toaster richColors position='bottom-center' />
+          </ThemeProvider>
+          <Analytics />
+          <SpeedInsights />
+        </body>
+      </html>
+    </ViewTransitions>
   );
 }

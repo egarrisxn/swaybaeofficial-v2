@@ -1,9 +1,15 @@
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
+function getSiteUrl() {
+  const rawUrl = process.env.SITE_URL || process.env.NEXT_PUBLIC_SITE_URL;
+  const devUrl = "http://localhost:3000";
 
-export const SITE = {
-  name: "Sway Bae",
-  description: "The official page for Sway Bae & The Bae Squad!",
-  url: SITE_URL,
-  ogImage: `${SITE_URL}/opengraph-image.png`,
-  social: "@sway_baeTV",
-};
+  return (rawUrl || devUrl).replace(/\/$/, ""); // Strip trailing slash
+}
+
+export const SITE_URL = getSiteUrl();
+
+export const SITE_TITLE = "Sway Bae";
+export const SITE_DESC = "The official page for Sway Bae & The Bae Squad!";
+export const SITE_HANDLE = "@sway_baeTV";
+
+// For CORS / APIs / etc.
+export const SITE_PRODUCTION_URL = "https://swaybae.net";

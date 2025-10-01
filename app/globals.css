@@ -144,24 +144,11 @@
   --container-12xl: 110rem;
   --container-13xl: 120rem;
 
-  --animate-slow-zoom: slowZoom 20s ease-in-out infinite;
   --animate-spin-slow: spin 14s linear infinite;
   --anmiate-accordion-down: accordionDown 0.2s ease-out;
   --anmiate-accordion-up: accordionUp 0.2s ease-out;
   --animate-marquee: marquee var(--duration) linear infinite;
   --animate-marquee-vertical: marqueeVertical var(--duration) linear infinite;
-
-  @keyframes slowZoom {
-    0% {
-      transform: scale(1.1);
-    }
-    50% {
-      transform: scale(1.2);
-    }
-    100% {
-      transform: scale(1.1);
-    }
-  }
 
   @keyframes spin {
     to {
@@ -209,6 +196,12 @@
   body {
     @apply bg-background text-foreground;
   }
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply text-balance;
+  }
 }
 
 ::selection {
@@ -228,4 +221,8 @@
 }
 ::-webkit-scrollbar-thumb:hover {
   background: var(--background);
+}
+
+body {
+  text-rendering: optimizeLegibility;
 }
