@@ -1,3 +1,4 @@
+import "./globals.css";
 import type { ReactNode } from "react";
 import type { Metadata, Viewport } from "next";
 import { Poppins, Fira_Sans } from "next/font/google";
@@ -10,7 +11,6 @@ import { CookieBanner } from "@/components/cookie-banner";
 import { Toaster } from "@/components/ui/sonner";
 import { SITE_URL, SITE_TITLE, SITE_DESC, SITE_HANDLE } from "@/lib/config";
 import Script from "next/script";
-import "./globals.css";
 
 const poppins = Poppins({
   subsets: ["latin"],

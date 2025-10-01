@@ -1,14 +1,6 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  turbopack: {
-    rules: {
-      "*.svg": {
-        loaders: ["@svgr/webpack"],
-        as: "*.js",
-      },
-    },
-  },
   images: {
     remotePatterns: [
       {
@@ -41,11 +33,17 @@ const nextConfig: NextConfig = {
       },
     ],
   },
-  // eslint: {
-  //   ignoreDuringBuilds: true,
-  // },
-  // experimental: {
-  //   taint: true,
+  experimental: {
+    globalNotFound: true,
+    //   taint: true,
+  },
+  // turbopack: {
+  //   rules: {
+  //     "*.svg": {
+  //       loaders: ["@svgr/webpack"],
+  //       as: "*.js",
+  //     },
+  //   },
   // },
 };
 

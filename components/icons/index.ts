@@ -9,6 +9,7 @@ export { ChevronDown } from "./chevron-down";
 export { CloseIcon } from "./close-icon";
 export { DiscordIcon } from "./discord-icon";
 export { InstagramIcon } from "./instagram-icon";
+export { LoaderIcon } from "./loader-icon";
 export { MailsIcon } from "./mails-icon";
 export { MapPinIcon } from "./map-pin-icon";
 export { MenuIcon } from "./menu-icon";
