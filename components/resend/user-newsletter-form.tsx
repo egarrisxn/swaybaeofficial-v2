@@ -4,7 +4,6 @@ import { useActionState, useEffect, useRef } from "react";
 import { toast } from "sonner";
 import { Input } from "@/components/ui/input";
 import { AnimatedSendIcon } from "@/components/icons";
-import { MockModeBanner } from "@/components/shared/mock-mode-banner";
 
 import { subscribeToNewsletter } from "@/app/actions/resend";
 
@@ -75,9 +74,6 @@ export function UserNewsletterForm() {
         </button>
       </form>
       <FieldMessage id='newsletter-email' errors={state.errors?.email} />
-      <div className='flex justify-end pt-0.5 pr-1'>
-        <MockModeBanner />
-      </div>
     </div>
   );
 }

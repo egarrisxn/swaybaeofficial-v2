@@ -1,4 +1,3 @@
-// import * as React from "react";
 import { Html, Text, Heading, Link } from "@react-email/components";
 
 interface WelcomeNewsletterTemplateProps {
