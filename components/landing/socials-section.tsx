@@ -9,6 +9,7 @@ export default function SocialsSection() {
       aria-labelledby='socials-heading'
       className='w-full max-w-13xl 4xl:mx-auto'
     >
+      {/* <div className='space-y-4 bg-shaded bg-[url(/graphics/grainy.png)] bg-repeat py-12 md:space-y-6 md:p-14 lg:pb-16 xl:pt-18 xl:pb-20 2xl:space-y-7 4xl:rounded-3xl 4xl:pt-14'>  */}
       <div className='space-y-4 bg-gradient-to-t from-slate-800 via-slate-700 to-slate-600 py-12 md:space-y-6 md:p-14 lg:pb-16 xl:pt-18 xl:pb-20 2xl:space-y-7 4xl:rounded-3xl 4xl:pt-14 dark:from-slate-950 dark:via-slate-800 dark:to-slate-950'>
         <h5
           id='socials-heading'

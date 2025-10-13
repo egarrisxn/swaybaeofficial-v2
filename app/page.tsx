@@ -15,7 +15,7 @@ import PhotosSection from "@/components/landing/photos-section";
 
 export default function LandingPage() {
   return (
-    <div className='relative grid min-h-dvh w-full grid-rows-[auto_1fr_auto] overscroll-contain bg-[url(/graphics/noisey.svg)] bg-repeat'>
+    <div className='relative grid min-h-dvh w-full grid-rows-[auto_1fr_auto] overscroll-contain'>
       <LandingNavbar />
       <main>
         <HeroSection />

@@ -7,10 +7,11 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import { ViewTransitions } from "next-view-transitions";
 import { ThemeProvider } from "@/app/providers/theme";
 import { TooltipProvider } from "@/app/providers/tooltip";
-import { CookieBanner } from "@/components/cookie-banner";
 import { Toaster } from "@/components/ui/sonner";
 import { SITE_URL, SITE_TITLE, SITE_DESC, SITE_HANDLE } from "@/lib/config";
-import Script from "next/script";
+
+// import { CookieBanner } from "@/components/cookie-banner";
+// import Script from "next/script";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -78,7 +79,7 @@ export default function RootLayout({
       <html lang='en' suppressHydrationWarning>
         <head>
           <meta name='apple-mobile-web-app-title' content='Sway Bae' />
-          <Script
+          {/* <Script
             id='gtag-init'
             strategy='afterInteractive'
             dangerouslySetInnerHTML={{
@@ -92,7 +93,7 @@ export default function RootLayout({
               gtag('config', 'G-823SZT7XNY', { anonymize_ip: true });
             `,
             }}
-          />
+          /> */}
         </head>
         <body
           className={`${poppins.variable} ${firaSans.variable} font-sans antialiased`}
@@ -104,7 +105,7 @@ export default function RootLayout({
             disableTransitionOnChange
           >
             <TooltipProvider delayDuration={0}>{children}</TooltipProvider>
-            <CookieBanner />
+            {/* <CookieBanner /> */}
             <Toaster richColors position='bottom-center' />
           </ThemeProvider>
           <Analytics />

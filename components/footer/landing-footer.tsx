@@ -17,7 +17,7 @@ import {
 export function LandingFooter() {
   return (
     <footer className='mx-auto w-full max-w-13xl lg:mb-6 lg:px-6 2xl:mb-8 2xl:px-8 4xl:px-0'>
-      <div className='rounded-t-3xl bg-shaded bg-[url(/graphics/grainy.png)] bg-repeat p-6 lg:rounded-3xl lg:shadow-lg'>
+      <div className='rounded-t-3xl bg-gradient-to-t from-slate-800 via-slate-700 to-slate-600 p-6 lg:rounded-3xl lg:shadow-lg dark:from-slate-950 dark:via-slate-800 dark:to-slate-950'>
         <div className='mx-auto w-full max-w-12xl'>
           <div className='px-4 pt-8 sm:px-6 md:pb-0 lg:px-8 xl:px-16 4xl:px-24'>
             <div className='flex flex-wrap gap-12 md:justify-between md:gap-0'>
