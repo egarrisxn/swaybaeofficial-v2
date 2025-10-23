@@ -92,7 +92,6 @@ export async function getGoogleCalendarEvents(
 
   try {
     const response = await fetch(url, {
-      // 💡 FIX: Ensure calendar data is always fresh and not built-time cached
       cache: "no-store",
     });
 
