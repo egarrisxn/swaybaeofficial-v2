@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import HybridCalendar from "@/components/calendar/hybrid-calendar";
+import { NewDate } from "@/lib/dates";
 
 export const metadata: Metadata = {
   title: "Calendar",
@@ -7,7 +8,8 @@ export const metadata: Metadata = {
     "Stay up to date with everything going on with Sway Bae and The Bae Squad!",
 };
 
-export default function CalendarPage() {
+export default async function CalendarPage() {
+  const initialDate = await NewDate();
   return (
     <section className='pb-24'>
       <div className='container mx-auto grid max-w-3xl grid-cols-1 gap-10 px-4 lg:max-w-8xl xl:gap-14 4xl:max-w-10xl'>
@@ -20,7 +22,7 @@ export default function CalendarPage() {
           </p>
         </div>
         <div>
-          <HybridCalendar initialDate={new Date()} showMonthNav={true} />
+          <HybridCalendar initialDate={initialDate} showMonthNav={true} />
         </div>
       </div>
     </section>

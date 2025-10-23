@@ -1,10 +1,14 @@
 import { type NextRequest, NextResponse } from "next/server";
+import { headers } from "next/headers";
 
 import { getGoogleCalendarEvents } from "@/lib/calendar";
 
 export async function GET(request: NextRequest) {
   try {
-    const { searchParams } = new URL(request.url);
+    headers();
+
+    const searchParams = request.nextUrl.searchParams;
+
     const month = searchParams.get("month");
     const year = searchParams.get("year");
 

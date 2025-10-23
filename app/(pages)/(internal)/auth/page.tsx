@@ -8,6 +8,7 @@ import {
   CardFooter,
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { FullYear } from "@/lib/dates";
 
 const DiscordAuthIcon = (
   <svg
@@ -66,7 +67,7 @@ export default function AuthPage() {
           </CardContent>
           <CardFooter className='flex items-center justify-center px-6 pt-4'>
             <p className='text-center text-sm'>
-              &copy; {new Date().getFullYear()} Sway Bae Official by{" "}
+              &copy; <FullYear /> Sway Bae Official by{" "}
               <a
                 href='https://egxo.dev'
                 className='cursor-pointer pl-0.5 font-medium text-link/80 transition-colors hover:text-link'

@@ -25,6 +25,7 @@ async function getAccessToken() {
       grant_type: "refresh_token",
       refresh_token: REFRESH_TOKEN,
     }),
+    cache: "no-store",
   });
 
   if (!response.ok) {
@@ -43,8 +44,7 @@ export async function getNowPlayingItem(): Promise<Spotify> {
       headers: {
         Authorization: `Bearer ${accessToken}`,
       },
-      // Add caching, if needed.
-      // next: { revalidate: 30 }
+      cache: "no-store",
     });
 
     if (response.status === 204 || response.status > 400) {
@@ -73,8 +73,6 @@ export async function getNowPlayingItem(): Promise<Spotify> {
       songUrl: song.external_urls.spotify,
       title: song.name,
     };
-
-    // console.log(metadata);
 
     return metadata;
   } catch (error) {

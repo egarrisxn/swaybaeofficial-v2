@@ -26,7 +26,6 @@ function categorizeEvent(title: string): CalendarEvent["type"] {
     lowerTitle.includes("personal") ||
     lowerTitle.includes("family") ||
     lowerTitle.includes("friend") ||
-    lowerTitle.includes("family") ||
     lowerTitle.includes("trip") ||
     lowerTitle.includes("weekend")
   ) {
@@ -92,7 +91,10 @@ export async function getGoogleCalendarEvents(
   )}/events?${params.toString()}`;
 
   try {
-    const response = await fetch(url);
+    const response = await fetch(url, {
+      // 💡 FIX: Ensure calendar data is always fresh and not built-time cached
+      cache: "no-store",
+    });
 
     if (!response.ok) {
       throw new Error(
