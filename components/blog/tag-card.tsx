@@ -53,7 +53,7 @@
 //                 href={`/blog/post/${postSlug}`}
 //                 className='group flex cursor-pointer items-center gap-1 text-muted-foreground hover:text-primary'
 //               >
-//                 <span className='tracking-widest uppercase'>Read Post</span>
+//                 <span className='-tracking-widest uppercase'>Read Post</span>
 //                 <ArrowRightIcon
 //                   width={16}
 //                   height={16}

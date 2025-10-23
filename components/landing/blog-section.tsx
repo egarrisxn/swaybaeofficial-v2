@@ -37,7 +37,7 @@ export default function BlogSection() {
       className='pt-24 4xl:pt-40'
     >
       <div className='container mx-auto grid max-w-lg grid-cols-1 gap-24 px-4 md:max-w-7xl md:grid-cols-2 md:gap-8 md:px-8 2xl:gap-12 2xl:px-16'>
-        <div className='order-1 mx-auto flex w-full max-w-lg flex-col justify-center gap-3 px-4 md:order-2 lg:justify-start lg:gap-2 lg:pt-20 4xl:max-w-[34rem]'>
+        <div className='order-1 mx-auto flex w-full max-w-lg flex-col justify-center gap-3 px-4 md:order-2 lg:justify-start lg:gap-2 lg:pt-20 4xl:max-w-136'>
           <h2
             id='blog-heading'
             className='px-3 pb-1 font-serif text-2xl font-bold tracking-tight text-muted-foreground text-shadow-lg xs:text-base sm:text-3xl sm:leading-none xl:text-4xl 2xl:pb-4 4xl:text-[2.6rem]'
@@ -84,7 +84,7 @@ export default function BlogSection() {
             alt='Another cutout photo of Sway'
             width={600}
             height={1200}
-            className='max-w-80 xs:max-w-92 lg:max-w-[30rem]'
+            className='max-w-80 xs:max-w-92 lg:max-w-120'
           />
         </div>
       </div>

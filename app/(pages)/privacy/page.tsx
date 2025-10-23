@@ -26,6 +26,11 @@ export const privacyGeneralInfo: Lists[] = [
     description:
       "If you contact us via email or a contact form, we may collect your name and email address in order to respond.",
   },
+  {
+    title: "Generative AI and Likeness",
+    description:
+      "Unless explicitly granted, you **may not** use this content creator's image, video, audio, or any other assets or works for the development, training, or input of any **generative artificial intelligence (AI) models or services**. Unauthorized use may infringe upon the creator's intellectual property and/or right of publicity.",
+  },
 ];
 export const privacyUsage: Lists[] = [
   {

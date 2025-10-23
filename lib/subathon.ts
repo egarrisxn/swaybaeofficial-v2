@@ -106,6 +106,7 @@ export const subathonGoals = [
       "The Don't Laugh challenge is back! Submit your best clips and Sway will try not to laugh.",
     completed: true,
     currentProgress: 0,
+    link: "https://youtu.be/YWiSJzvqSi4",
   },
   {
     points: 300000,

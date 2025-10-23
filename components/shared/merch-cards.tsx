@@ -122,7 +122,7 @@ export function MerchCards() {
                 fill
                 className='pointer-events-none object-cover'
               />
-              <div className='absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/30 via-black/10 to-transparent pr-4 pb-4'>
+              <div className='absolute inset-x-0 bottom-0 bg-linear-to-t from-black/30 via-black/10 to-transparent pr-4 pb-4'>
                 <span className='flex h-28 items-end justify-end font-semibold text-white'>
                   {card.title}
                 </span>

@@ -17,7 +17,7 @@ import {
 export function LandingFooter() {
   return (
     <footer className='mx-auto w-full max-w-13xl lg:mb-6 lg:px-6 2xl:mb-8 2xl:px-8 4xl:px-0'>
-      <div className='rounded-t-3xl bg-gradient-to-t from-slate-800 via-slate-700 to-slate-600 p-6 lg:rounded-3xl lg:shadow-lg dark:from-slate-950 dark:via-slate-800 dark:to-slate-950'>
+      <div className='rounded-t-3xl bg-linear-to-t from-slate-800 via-slate-700 to-slate-600 p-6 lg:rounded-3xl lg:shadow-lg dark:from-slate-950 dark:via-slate-800 dark:to-slate-950'>
         <div className='mx-auto w-full max-w-12xl'>
           <div className='px-4 pt-8 sm:px-6 md:pb-0 lg:px-8 xl:px-16 4xl:px-24'>
             <div className='flex flex-wrap gap-12 md:justify-between md:gap-0'>
@@ -26,7 +26,7 @@ export function LandingFooter() {
               <section className='flex w-full flex-col justify-between pb-4 md:mx-auto md:items-center md:pb-6 lg:w-[35%] lg:items-start lg:pb-0'>
                 <Link
                   href='/'
-                  className='text-6xl font-black tracking-[-0.1em] text-primary text-shadow-black text-shadow-sm md:mb-5'
+                  className='--tracking-widest text-6xl font-black text-primary text-shadow-black text-shadow-sm md:mb-5'
                 >
                   Sway Bae
                 </Link>

@@ -50,7 +50,7 @@ export default function PostPage() {
 //               className='group mb-12 flex cursor-pointer items-center gap-1 text-muted-foreground hover:text-primary'
 //             >
 //               <ArrowLeftIcon className='ml-1 size-4 transition group-hover:-translate-x-1' />{" "}
-//               <span className='text-sm tracking-widest uppercase'>Blog</span>
+//               <span className='text-sm -tracking-widest uppercase'>Blog</span>
 //             </Link>
 //             <h2 className='mb-2 font-serif text-3xl font-bold tracking-tight text-shadow-lg sm:text-4xl sm:leading-none lg:text-5xl'>
 //               {title}

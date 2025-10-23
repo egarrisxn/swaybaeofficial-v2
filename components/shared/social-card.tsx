@@ -8,7 +8,7 @@ export function SocialCard({ title, username, href, Icon }: Socials) {
       rel='noopener noreferrer'
       target='_blank'
     >
-      <div className='absolute inset-0 translate-y-[100%] bg-gradient-to-r from-pink-600 to-purple-600 transition-transform duration-300 group-hover:translate-y-[0%]' />
+      <div className='absolute inset-0 translate-y-[100%] bg-linear-to-r from-pink-600 to-purple-600 transition-transform duration-300 group-hover:translate-y-[0%]' />
       <Icon
         width={144}
         height={144}

@@ -41,7 +41,7 @@
 //             className='group mb-12 flex cursor-pointer items-center gap-1 text-muted-foreground hover:text-primary'
 //           >
 //             <ArrowLeftIcon className='ml-1 size-4 transition group-hover:-translate-x-1' />{" "}
-//             <span id={id} className='tracking-widest uppercase'>
+//             <span id={id} className='-tracking-widest uppercase'>
 //               {linkText}
 //             </span>
 //           </Link>

@@ -68,7 +68,7 @@ export function GoalsList() {
                       </div>
                       <div className='h-2 overflow-hidden rounded-full bg-muted'>
                         <div
-                          className='h-full bg-gradient-to-r from-primary/20 via-primary/50 to-primary/80 transition-all duration-500'
+                          className='h-full bg-linear-to-r from-primary/20 via-primary/50 to-primary/80 transition-all duration-500'
                           style={{
                             width: `${Math.min(progressPercentage, 100)}%`,
                           }}

@@ -4,7 +4,7 @@ export function LogoText() {
   return (
     <Link
       href='/'
-      className='text-3xl font-black tracking-[-0.1em] text-primary text-shadow-black text-shadow-sm'
+      className='--tracking-widest text-3xl font-black text-primary text-shadow-black text-shadow-sm'
     >
       Sway Bae
     </Link>

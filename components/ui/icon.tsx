@@ -108,12 +108,15 @@ function AnimateIcon({
 }: AnimateIconProps) {
   const controls = useAnimation();
   const [localAnimate, setLocalAnimate] = React.useState(!!animate);
-  const currentAnimation = React.useRef(animation);
+
+  const [currentAnimation, setCurrentAnimation] = React.useState<
+    StaticAnimations | string
+  >(animation);
 
   const startAnimation = React.useCallback(
     (trigger: TriggerProp) => {
-      currentAnimation.current =
-        typeof trigger === "string" ? trigger : animation;
+      const newAnimation = typeof trigger === "string" ? trigger : animation;
+      setCurrentAnimation(newAnimation);
       setLocalAnimate(true);
     },
     [animation]
@@ -123,17 +126,20 @@ function AnimateIcon({
     setLocalAnimate(false);
   }, []);
 
+  // Sync prop changes (animate, animation) to local state
   React.useEffect(() => {
-    currentAnimation.current =
-      typeof animate === "string" ? animate : animation;
+    const newAnimation = typeof animate === "string" ? animate : animation;
+    setCurrentAnimation(newAnimation);
     setLocalAnimate(!!animate);
   }, [animate, animation]);
 
+  // Handle onAnimateChange callback
   React.useEffect(
-    () => onAnimateChange?.(localAnimate, currentAnimation.current),
-    [localAnimate, onAnimateChange]
+    () => onAnimateChange?.(localAnimate, currentAnimation),
+    [localAnimate, onAnimateChange, currentAnimation]
   );
 
+  // Animate effect
   React.useEffect(() => {
     if (localAnimate) onAnimateStart?.();
     controls.start(localAnimate ? "animate" : "initial").then(() => {
@@ -141,22 +147,38 @@ function AnimateIcon({
     });
   }, [localAnimate, controls, onAnimateStart, onAnimateEnd]);
 
-  const handleMouseEnter = (e: React.MouseEvent) => {
-    if (animateOnHover) startAnimation(animateOnHover);
-    children.props?.onMouseEnter?.(e);
-  };
-  const handleMouseLeave = (e: React.MouseEvent) => {
-    if (animateOnHover || animateOnTap) stopAnimation();
-    children.props?.onMouseLeave?.(e);
-  };
-  const handlePointerDown = (e: React.PointerEvent) => {
-    if (animateOnTap) startAnimation(animateOnTap);
-    children.props?.onPointerDown?.(e);
-  };
-  const handlePointerUp = (e: React.PointerEvent) => {
-    if (animateOnTap) stopAnimation();
-    children.props?.onPointerUp?.(e);
-  };
+  // FIX: Wrap handlers in useCallback for stability and efficiency
+  const handleMouseEnter = React.useCallback(
+    (e: React.MouseEvent) => {
+      if (animateOnHover) startAnimation(animateOnHover);
+      React.Children.only(children).props?.onMouseEnter?.(e);
+    },
+    [animateOnHover, children, startAnimation]
+  );
+
+  const handleMouseLeave = React.useCallback(
+    (e: React.MouseEvent) => {
+      if (animateOnHover || animateOnTap) stopAnimation();
+      React.Children.only(children).props?.onMouseLeave?.(e);
+    },
+    [animateOnHover, animateOnTap, children, stopAnimation]
+  );
+
+  const handlePointerDown = React.useCallback(
+    (e: React.PointerEvent) => {
+      if (animateOnTap) startAnimation(animateOnTap);
+      React.Children.only(children).props?.onPointerDown?.(e);
+    },
+    [animateOnTap, children, startAnimation]
+  );
+
+  const handlePointerUp = React.useCallback(
+    (e: React.PointerEvent) => {
+      if (animateOnTap) stopAnimation();
+      React.Children.only(children).props?.onPointerUp?.(e);
+    },
+    [animateOnTap, children, stopAnimation]
+  );
 
   const child = React.Children.only(children);
   const cloned = React.cloneElement(child, {
@@ -170,7 +192,7 @@ function AnimateIcon({
     <AnimateIconContext.Provider
       value={{
         controls,
-        animation: currentAnimation.current,
+        animation: currentAnimation,
         loop,
         loopDelay,
       }}
@@ -278,7 +300,6 @@ function IconWrapper<T extends string>({
   );
 }
 
-// Refactored getVariants to accept context values as arguments
 function getVariants<
   V extends { default: T; [key: string]: T },
   T extends Record<string, Variants>,

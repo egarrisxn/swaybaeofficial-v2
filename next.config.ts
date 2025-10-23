@@ -1,6 +1,8 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  reactCompiler: true,
+  cacheComponents: true,
   images: {
     remotePatterns: [
       {
@@ -35,6 +37,7 @@ const nextConfig: NextConfig = {
   },
   experimental: {
     globalNotFound: true,
+    //   turbopackFileSystemCacheForDev: true,
     //   taint: true,
   },
   // turbopack: {

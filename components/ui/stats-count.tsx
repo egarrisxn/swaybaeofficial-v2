@@ -132,7 +132,7 @@ function AnimatedCounter({
       </motion.div>
       <motion.p
         className={cn(
-          "px-1 text-xs leading-relaxed break-words hyphens-auto text-gray-600 sm:px-2 sm:text-sm dark:text-gray-400"
+          "px-1 text-xs leading-relaxed wrap-break-word hyphens-auto text-gray-600 sm:px-2 sm:text-sm dark:text-gray-400"
         )}
         initial={{ opacity: 0 }}
         animate={isInView ? { opacity: 1 } : { opacity: 0 }}

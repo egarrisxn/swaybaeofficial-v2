@@ -9,7 +9,7 @@ export function Navbar() {
       <section className='flex flex-1 items-center justify-start pb-1'>
         <Link
           href='/'
-          className='text-3xl font-black tracking-[-0.1em] text-primary text-shadow-black text-shadow-sm'
+          className='text-3xl font-black -tracking-widest text-primary text-shadow-black text-shadow-sm'
         >
           Sway Bae
         </Link>

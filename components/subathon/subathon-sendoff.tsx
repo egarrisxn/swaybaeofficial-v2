@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 
 export function SubathonSendoff() {
   return (
-    <section className='bg-gradient-to-t from-transparent via-primary/5 to-transparent px-6 py-24 text-center md:py-32 lg:py-40 dark:from-transparent dark:via-accent/5 dark:to-transparent'>
+    <section className='bg-linear-to-t from-transparent via-primary/5 to-transparent px-6 py-24 text-center md:py-32 lg:py-40 dark:from-transparent dark:via-accent/5 dark:to-transparent'>
       <h2 className='mb-4 text-3xl font-bold md:text-4xl lg:text-5xl'>
         Thank You for Your Support!
       </h2>

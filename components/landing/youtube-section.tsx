@@ -17,7 +17,7 @@ export default function YouTubeSection() {
     <section
       id='youtube'
       aria-labelledby='youtube-heading'
-      className='w-full bg-radial-[at_50%_75%] from-background via-muted to-muted to-90% pt-24 pb-20 2xl:py-20 4xl:mx-auto 4xl:max-w-[112rem] 4xl:rounded-3xl 4xl:border 4xl:border-border 4xl:py-18 dark:from-[#2e2e3f] dark:via-muted dark:to-muted'
+      className='w-full bg-radial-[at_50%_75%] from-background via-muted to-muted to-90% pt-24 pb-20 2xl:py-20 4xl:mx-auto 4xl:max-w-448 4xl:rounded-3xl 4xl:border 4xl:border-border 4xl:py-18 dark:from-[#2e2e3f] dark:via-muted dark:to-muted'
     >
       <div className='container mx-auto max-w-xl px-4 lg:max-w-8xl lg:px-8 2xl:max-w-9xl 4xl:max-w-11xl 4xl:px-0'>
         <div className='flex flex-col gap-10 lg:flex-row lg:items-center xl:gap-12 4xl:gap-16'>
