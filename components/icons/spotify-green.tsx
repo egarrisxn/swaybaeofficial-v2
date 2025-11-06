@@ -1,6 +1,6 @@
 import type { SVGProps } from "react";
 
-interface Icons extends SVGProps<SVGSVGElement> {
+interface Icon extends SVGProps<SVGSVGElement> {
   width?: string | number;
   height?: string | number;
 }
@@ -9,7 +9,7 @@ const SpotifyGreen = ({
   className = "",
   width = "24",
   height = "24",
-}: Icons) => {
+}: Icon) => {
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'

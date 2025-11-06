@@ -10,13 +10,13 @@ export function SubathonHeader() {
         <div className='mx-auto max-w-4xl text-center'>
           <div className='mx:py-2 mb-6 inline-flex items-center gap-1.5 rounded-full border bg-card px-3 py-1.5 text-xs font-medium text-card-foreground md:mb-8 md:gap-2 md:px-4 md:text-sm'>
             <Clock className='size-3 text-accent md:size-3.5' />
-            <span className='text-muted-foreground'>Happening Now!</span>
+            <span className='text-muted-foreground'>Subathon Complete.</span>
           </div>
           <h1 className='bg-linear-to-br from-foreground via-foreground to-accent bg-clip-text pb-4 text-[2.65rem] leading-none font-bold tracking-tighter text-transparent text-shadow-lg sm:text-5xl md:pt-1 md:pb-6 md:text-6xl lg:text-7xl xl:text-8xl'>
             {`Sway's Subtember Subathon`}
           </h1>
           <p className='mb-6 text-lg leading-relaxed text-balance text-muted-foreground md:mb-12 md:text-xl'>
-            {`Join Sway for the ultimate Subtember Subathon! Stay tuned for live updates, highlights, community clips, and all the can't-miss moments.`}
+            {`Thank you for joining Sway for the ultimate Subtember Subathon! Check out highlights, community clips, and all the can't-miss moments below.`}
           </p>
           <a
             href='https://www.twitch.tv/sway_bae'
@@ -28,7 +28,7 @@ export function SubathonHeader() {
               className='text-white transition-all hover:scale-103'
             >
               <TwitchIcon className='size-3.5 md:size-4.5' />
-              Watch Live
+              My Twitch Page!
             </Button>
           </a>
         </div>

@@ -10,15 +10,15 @@ export type ActionResult =
   | { success: true; res: unknown }
   | { success: false; err: unknown };
 
-// Icons
-export interface Icons extends SVGProps<SVGSVGElement> {
+// Icon
+export interface Icon extends SVGProps<SVGSVGElement> {
   width?: string | number;
   height?: string | number;
 }
-export type IconComponent = ComponentType<Icons>;
+export type IconComponent = ComponentType<Icon>;
 
 // Links
-export interface Links {
+export interface HyperLink {
   href: string;
   label: string;
   external?: boolean;
@@ -26,16 +26,16 @@ export interface Links {
 }
 
 // Lists
-export interface Lists {
+export interface List {
   title?: string;
   description?: string;
   link?: string;
   linkText?: string;
 }
-export interface ReusableLists {
+export interface ExtendedList {
   title: string;
   description?: string | ReactNode;
-  items?: Lists[];
+  items?: List[];
 }
 
 // Socials

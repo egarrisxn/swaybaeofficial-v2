@@ -69,11 +69,7 @@ export const viewport: Viewport = {
   ],
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: ReactNode;
-}>) {
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <ViewTransitions>
       <html lang='en' suppressHydrationWarning>

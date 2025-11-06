@@ -3,14 +3,7 @@
 import { useActionState, useEffect, useRef } from "react";
 import { useFormStatus } from "react-dom";
 import { toast } from "sonner";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Input } from "@/components/ui/input";
@@ -61,16 +54,8 @@ export function UserContactForm() {
   }, [state]);
 
   return (
-    <Card>
-      <CardHeader className='px-7'>
-        <CardTitle className='text-2xl font-bold tracking-tight lg:text-3xl'>
-          Contact me
-        </CardTitle>
-        <CardDescription className='tracking-wide text-wrap'>
-          {`Fill out the form below and I'll be in touch.`}
-        </CardDescription>
-      </CardHeader>
-      <CardContent>
+    <Card className='xl:py-10'>
+      <CardContent className='xl:px-10'>
         <form
           ref={formRef}
           action={formAction}
@@ -144,9 +129,9 @@ export function UserContactForm() {
             <FieldError id='message' errors={state.errors?.message} />
           </div>
 
-          <CardFooter className='x'>
+          <div className='flex items-center'>
             <SubmitButton />
-          </CardFooter>
+          </div>
         </form>
       </CardContent>
     </Card>

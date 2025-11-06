@@ -1,10 +1,10 @@
 import { Link } from "next-view-transitions";
 
-import type { Links } from "@/types";
+import type { HyperLink } from "@/types";
 
 interface LinkListProps {
   title: string;
-  links: Links[];
+  links: HyperLink[];
 }
 
 export function LinkList({ title, links }: LinkListProps) {

@@ -3,9 +3,9 @@ import ContactMeSnippet from "@/components/shared/contact-me-snippet";
 
 export default function AccessibilityPage() {
   return (
-    <div className='min-h-screen w-full'>
-      <div className='container mx-auto my-24 max-w-2xl px-4 lg:max-w-7xl xl:px-0'>
-        <section className='mx-auto grid max-w-[65ch] grid-cols-1 items-center xl:max-w-[80ch]'>
+    <section className='pb-24'>
+      <div className='container mx-auto max-w-2xl px-4 lg:max-w-7xl'>
+        <div className='mx-auto grid max-w-[65ch] grid-cols-1 items-center xl:max-w-[80ch]'>
           <header className='mb-10 flex w-full flex-col md:mx-auto md:items-center md:justify-center md:text-center'>
             <h1 className='mb-2 text-4xl font-extrabold tracking-tight text-foreground md:mb-4 xl:text-5xl'>
               Accessibility
@@ -24,8 +24,8 @@ export default function AccessibilityPage() {
           </article>
           <hr className='mb-6' />
           <ContactMeSnippet />
-        </section>
+        </div>
       </div>
-    </div>
+    </section>
   );
 }

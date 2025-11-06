@@ -3,9 +3,9 @@ import LastUpdated from "@/components/shared/last-updated";
 import ReusableList from "@/components/shared/reusable-list";
 import ContactMeSnippet from "@/components/shared/contact-me-snippet";
 
-import type { Lists } from "@/types";
+import type { List } from "@/types";
 
-export const privacyGeneralInfo: Lists[] = [
+export const privacyGeneralInfo: List[] = [
   {
     title: "Analytics Information",
     description:
@@ -32,7 +32,7 @@ export const privacyGeneralInfo: Lists[] = [
       "Unless explicitly granted, you **may not** use this content creator's image, video, audio, or any other assets or works for the development, training, or input of any **generative artificial intelligence (AI) models or services**. Unauthorized use may infringe upon the creator's intellectual property and/or right of publicity.",
   },
 ];
-export const privacyUsage: Lists[] = [
+export const privacyUsage: List[] = [
   {
     description:
       "Improving the site experience based on anonymous usage analytics.",
@@ -54,7 +54,7 @@ export const privacyUsage: Lists[] = [
       "Enhancing viewer interactivity with stream-related features, such as live polls or embedded chat widgets.",
   },
 ];
-export const privacyThirdPartyServices: Lists[] = [
+export const privacyThirdPartyServices: List[] = [
   {
     title: "YouTube",
     link: "https://policies.google.com/privacy",
@@ -81,7 +81,7 @@ export const privacyThirdPartyServices: Lists[] = [
       "Our mailing list is managed by a third-party email service. Your email address is securely stored and only used for communication you've opted into.",
   },
 ];
-export const privacyRights: Lists[] = [
+export const privacyRights: List[] = [
   { description: "Request access to any personal information we may hold" },
   { description: "Ask us to correct or delete your information" },
   { description: "Unsubscribe from our mailing list at any time" },
@@ -89,9 +89,9 @@ export const privacyRights: Lists[] = [
 
 export default function PrivacyPolicyPage() {
   return (
-    <div className='min-h-screen w-full'>
-      <div className='container mx-auto my-24 max-w-2xl px-4 lg:max-w-7xl xl:px-0'>
-        <section className='mx-auto grid max-w-[65ch] grid-cols-1 items-center xl:max-w-[80ch]'>
+    <section className='pb-24'>
+      <div className='container mx-auto max-w-2xl px-4 lg:max-w-7xl'>
+        <div className='mx-auto grid max-w-[65ch] grid-cols-1 items-center xl:max-w-[80ch]'>
           <header className='mb-10 flex w-full flex-col md:mx-auto md:items-center md:justify-center md:text-center'>
             <h1 className='mb-2 text-4xl font-extrabold tracking-tight text-foreground md:mb-4 xl:text-5xl'>
               Privacy Policy
@@ -170,8 +170,8 @@ export default function PrivacyPolicyPage() {
           </article>
           <hr className='mb-6' />
           <ContactMeSnippet />
-        </section>
+        </div>
       </div>
-    </div>
+    </section>
   );
 }

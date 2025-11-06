@@ -8,7 +8,7 @@ export function SubathonSendoff() {
       </h2>
       <p className='mx-auto mb-6 max-w-2xl text-lg leading-relaxed text-muted-foreground md:text-xl'>
         Your support makes everything possible. Every cheer, sub, and donation
-        helps us grow, unlock new subathonGoals, and create memories together.
+        helps us grow, unlock new subathon Goals, and create memories together.
         This community is what makes the subathon special, and you are a huge
         part of it.
       </p>
@@ -21,7 +21,7 @@ export function SubathonSendoff() {
           size='dynamic'
           className='text-white transition-all hover:scale-103'
         >
-          Continue the Celebration
+          @sway_bae on Twitch
         </Button>
       </a>
     </section>

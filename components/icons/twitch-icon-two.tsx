@@ -1,10 +1,10 @@
-import type { Icons } from "@/types";
+import type { Icon } from "@/types";
 
 const TwitchIconTwo = ({
   className = "",
   width = "24",
   height = "24",
-}: Icons) => {
+}: Icon) => {
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'

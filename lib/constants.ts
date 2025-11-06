@@ -9,22 +9,38 @@ import {
   YoutubeIcon,
 } from "@/components/icons";
 
-import type { Links, Socials } from "@/types";
+import type { HyperLink, Socials } from "@/types";
 
 // Calendar
 export const calendarDays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
+// Navbar
+export const navLinks: HyperLink[] = [
+  { href: "/about", label: "About" },
+  { href: "/calendar", label: "Calendar" },
+  // { href: "/community", label: "Community" },
+
+  {
+    href: "https://swaybae-v1.vercel.app/blog",
+    label: "Blog",
+    external: true,
+  },
+  { href: "/subathon", label: "Subathon" },
+  { href: "https://shop.swaybae.net/", label: "Shop", external: true },
+  { href: "/contact", label: "Contact" },
+];
+
 // Footer
-export const quickLinks: Links[] = [
+export const quickLinks: HyperLink[] = [
   { href: "/about", label: "About" },
   { href: "/calendar", label: "Calendar" },
   { href: "/community", label: "Community" },
-  { href: "https://shop.swaybae.net/", label: "Merch", external: true },
+  { href: "https://shop.swaybae.net/", label: "Shop", external: true },
 ];
-export const moreLinks: Links[] = [
+export const moreLinks: HyperLink[] = [
   { href: "/blog", label: "Blog" },
   { href: "/contact", label: "Contact" },
-  { href: "/faq", label: "FAQs" },
+  { href: "/faq", label: "FAQ" },
   // { href: "/media", label: "Media Kit" },
   {
     href: "http://beacons.ai/sway_bae/mediakit",
@@ -32,23 +48,11 @@ export const moreLinks: Links[] = [
     external: true,
   },
 ];
-export const sharedLinks: Links[] = [
+export const sharedLinks: HyperLink[] = [
   { href: "/accessibility", label: "Accessibility" },
   { href: "/cookies", label: "Cookies" },
   { href: "/privacy", label: "Privacy" },
   { href: "/terms", label: "Terms" },
-];
-
-// Navbar
-export const navLinks: Links[] = [
-  { href: "/", label: "Home" },
-  { href: "/calendar", label: "Calendar" },
-  { href: "/subathon", label: "Subathon" },
-  { href: "https://shop.swaybae.net/", label: "Merch", external: true },
-  // { href: "/blog", label: "Blog" },
-  // { href: "/contact", label: "Contact" },
-  // { href: "/about", label: "About" },
-  // { href: "/community", label: "Community" },
 ];
 
 // Social

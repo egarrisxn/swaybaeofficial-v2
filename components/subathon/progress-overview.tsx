@@ -12,12 +12,12 @@ export function ProgressOverview() {
       <div className='space-y-6'>
         <div className='text-center'>
           <h2 className='mb-2 text-3xl leading-tight font-medium tracking-tight md:text-4xl lg:text-5xl'>
-            Current Progress
+            Final Subathon Stats
           </h2>
           <p className='text-base leading-relaxed text-muted-foreground'>
             {subathonStats.totalPoints.toLocaleString()} points earned
             {nextGoal &&
-              ` • Next goal: ${nextGoal.points.toLocaleString()} points`}
+              ` • Next goal was: ${nextGoal.points.toLocaleString()} points`}
           </p>
         </div>
         {nextGoal && (

@@ -14,7 +14,8 @@ export function GoalsList() {
           Point Goals
         </h2>
         <p className='text-base leading-relaxed text-balance text-muted-foreground'>
-          Unlock amazing content and crazy challenges as we hit each milestone.
+          We unlocked tons of crazy challenges and fun content after each
+          milestone.
         </p>
       </div>
       <div className='grid gap-6'>

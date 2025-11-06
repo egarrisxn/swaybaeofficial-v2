@@ -1,12 +1,12 @@
 import { Link } from "next-view-transitions";
 
-import type { ReusableLists } from "@/types";
+import type { ExtendedList } from "@/types";
 
 export default function ReusableList({
   title,
   description,
   items = [],
-}: ReusableLists) {
+}: ExtendedList) {
   const filteredItems = items.filter(
     (item) => item.title || item.description || item.link
   );

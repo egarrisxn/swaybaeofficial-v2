@@ -7,7 +7,7 @@ import {
   TvPlayIcon,
 } from "@/components/icons";
 
-import type { TextBlurb, Links, IconComponent } from "@/types";
+import type { TextBlurb, HyperLink, IconComponent } from "@/types";
 
 export const contactText: TextBlurb = {
   badge: `Let's connect`,
@@ -15,7 +15,7 @@ export const contactText: TextBlurb = {
   body: `Please feel free to reach out below with any inquiries, collaborations, or thoughts!`,
 };
 
-interface Contact extends Links {
+interface Contact extends HyperLink {
   title: string;
   description?: string;
   Icon: IconComponent;

@@ -1,127 +1,92 @@
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+
+import type { List } from "@/types";
+
+export const faqList: List[] = [
+  {
+    title: "Where all do you stream at?",
+    description:
+      "I stream exclusively on Twitch at the moment. This may change in the future!",
+  },
+  {
+    title: "What is your stream schedule?",
+    description:
+      "My schedule fluctuates. Check the calendar page on this website for the most up-to-date weekly schedule.",
+  },
+  {
+    title: "What is your content/upload schedule?",
+    description:
+      "Content uploads also fluctuate. Visit my YouTube channel for the latest updates and release times.",
+  },
+  {
+    title: "Is your content family-friendly?",
+    description:
+      "Yes, I strive to keep all my streams and videos suitable for all audiences and all ages.",
+  },
+  {
+    title: "Do you attend conventions or in-person events?",
+    description:
+      "I love meeting the community! Keep an eye on my social media channels (Twitter/Instagram) for any event or convention announcements.",
+  },
+  {
+    title: "What advice do you have for new creators/streamers?",
+    description:
+      "Value your community, do not be too hard on yourself, and have fun! Those are the keys.",
+  },
+  {
+    title: "How can I support the stream/channel?",
+    description:
+      "The best ways to support are by watching, engaging in chat, subscribing on Twitch/YouTube, or checking out the merch store!",
+  },
+  {
+    title: "My question wasn't answered here. Where can I find more help?",
+    description:
+      "The best place to ask any other questions is by joining our Discord server!",
+  },
+];
+
 export default function FAQPage() {
   return (
-    <section className='grid size-full place-items-center'>
-      <h1 className='text-shadow pb-20 text-4xl font-black tracking-tighter text-wrap text-shadow-lg sm:text-6xl lg:text-7xl 2xl:text-9xl'>
-        COMING SOON.
-      </h1>
+    <section className='pb-24'>
+      <div className='container mx-auto max-w-3xl space-y-14 px-4 lg:max-w-6xl xl:gap-14'>
+        <div className='flex flex-col justify-center gap-3 px-2 lg:gap-4 lg:px-4'>
+          <h2 className='max-w-5xl font-serif text-3xl font-bold tracking-tight text-shadow-lg sm:text-4xl sm:leading-none lg:text-5xl 2xl:text-6xl'>
+            Frequently Asked Questions
+          </h2>
+          <p className='max-w-xl font-light text-muted-foreground sm:text-lg sm:leading-snug lg:max-w-5xl lg:text-xl 2xl:text-[1.35rem] 2xl:leading-snug'>
+            Find an answer to the most common questions I get asked.
+          </p>
+        </div>
+
+        <div>
+          <Accordion
+            defaultValue='item-0'
+            type='single'
+            collapsible
+            className='w-full space-y-2'
+          >
+            {faqList.map(({ title, description }, index) => (
+              <AccordionItem
+                key={index}
+                value={`item-${index}`}
+                className='p-1'
+              >
+                <AccordionTrigger className='text-base font-semibold'>
+                  {title}
+                </AccordionTrigger>
+                <AccordionContent className='font-medium text-primary'>
+                  {description}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </div>
+      </div>
     </section>
   );
 }
-
-// import {
-//   Accordion,
-//   AccordionContent,
-//   AccordionItem,
-//   AccordionTrigger,
-// } from "@/components/ui/accordion";
-// import LastUpdated from "@/components/shared/last-updated";
-// import ContactMeSnippet from "@/components/shared/contact-me-snippet";
-
-// import type { Lists } from "@/types";
-
-// // interface Lists {
-// //   title?: string;
-// //   description?: string;
-// //   link?: string;
-// //   linkText?: string;
-// // }
-
-// export const faqList: Lists[] = [
-//   {
-//     title: "Do you offer teleportation services?",
-//     description: "Only on Tuesdays, and only if Mercury is in retrograde.",
-//   },
-//   {
-//     title: "What's the return policy on bad life choices?",
-//     description:
-//       "We accept returns within 30 years with proof of receipt and a therapist's note.",
-//   },
-//   {
-//     title: "Can I pay in hugs?",
-//     description: "Yes, but only if your hugs are IRS-approved.",
-//   },
-//   {
-//     title: "Is it true your CEO is a raccoon in a trench coat?",
-//     description:
-//       "We can neither confirm nor deny, but he does love dumpsters and quarterly reports.",
-//   },
-//   {
-//     title: "What happens if I press this big red button?",
-//     description:
-//       "You gain temporary invisibility, but only when no one is looking.",
-//   },
-//   {
-//     title: "Can this software help me find true love?",
-//     description:
-//       "Absolutely! As long as your true love is fast-loading dashboards.",
-//   },
-//   {
-//     title: "Do you offer tech support for emotional breakdowns?",
-//     description:
-//       "Yes, our support team will send memes and virtual snacks within 15 minutes.",
-//   },
-//   {
-//     title: "Is there a secret menu?",
-//     description:
-//       "Yes. Just whisper 'enchanted spreadsheet' to your mouse and wait for the magic.",
-//   },
-// ];
-
-// export default function FAQPage() {
-//   return (
-//     <div className='min-h-screen w-full'>
-//       <div className='container mx-auto my-24 max-w-2xl px-4 lg:max-w-7xl xl:px-0'>
-//         <section className='mx-auto grid max-w-[65ch] grid-cols-1 items-center xl:max-w-[80ch]'>
-//           <header className='mb-10 flex w-full flex-col md:mx-auto md:items-center md:justify-center md:text-center'>
-//             <h1 className='mb-2 text-4xl font-extrabold tracking-tight text-foreground md:mb-4 xl:text-5xl'>
-//               FAQs
-//             </h1>
-//             <div className='text-xs text-muted-foreground md:text-sm'>
-//               <LastUpdated />
-//             </div>
-//           </header>
-
-//           <article className='mb-10'>
-//             <h3 className='mb-4 text-2xl font-semibold'>
-//               Frequently Asked Questions
-//             </h3>
-//             <p className='mb-6 text-muted-foreground'>
-//               Here you&apos;ll find answers to some of the most common questions
-//               I get. If you don&apos;t see your question answered below, feel
-//               free to reach out for further assistance. I am here to help! Text
-//               text text we need more text here.
-//             </p>
-
-//             <div>
-//               <Accordion
-//                 defaultValue='item-0'
-//                 type='single'
-//                 collapsible
-//                 className='w-full space-y-2'
-//               >
-//                 {faqList.map(({ title, description }, index) => (
-//                   <AccordionItem
-//                     key={index}
-//                     value={`item-${index}`}
-//                     className='p-1'
-//                   >
-//                     <AccordionTrigger className='text-base font-semibold'>
-//                       {title}
-//                     </AccordionTrigger>
-//                     <AccordionContent className='font-medium text-primary'>
-//                       {description}
-//                     </AccordionContent>
-//                   </AccordionItem>
-//                 ))}
-//               </Accordion>
-//             </div>
-//           </article>
-
-//           <hr className='mb-6' />
-
-//           <ContactMeSnippet />
-//         </section>
-//       </div>
-//     </div>
-//   );
-// }

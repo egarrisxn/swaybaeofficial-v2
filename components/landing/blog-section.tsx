@@ -18,14 +18,14 @@ interface Blog {
 
 const blogList: Blog[] = [
   {
-    id: "#2",
-    title: "The best FREE Ways to Support Your Favorite Content Creators!",
-    href: "#",
-  },
-  {
     id: "#1",
     title: "Sway Starts a BLOG!",
-    href: "#",
+    href: "https://swaybae-v1.vercel.app/blog/post/sway-starts-a-blog",
+  },
+  {
+    id: "#2",
+    title: "The best FREE Ways to Support Your Favorite Content Creators!",
+    href: "https://swaybae-v1.vercel.app/blog/post/the-best-free-ways-to-support-your-favorite-content-creators",
   },
 ];
 
@@ -50,7 +50,7 @@ export default function BlogSection() {
                 key={id}
                 className='mt-4 mb-0.5 border-b border-foreground pb-4 lg:mt-8 lg:px-4 lg:pb-8'
               >
-                <Link href={href}>
+                <a href={href} target='_blank' rel='noopener noreferrer'>
                   <div className='group flex flex-row items-center gap-4 font-light'>
                     <span className='flex w-fit p-1 text-3xl font-bold text-primary'>
                       {String(index + 1).padStart(2, "0")}
@@ -68,15 +68,20 @@ export default function BlogSection() {
                       />
                     </div>
                   </div>
-                </Link>
+                </a>
               </div>
             ))}
           </div>
-          <Link href='/blog' className='mt-12 flex items-center px-4'>
+          <a
+            href='https://swaybae-v1.vercel.app/blog'
+            className='mt-12 flex items-center px-4'
+            target='_blank'
+            rel='noopener noreferrer'
+          >
             <Button variant='contrast' size='lg'>
               {blogText.button}
             </Button>
-          </Link>
+          </a>
         </div>
         <div className='order-2 mx-auto flex items-center justify-center px-3 md:order-1'>
           <Image

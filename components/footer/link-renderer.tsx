@@ -1,8 +1,8 @@
 import { Link } from "next-view-transitions";
 
-import type { Links } from "@/types";
+import type { HyperLink } from "@/types";
 
-export function LinkRenderer({ href, label, external }: Links) {
+export function LinkRenderer({ href, label, external }: HyperLink) {
   if (external) {
     return (
       <a

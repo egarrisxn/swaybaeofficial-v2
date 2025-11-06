@@ -1,11 +1,11 @@
-import type { Icons } from "@/types";
+import type { Icon } from "@/types";
 
 const MailsIcon = ({
   className = "",
   width = "24",
   height = "24",
   strokeWidth = "2",
-}: Icons) => {
+}: Icon) => {
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'

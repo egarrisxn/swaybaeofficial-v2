@@ -1,9 +1,9 @@
 import LastUpdated from "@/components/shared/last-updated";
 import ContactMeSnippet from "@/components/shared/contact-me-snippet";
 
-import type { Lists } from "@/types";
+import type { List } from "@/types";
 
-const cookieData: Lists[] = [
+const cookieData: List[] = [
   {
     description:
       "This Cookie Policy explains what cookies are, how we use them, what types of cookies we place, the information they collect, and how that information is used. It also outlines how you can manage your cookie preferences. Cookies are small text files stored on your device when you visit a website. They hold limited information that helps the site function properly, keep it secure, improve your browsing experience, and provide insights into how the website is performing and where it can be improved.",
@@ -44,9 +44,9 @@ const cookieData: Lists[] = [
 
 export default function CookiePolicyPage() {
   return (
-    <div className='min-h-screen w-full'>
-      <div className='container mx-auto my-24 max-w-2xl px-4 lg:max-w-7xl xl:px-0'>
-        <section className='mx-auto grid max-w-[65ch] grid-cols-1 items-center xl:max-w-[80ch]'>
+    <section className='pb-24'>
+      <div className='container mx-auto max-w-2xl px-4 lg:max-w-7xl'>
+        <div className='mx-auto grid max-w-[65ch] grid-cols-1 items-center xl:max-w-[80ch]'>
           <header className='mb-10 flex w-full flex-col md:mx-auto md:items-center md:justify-center md:text-center'>
             <h1 className='mb-2 text-4xl font-extrabold tracking-tight text-foreground md:mb-4 xl:text-5xl'>
               Cookie Policy
@@ -82,8 +82,8 @@ export default function CookiePolicyPage() {
           </article>
           <hr className='mb-6' />
           <ContactMeSnippet />
-        </section>
+        </div>
       </div>
-    </div>
+    </section>
   );
 }
