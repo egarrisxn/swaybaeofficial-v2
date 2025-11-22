@@ -21,9 +21,8 @@ export const navLinks: HyperLink[] = [
   // { href: "/community", label: "Community" },
 
   {
-    href: "https://swaybae-v1.vercel.app/blog",
+    href: "/blog",
     label: "Blog",
-    external: true,
   },
   { href: "/subathon", label: "Subathon" },
   { href: "https://shop.swaybae.net/", label: "Shop", external: true },

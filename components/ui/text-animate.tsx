@@ -4,8 +4,8 @@ import { memo, useRef, type ElementType } from "react";
 import {
   motion,
   AnimatePresence,
-  MotionProps,
-  Variants,
+  type MotionProps,
+  type Variants,
   useInView,
 } from "motion/react";
 import { cn } from "@/lib/utils";
@@ -13,8 +13,6 @@ import { cn } from "@/lib/utils";
 // We pre-cache the most common motion components outside the render scope.
 type NativeMotionElement = "p" | "div" | "h1" | "h2" | "h3" | "span" | "a";
 
-// Statically declare motion components for common HTML elements.
-// This ensures that the component being rendered is ALWAYS static and predefined.
 const staticMotionComponents: Partial<
   Record<NativeMotionElement, ElementType>
 > = {
@@ -48,6 +46,7 @@ interface TextAnimateProps extends MotionProps {
   children: string;
   className?: string;
   segmentClassName?: string;
+  usePresence?: boolean;
   delay?: number;
   duration?: number;
   variants?: Variants;
@@ -101,7 +100,11 @@ const defaultItemAnimationVariants: Record<
     item: {
       hidden: { opacity: 0, filter: "blur(10px)" },
       show: { opacity: 1, filter: "blur(0px)", transition: { duration: 0.3 } },
-      exit: { opacity: 0, filter: "blur(10px)", transition: { duration: 0.3 } },
+      exit: {
+        opacity: 0,
+        filter: "blur(10px)",
+        transition: { duration: 0.3 },
+      },
     },
   },
   blurInUp: {
@@ -232,9 +235,6 @@ function MotionWrapper({
   children,
   ...props
 }: MotionWrapperProps) {
-  // Determine the component to use by checking the static cache.
-  // If the Component prop is a string (native element), use the pre-cached motion component.
-  // Otherwise (if it's a custom React component or an unrecognized string), fall back to a safe motion.div.
   const FinalMotionComponent =
     typeof Component === "string" &&
     staticMotionComponents[Component as NativeMotionElement]
@@ -244,11 +244,11 @@ function MotionWrapper({
   return <FinalMotionComponent {...props}>{children}</FinalMotionComponent>;
 }
 
-// Memoize the NAMED component
 const MotionComponentWrapper = memo(MotionWrapper);
 
 const TextAnimateBase = ({
   children,
+  usePresence = false,
   delay = 0,
   duration = 0.3,
   variants,
@@ -277,7 +277,6 @@ const TextAnimateBase = ({
       segments = [children];
   }
 
-  // Determine variants
   const finalVariants = variants
     ? {
         container: {
@@ -321,42 +320,47 @@ const TextAnimateBase = ({
         item: defaultItemAnimationVariants[animation].item,
       };
 
-  const wrapperRef = useRef(null);
+  const wrapperRef = useRef<HTMLDivElement | null>(null);
   const isInView = useInView(wrapperRef, { once });
+
+  const content = (
+    <MotionComponentWrapper
+      as={Component}
+      variants={finalVariants.container as Variants}
+      initial='hidden'
+      animate={
+        startOnView && isInView ? "show" : startOnView ? "hidden" : "show"
+      }
+      exit='exit'
+      className={cn("whitespace-pre-wrap", className)}
+      aria-label={accessible ? children : undefined}
+      {...props}
+    >
+      {accessible && <span className='sr-only'>{children}</span>}
+      {segments.map((segment, i) => (
+        <motion.span
+          key={`${by}-${segment}-${i}`}
+          variants={finalVariants.item}
+          custom={i * staggerTimings[by]}
+          className={cn(
+            by === "line" ? "block" : "inline-block whitespace-pre",
+            segmentClassName
+          )}
+          aria-hidden={accessible ? true : undefined}
+        >
+          {segment}
+        </motion.span>
+      ))}
+    </MotionComponentWrapper>
+  );
 
   return (
     <div ref={wrapperRef}>
-      <AnimatePresence mode='popLayout'>
-        {/* Render the static wrapper component, passing 'as' as a prop */}
-        <MotionComponentWrapper
-          as={Component}
-          variants={finalVariants.container as Variants}
-          initial='hidden'
-          animate={
-            startOnView && isInView ? "show" : startOnView ? "hidden" : "show"
-          }
-          exit='exit'
-          className={cn("whitespace-pre-wrap", className)}
-          aria-label={accessible ? children : undefined}
-          {...props}
-        >
-          {accessible && <span className='sr-only'>{children}</span>}
-          {segments.map((segment, i) => (
-            <motion.span
-              key={`${by}-${segment}-${i}`}
-              variants={finalVariants.item}
-              custom={i * staggerTimings[by]}
-              className={cn(
-                by === "line" ? "block" : "inline-block whitespace-pre",
-                segmentClassName
-              )}
-              aria-hidden={accessible ? true : undefined}
-            >
-              {segment}
-            </motion.span>
-          ))}
-        </MotionComponentWrapper>
-      </AnimatePresence>
+      {usePresence ? (
+        <AnimatePresence mode='popLayout'>{content}</AnimatePresence>
+      ) : (
+        content
+      )}
     </div>
   );
 };
