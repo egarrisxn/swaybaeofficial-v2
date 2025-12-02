@@ -16,14 +16,13 @@ export const calendarDays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
 // Navbar
 export const navLinks: HyperLink[] = [
-  { href: "/about", label: "About" },
+  // { href: "/about", label: "About" },
   { href: "/calendar", label: "Calendar" },
   // { href: "/community", label: "Community" },
-
-  {
-    href: "/blog",
-    label: "Blog",
-  },
+  // {
+  //   href: "/blog",
+  //   label: "Blog",
+  // },
   { href: "/subathon", label: "Subathon" },
   { href: "https://shop.swaybae.net/", label: "Shop", external: true },
   { href: "/contact", label: "Contact" },
@@ -37,12 +36,13 @@ export const quickLinks: HyperLink[] = [
   { href: "https://shop.swaybae.net/", label: "Shop", external: true },
 ];
 export const moreLinks: HyperLink[] = [
-  { href: "/blog", label: "Blog" },
+  // { href: "/blog", label: "Blog"},
+  { href: "https://swaybae-v1.vercel.app/blog", label: "Blog", external: true },
   { href: "/contact", label: "Contact" },
   { href: "/faq", label: "FAQ" },
   // { href: "/media", label: "Media Kit" },
   {
-    href: "http://beacons.ai/sway_bae/mediakit",
+    href: "https://beacons.ai/sway_bae/mediakit",
     label: "Media Kit",
     external: true,
   },
