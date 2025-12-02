@@ -35,11 +35,11 @@ const nextConfig: NextConfig = {
       },
     ],
   },
-  experimental: {
-    // globalNotFound: true,
-    // turbopackFileSystemCacheForDev: true,
-    // taint: true,
-  },
+  // experimental: {
+  //   globalNotFound: true,
+  //   turbopackFileSystemCacheForDev: true,
+  //   taint: true,
+  // },
   // turbopack: {
   //   rules: {
   //     "*.svg": {
