@@ -28,7 +28,7 @@ export default function TwitterSection() {
           </span>
           <h2
             id='twitter-heading'
-            className='font-serif text-2xl font-bold tracking-tight text-shadow-lg sm:text-3xl sm:leading-none lg:text-4xl 2xl:text-5xl'
+             className='font-serif text-3xl font-bold tracking-tight text-shadow-lg sm:text-4xl sm:leading-none 2xl:text-6xl'
           >
             {twitterText.heading}
           </h2>
