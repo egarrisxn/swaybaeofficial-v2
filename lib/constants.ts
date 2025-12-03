@@ -39,8 +39,8 @@ export const mobileNavLinks: HyperLink[] = [
   { href: "https://shop.swaybae.net/", label: "Shop", external: true },
   { href: "/contact", label: "Contact" },
   { href: "/faq", label: "FAQ" },
-  { href: "/subathon/2024", label: "Subathon '24" },
   { href: "/subathon/2025", label: "Subathon '25" },
+  { href: "/subathon/2024", label: "Subathon '24" },
 ];
 
 // Footer
