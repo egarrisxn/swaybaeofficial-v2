@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import { AnimatePresence, motion } from "motion/react";
-import { CloseIcon, PlayIcon } from "@/components/icons";
+import { XCloseIcon, PlayIcon } from "@/components/icons";
 import { cn } from "@/lib/utils";
 
 type VideoAnimationStyle =
@@ -141,7 +141,7 @@ function Video({
                 onClick={() => setIsVideoOpen(false)}
                 aria-label='Close video'
               >
-                <CloseIcon className='size-5' />
+                <XCloseIcon className='size-5' />
               </motion.button>
 
               <div className='relative isolate size-full overflow-hidden rounded-3xl border border-b-4 border-foreground border-b-foreground/90 bg-white p-1 dark:bg-black'>

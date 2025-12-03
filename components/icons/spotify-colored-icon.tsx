@@ -1,6 +1,6 @@
 import type { Icon } from "@/types";
 
-const SpotifyColored = ({
+const SpotifyColoredIcon = ({
   className = "",
   width = "24",
   height = "24",
@@ -22,4 +22,4 @@ const SpotifyColored = ({
   );
 };
 
-export { SpotifyColored };
+export { SpotifyColoredIcon };

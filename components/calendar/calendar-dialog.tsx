@@ -1,7 +1,6 @@
 "use client";
 
 import { Root } from "@radix-ui/react-visually-hidden";
-import { ClockIcon, ExternalLinkIcon } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import {
   Dialog,
@@ -10,6 +9,7 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
+import { ClockIcon, ExternalLinkIcon } from "@/components/icons";
 
 import { cn } from "@/lib/utils";
 import { formatEventTime, getEventLabelColor } from "@/lib/calendar";

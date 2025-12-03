@@ -2,8 +2,7 @@
 
 // import { useState } from "react";
 // import Image from "next/image";
-// import { ArrowLeftIcon } from "@/components/icons";
-// import { ArrowRightIcon } from "@/components/icons";
+// import {  ArrowLeftIcon, ArrowRightIcon } from "@/components/icons";
 
 // export default function AboutMeSwap() {
 //   const [isSwapped, setIsSwapped] = useState(false);

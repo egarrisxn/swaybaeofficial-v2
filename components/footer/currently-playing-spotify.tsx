@@ -1,6 +1,5 @@
 import type { ReactNode } from "react";
 import { Link } from "next-view-transitions";
-
 import { getNowPlayingItem } from "@/app/actions/spotify";
 import { mockSpotifyNowPlaying } from "@/lib/mock/data";
 

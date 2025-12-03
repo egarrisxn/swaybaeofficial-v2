@@ -2,7 +2,7 @@
 
 // import { useEffect, useState } from "react";
 // import { getNowPlayingItem } from "@/app/actions/spotify";
-// import { SpotifyColored } from "@/components/icons";
+// import { SpotifyColoredIcon } from "@/components/icons";
 // import type { Spotify } from "@/types";
 
 // export function SpotifyNowPlaying() {

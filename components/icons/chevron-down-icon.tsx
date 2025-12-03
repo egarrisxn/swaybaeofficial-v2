@@ -1,6 +1,6 @@
 import type { Icon } from "@/types";
 
-const PlayIcon = ({
+const ChevronDownIcon = ({
   className = "",
   width = "24",
   height = "24",
@@ -9,21 +9,17 @@ const PlayIcon = ({
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'
+      viewBox='0 0 24 24'
+      fill='none'
+      stroke='currentColor'
+      strokeWidth={strokeWidth}
       width={width}
       height={height}
-      viewBox='0 0 24 24'
       className={className}
     >
-      <path
-        fill='none'
-        stroke='currentColor'
-        strokeLinecap='round'
-        strokeLinejoin='round'
-        strokeWidth={strokeWidth}
-        d='m6 3l14 9l-14 9z'
-      ></path>
+      <path d='M7.41 8.58L12 13.17l4.59-4.59L18 10l-6 6l-6-6z'></path>
     </svg>
   );
 };
 
-export { PlayIcon };
+export { ChevronDownIcon };

@@ -1,7 +1,7 @@
 "use client";
 
-import { ClockIcon, ExternalLinkIcon } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
+import { ClockIcon, ExternalLinkIcon } from "@/components/icons";
 
 import { cn } from "@/lib/utils";
 import {
@@ -25,7 +25,12 @@ export function CalendarList({ currentDate, events }: CalendarEvents) {
   const eventsByDate = events.reduce<Record<string, CalendarEvent[]>>(
     (acc, e) => {
       const key = e.start.toDateString();
-      (acc[key] ||= []).push(e);
+
+      if (!acc[key]) {
+        acc[key] = [];
+      }
+
+      acc[key].push(e);
       return acc;
     },
     {}

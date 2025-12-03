@@ -1,5 +1,5 @@
-import { Users } from "lucide-react";
 import { Card } from "@/components/ui/card";
+import { UsersIcon } from "@/components/icons";
 
 export function EventStats() {
   return (
@@ -7,7 +7,7 @@ export function EventStats() {
       <div className='space-y-6'>
         <div className='flex items-center gap-3'>
           <div className='rounded-full bg-primary p-2.5'>
-            <Users className='size-5 text-primary-foreground' />
+            <UsersIcon className='size-5 text-primary-foreground' />
           </div>
           <h2 className='text-xl font-medium tracking-tight md:text-2xl lg:text-3xl'>
             Event Stats

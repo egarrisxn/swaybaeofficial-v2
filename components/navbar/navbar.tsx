@@ -1,7 +1,7 @@
 import { Link } from "next-view-transitions";
-import { MobileMenu } from "@/components/nav/mobile-menu";
-import { ThemeToggle } from "@/components/nav/theme-toggle";
-import { DesktopMenu } from "@/components/nav/desktop-menu";
+import { MobileMenu } from "@/components/navbar/mobile-menu";
+import { ThemeToggle } from "@/components/navbar/theme-toggle";
+import { DesktopMenu } from "@/components/navbar/desktop-menu";
 
 export function Navbar() {
   return (

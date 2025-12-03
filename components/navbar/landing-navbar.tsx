@@ -1,6 +1,6 @@
 "use client";
 
-import { Navbar } from "@/components/nav/navbar";
+import { Navbar } from "@/components/navbar/navbar";
 
 import { useScrollVisibility } from "@/hooks/use-scroll-visibility";
 

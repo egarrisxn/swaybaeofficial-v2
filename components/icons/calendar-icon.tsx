@@ -9,15 +9,15 @@ const CalendarIcon = ({
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'
-      width={width}
-      height={height}
       viewBox='0 0 24 24'
-      className={className}
       fill='none'
       stroke='currentColor'
       strokeLinecap='round'
       strokeLinejoin='round'
       strokeWidth={strokeWidth}
+      width={width}
+      height={height}
+      className={className}
     >
       <path d='M8 2v4' />
       <path d='M16 2v4' />

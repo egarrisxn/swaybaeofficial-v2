@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { ChevronLeftIcon, ChevronRightIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -13,6 +12,7 @@ import { LandingSkeleton } from "@/components/calendar/calendar-skeletons";
 import { CalendarError } from "@/components/calendar/calendar-error";
 import { CalendarList } from "@/components/calendar/calendar-list";
 import { CalendarSubscribe } from "@/components/calendar/calendar-subscribe";
+import { ChevronLeftIcon, ChevronRightIcon } from "@/components/icons";
 
 import { useCalendar } from "@/hooks/use-calendar";
 

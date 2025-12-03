@@ -68,7 +68,7 @@ export default function AboutSection() {
 
               <DialogContent className='space-y-4 sm:max-w-md'>
                 <DialogHeader>
-                  <DialogTitle>{`Here's a little more about me!`}</DialogTitle>
+                  <DialogTitle>{`A little more about me!`}</DialogTitle>
                 </DialogHeader>
 
                 <div className='space-y-4 text-sm leading-relaxed text-muted-foreground'>
@@ -76,6 +76,20 @@ export default function AboutSection() {
                     <p key={index}>{paragraph}</p>
                   ))}
                 </div>
+                <Image
+                  src='/signature/wht.png'
+                  alt='White Signature'
+                  width={100}
+                  height={60}
+                  className='hidden dark:flex'
+                />
+                <Image
+                  src='/signature/blk.png'
+                  alt='Black Signature'
+                  width={100}
+                  height={60}
+                  className='flex dark:hidden'
+                />
               </DialogContent>
             </Dialog>
           </BlurItem>

@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import { Navbar } from "@/components/nav/navbar";
+import { Navbar } from "@/components/navbar/navbar";
 import PagesFooter from "@/components/footer/pages-footer";
 
 export default function PagesLayout({ children }: { children: ReactNode }) {

@@ -1,4 +1,4 @@
-import { ExternalLinkIcon } from "lucide-react";
+import { ExternalLinkIcon } from "@/components/icons";
 
 export function CalendarSubscribe() {
   const PUBLIC_ICS =

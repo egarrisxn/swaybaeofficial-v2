@@ -14,7 +14,7 @@ import type { HyperLink, Socials } from "@/types";
 // Calendar
 export const calendarDays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
-// Navbar
+// Desktop Navbar
 export const navLinks: HyperLink[] = [
   // { href: "/about", label: "About" },
   { href: "/calendar", label: "Calendar" },
@@ -23,9 +23,24 @@ export const navLinks: HyperLink[] = [
   //   href: "/blog",
   //   label: "Blog",
   // },
-  { href: "/subathon", label: "Subathon" },
   { href: "https://shop.swaybae.net/", label: "Shop", external: true },
   { href: "/contact", label: "Contact" },
+];
+
+// Navbar
+export const mobileNavLinks: HyperLink[] = [
+  // { href: "/about", label: "About" },
+  { href: "/calendar", label: "Calendar" },
+  // { href: "/community", label: "Community" },
+  // {
+  //   href: "/blog",
+  //   label: "Blog",
+  // },
+  { href: "https://shop.swaybae.net/", label: "Shop", external: true },
+  { href: "/contact", label: "Contact" },
+  { href: "/faq", label: "FAQ" },
+  { href: "/subathon/2024", label: "Subathon '24" },
+  { href: "/subathon/2025", label: "Subathon '25" },
 ];
 
 // Footer

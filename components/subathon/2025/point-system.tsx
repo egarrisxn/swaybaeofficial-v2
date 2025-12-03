@@ -1,5 +1,5 @@
-import { Zap } from "lucide-react";
 import { Card } from "@/components/ui/card";
+import { ZapIcon } from "@/components/icons";
 
 export function PointSystem() {
   return (
@@ -7,7 +7,7 @@ export function PointSystem() {
       <div className='space-y-6'>
         <div className='flex items-center gap-3'>
           <div className='rounded-full bg-primary p-2.5'>
-            <Zap className='size-5 text-primary-foreground' />
+            <ZapIcon className='size-5 text-primary-foreground' />
           </div>
           <h2 className='text-xl font-medium tracking-tight md:text-2xl lg:text-3xl'>
             How Points Work

@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { Link } from "next-view-transitions";
 import { Button } from "@/components/ui/button";
 import { ArrowRightIcon } from "@/components/icons";
 

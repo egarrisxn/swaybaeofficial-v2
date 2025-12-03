@@ -2,8 +2,8 @@
 
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
-import { useImage } from "@/hooks/use-user-image";
-import { useName } from "@/hooks/use-user-name";
+import { useImage } from "@/hooks/use-user/image";
+import { useName } from "@/hooks/use-user/name";
 
 export default function UserAvatar() {
   const usersName = useName();

@@ -1,6 +1,11 @@
-import { CheckCircle, Clock, Zap, ExternalLinkIcon } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import {
+  CheckCircleIcon,
+  ClockIcon,
+  ZapIcon,
+  ExternalLinkIcon,
+} from "@/components/icons";
 
 import { subathonGoals, subathonStats } from "@/lib/subathon";
 
@@ -23,7 +28,7 @@ export function GoalsList() {
         <div className='space-y-4'>
           <div className='flex items-center gap-3'>
             <div className='rounded-full bg-primary p-1.5'>
-              <Clock className='size-4 text-success-foreground' />
+              <ClockIcon className='size-4 text-success-foreground' />
             </div>
             <h3 className='text-xl font-medium tracking-tight md:text-2xl lg:text-3xl'>
               Upcoming Goals
@@ -48,7 +53,7 @@ export function GoalsList() {
                         {goal.points.toLocaleString()} pts
                       </Badge>
                       <Badge className='shrink-0 bg-primary text-success-foreground'>
-                        <Clock className='mr-1 size-3' />
+                        <ClockIcon className='mr-1 size-3' />
                         Locked
                       </Badge>
                     </div>
@@ -95,7 +100,7 @@ export function GoalsList() {
           <div className='space-y-4'>
             <div className='flex items-center gap-3'>
               <div className='rounded-full bg-success p-1.5'>
-                <CheckCircle className='size-4 text-success-foreground' />
+                <CheckCircleIcon className='size-4 text-success-foreground' />
               </div>
               <h3 className='text-xl font-medium tracking-tight md:text-2xl lg:text-3xl'>
                 Completed Goals
@@ -117,7 +122,7 @@ export function GoalsList() {
                         {goal.points.toLocaleString()} pts
                       </Badge>
                       <Badge className='shrink-0 bg-success text-success-foreground'>
-                        <CheckCircle className='mr-1 size-3' />
+                        <CheckCircleIcon className='mr-1 size-3' />
                         Complete
                       </Badge>
                     </div>
@@ -168,7 +173,7 @@ export function PointSystem() {
       <div className='space-y-6'>
         <div className='flex items-center gap-3'>
           <div className='rounded-full bg-primary p-2.5'>
-            <Zap className='size-5 text-primary-foreground' />
+            <ZapIcon className='size-5 text-primary-foreground' />
           </div>
           <h2 className='text-xl font-medium tracking-tight md:text-2xl lg:text-3xl'>
             How Points Work

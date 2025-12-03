@@ -58,7 +58,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       lastModified: now,
     },
     {
-      url: `${SITE_URL}/subathon`,
+      url: `${SITE_URL}/subathon/2024`,
+      lastModified: now,
+    },
+    {
+      url: `${SITE_URL}/subathon/2025`,
       lastModified: now,
     },
     {

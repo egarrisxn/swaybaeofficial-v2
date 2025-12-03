@@ -1,24 +1,23 @@
 import type { Metadata } from "next";
 import {
-  SubathonHeader,
+  SubathonHeader25,
   ProgressOverview,
   GoalsList,
   PointSystem,
   RecurringGoals,
   EventStats,
   SubathonSendoff,
-} from "@/components/subathon";
+} from "@/components/subathon/2025";
 
 export const metadata: Metadata = {
-  title: "Subathon!",
-  description:
-    "Celebrate Sway Bae's Subathon! Join the community for jammed packed set of streams, exclusive content, and fun rewards for subscribers.",
+  title: "Subathon 2025!",
+  description: "A recap of the 2025 Subathon!",
 };
 
-export default function SubathonPage() {
+export default function Subathon2025Page() {
   return (
     <section>
-      <SubathonHeader />
+      <SubathonHeader25 />
       <div className='mx-auto max-w-7xl space-y-16 px-6'>
         <ProgressOverview />
         <GoalsList />

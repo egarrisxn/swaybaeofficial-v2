@@ -1,7 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { RefreshCwIcon } from "lucide-react";
+import { RefreshCwIcon } from "@/components/icons";
 
 interface CalendarErrorProps {
   errorMessage?: string;

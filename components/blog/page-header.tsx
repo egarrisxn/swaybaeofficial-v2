@@ -1,7 +1,7 @@
 // import type { ReactNode } from "react";
 // import { Link } from "next-view-transitions";
-// import { ArrowLeftIcon } from "@/components/icons";
 // import SearchBar from "@/components/blog/search-bar";
+// import { ArrowLeftIcon } from "@/components/icons";
 
 // interface PageHeaderProps {
 //   id: string;

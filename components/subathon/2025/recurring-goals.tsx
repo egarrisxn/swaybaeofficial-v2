@@ -1,6 +1,6 @@
-import { Repeat } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { RepeatIcon } from "@/components/icons";
 
 export function RecurringGoals() {
   return (
@@ -8,7 +8,7 @@ export function RecurringGoals() {
       <div className='space-y-6'>
         <div className='flex items-center gap-3'>
           <div className='rounded-full bg-accent p-2'>
-            <Repeat className='size-5 text-accent-foreground' />
+            <RepeatIcon className='size-5 text-accent-foreground' />
           </div>
           <h2 className='text-xl font-medium tracking-tight md:text-2xl lg:text-3xl'>
             Recurring Goals

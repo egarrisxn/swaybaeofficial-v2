@@ -8,9 +8,9 @@ import {
   PopoverTrigger,
   PopoverContent,
 } from "@/components/ui/popover";
-import { DropdownToggle } from "@/components/nav/dropdown-toggle";
+import { DropdownToggle } from "@/components/navbar/dropdown-toggle";
 
-import { navLinks } from "@/lib/constants";
+import { mobileNavLinks } from "@/lib/constants";
 
 export function MobileMenu() {
   const pathname = usePathname();
@@ -29,7 +29,7 @@ export function MobileMenu() {
           className='inset-0 mt-3 h-screen w-screen max-w-none rounded-none border-none bg-background p-6'
         >
           <div className='flex flex-col gap-6'>
-            {navLinks.map((link, index) => (
+            {mobileNavLinks.map((link, index) => (
               <div key={index} className='w-full text-lg font-medium'>
                 {link.external ? (
                   <a
