@@ -26,7 +26,7 @@ export function LandingFooter() {
               <section className='flex w-full flex-col justify-between pb-4 md:mx-auto md:items-center md:pb-6 lg:w-[35%] lg:items-start lg:pb-0'>
                 <Link
                   href='/'
-                  className='--tracking-widest text-6xl font-black text-primary text-shadow-black text-shadow-sm md:mb-5'
+                  className='text-6xl leading-none font-black -tracking-widest text-primary text-shadow-black/50 text-shadow-sm md:mb-5'
                 >
                   Sway Bae
                 </Link>

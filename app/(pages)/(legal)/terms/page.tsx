@@ -1,8 +1,14 @@
+import type { Metadata } from "next";
 import LastUpdated from "@/components/shared/last-updated";
 import ReusableList from "@/components/shared/reusable-list";
 import ContactMeSnippet from "@/components/shared/contact-me-snippet";
 
 import type { ExtendedList } from "@/types";
+
+export const metadata: Metadata = {
+  title: "Terms",
+  description: "Terms of service page for Sway Bae Official.",
+};
 
 export const termsOfServiceList: ExtendedList[] = [
   {

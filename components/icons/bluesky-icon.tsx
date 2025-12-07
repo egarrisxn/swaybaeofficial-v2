@@ -1,11 +1,6 @@
 import type { Icon } from "@/types";
 
-const BlueskyIcon = ({
-  className = "",
-  width = "24",
-  height = "24",
-  strokeWidth = "2",
-}: Icon) => {
+const BlueskyIcon = ({ className = "", width = "24", height = "24" }: Icon) => {
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'
@@ -14,7 +9,7 @@ const BlueskyIcon = ({
       stroke='currentColor'
       strokeLinecap='round'
       strokeLinejoin='round'
-      strokeWidth={strokeWidth}
+      strokeWidth={2}
       width={width}
       height={height}
       className={className}

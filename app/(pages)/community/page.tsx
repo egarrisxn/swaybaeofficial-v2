@@ -1,4 +1,10 @@
+import type { Metadata } from "next";
 import ComingSoon from "@/components/shared/coming-soon";
+
+export const metadata: Metadata = {
+  title: "Community",
+  description: "Community page coming soon.",
+};
 
 export default function CommunityPage() {
   return <ComingSoon />;

@@ -27,11 +27,11 @@ export default function YouTubeSection() {
             </span>
             <h2
               id='youtube-heading'
-              className='font-serif text-3xl font-bold tracking-tight text-shadow-lg sm:text-4xl sm:leading-none 2xl:text-6xl'
+              className='font-serif text-3xl font-bold tracking-tight text-shadow-lg sm:text-4xl sm:leading-none lg:text-5xl 2xl:text-6xl'
             >
               {youTubeText.heading}
             </h2>
-            <p className='max-w-xl font-light text-muted-foreground sm:text-lg sm:leading-snug 2xl:text-2xl'>
+            <p className='max-w-xl font-light text-muted-foreground sm:text-lg sm:leading-snug lg:text-xl 2xl:text-[1.35rem] 2xl:leading-snug'>
               {youTubeText.body}
             </p>
             <a
@@ -47,8 +47,8 @@ export default function YouTubeSection() {
           </div>
           <div className='order-2 mx-auto w-full max-w-2xl lg:order-1 4xl:w-[40%]'>
             <Video
-              videoAnimationStyle='from-center'
               videoSrc='https://www.youtube-nocookie.com/embed/LJtxzJ6S_hE'
+              reducedMotionThumbnailSrc='/images/sway-youtube-reduced.avif'
               thumbnailSrc='/images/sway-youtube.webp'
               thumbnailAlt='Featured YouTube video'
             />

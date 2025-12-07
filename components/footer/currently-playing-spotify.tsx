@@ -30,7 +30,7 @@ function Record({ albumImageUrl, isPlaying }: RecordProps) {
       viewBox='0 0 180 180'
       fill='none'
       xmlns='http://www.w3.org/2000/svg'
-      className={isPlaying ? "animate-spin-slow" : ""}
+      className={isPlaying ? "motion-safe:animate-spin-slow" : ""}
     >
       <circle cx='90' cy='90' r='90' fill='#3C3C3F' />
       <image
@@ -110,7 +110,7 @@ function CurrentlyPlayingClient({ track }: { track: Spotify | null }) {
             <span className='font-semibold'>{currentTrack.albumName}</span>
           </p>
 
-          <div className='pointer-events-none absolute -bottom-8 left-1/2 -translate-x-1/2 transition-all duration-300 group-hover:-bottom-1 xl:left-[30%]'>
+          <div className='pointer-events-none absolute -bottom-8 left-1/2 -translate-x-1/2 transition-all duration-300 motion-safe:group-hover:-bottom-1 xl:left-[30%]'>
             <Record
               albumImageUrl={currentTrack.albumImageUrl}
               isPlaying={isCurrentlyPlaying}

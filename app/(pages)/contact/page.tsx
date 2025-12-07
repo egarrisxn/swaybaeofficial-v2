@@ -1,6 +1,10 @@
-"use client";
-
+import type { Metadata } from "next";
 import { UserContactForm } from "@/components/resend/user-contact-form";
+
+export const metadata: Metadata = {
+  title: "Contact",
+  description: "Get in contact with Sway Bae and The Bae Squad here!",
+};
 
 export default function ContactPage() {
   return (

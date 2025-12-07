@@ -13,7 +13,7 @@ export function ScrollDownButton({ targetId }: TargetId) {
     <button
       type='button'
       onClick={() => scrollTo(targetId)}
-      className='absolute bottom-5 left-1/2 z-30 -translate-x-1/2 animate-bounce cursor-pointer rounded-full p-3 transition-transform hover:scale-110'
+      className='absolute bottom-5 left-1/2 z-30 -translate-x-1/2 cursor-pointer rounded-full p-3 transition-transform hover:scale-110 motion-safe:animate-bounce'
       aria-label='Scroll down'
     >
       <ArrowDownIcon className='size-8 text-white' />

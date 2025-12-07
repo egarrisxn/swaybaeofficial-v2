@@ -30,7 +30,7 @@ export default function PhotosSection() {
               <BlurItem key={src} delay={0.25 + idx * 0.05}>
                 <div className='group relative mb-4 overflow-hidden rounded-lg border shadow-lg md:mb-6'>
                   <Image
-                    className='size-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-105'
+                    className='size-full object-cover transition-transform duration-300 ease-in-out motion-safe:group-hover:scale-105'
                     src={src}
                     alt={`Public photo ${idx + 1}`}
                     width={800}

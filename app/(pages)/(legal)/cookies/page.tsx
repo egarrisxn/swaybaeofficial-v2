@@ -1,7 +1,13 @@
+import type { Metadata } from "next";
 import LastUpdated from "@/components/shared/last-updated";
 import ContactMeSnippet from "@/components/shared/contact-me-snippet";
 
 import type { List } from "@/types";
+
+export const metadata: Metadata = {
+  title: "Cookies",
+  description: "Cookies page for Sway Bae Official.",
+};
 
 const cookieData: List[] = [
   {

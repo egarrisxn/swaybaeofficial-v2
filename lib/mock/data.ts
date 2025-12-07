@@ -104,14 +104,14 @@ export const mockYouTubeFeed: YouTubeVideo[] = [
     title: "clean with an APM pirates in #hearthstonebattlegrounds",
     url: "https://www.youtube.com/watch?v=Kb94KnS1pb8",
     published_at: "2025-09-26T00:00:00Z",
-    thumbnail_url: "/mock/1.webp",
+    thumbnail_url: "/images/sway-mock-youtube.webp",
   },
   {
     post_id: "7hvl-nN5JOg",
     title: "Deathrattle Demons Dominate Again! #hearthstonebattlegrounds",
     url: "https://www.youtube.com/watch?v=7hvl-nN5JOg",
     published_at: "2025-09-24T00:00:00Z",
-    thumbnail_url: "/mock/2.webp",
+    thumbnail_url: "/images/sway-mock-youtube.webp",
   },
   {
     post_id: "0P08qRNYF2M",
@@ -119,7 +119,7 @@ export const mockYouTubeFeed: YouTubeVideo[] = [
       "Eudora Deathrattle build has INSANE scaling! #hearthstonebattlegrounds",
     url: "https://www.youtube.com/watch?v=0P08qRNYF2M",
     published_at: "2025-09-19T00:00:00Z",
-    thumbnail_url: "/mock/3.webp",
+    thumbnail_url: "/images/sway-mock-youtube.webp",
   },
 ];
 

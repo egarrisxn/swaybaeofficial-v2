@@ -8,22 +8,22 @@ export function SocialCard({ title, username, href, Icon }: Socials) {
       rel='noopener noreferrer'
       target='_blank'
     >
-      <div className='absolute inset-0 translate-y-full bg-linear-to-r from-pink-600 to-purple-600 transition-transform duration-300 group-hover:translate-y-[0%]' />
+      <div className='absolute inset-0 translate-y-full bg-linear-to-r from-pink-600 to-purple-600 transition-transform duration-300 motion-safe:group-hover:translate-y-[0%]' />
       <Icon
         width={144}
         height={144}
-        className='absolute -top-12 -right-12 z-0 stroke-slate-600 stroke-2 text-9xl text-slate-100 opacity-50 transition-transform duration-300 group-hover:rotate-12 group-hover:stroke-violet-400 group-hover:opacity-100'
+        className='absolute -top-12 -right-12 z-0 stroke-slate-600 stroke-2 text-9xl text-slate-100 opacity-50 transition-transform duration-300 motion-safe:group-hover:rotate-12 motion-safe:group-hover:stroke-violet-400 motion-safe:group-hover:opacity-100'
       />
       <Icon
         width={24}
         height={24}
-        className='relative z-10 mb-2 text-xl text-violet-600 transition-colors duration-300 group-hover:text-white'
+        className='relative z-10 mb-2 text-xl text-violet-600 transition-colors duration-300 motion-safe:group-hover:text-white'
       />
-      <div className='relative z-10 text-sm font-medium text-slate-950 duration-300 group-hover:text-white sm:text-base'>
+      <div className='relative z-10 text-sm font-medium text-slate-950 duration-300 motion-safe:group-hover:text-white sm:text-base'>
         {title}
       </div>
       {username && (
-        <p className='relative z-10 text-xs text-slate-400 duration-300 group-hover:text-violet-200 sm:text-sm'>
+        <p className='relative z-10 text-xs text-slate-400 duration-300 motion-safe:group-hover:text-violet-200 sm:text-sm'>
           {username}
         </p>
       )}

@@ -1,6 +1,12 @@
+import type { Metadata } from "next";
 import ComingSoon from "@/components/shared/coming-soon";
 
-export default function TagtPage() {
+export const metadata: Metadata = {
+  title: "Tag",
+  description: "Blog Tag page coming soon.",
+};
+
+export default function TagPage() {
   return <ComingSoon />;
 }
 

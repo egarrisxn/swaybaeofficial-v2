@@ -1,5 +1,11 @@
+import type { Metadata } from "next";
 import LastUpdated from "@/components/shared/last-updated";
 import ContactMeSnippet from "@/components/shared/contact-me-snippet";
+
+export const metadata: Metadata = {
+  title: "Accessibility",
+  description: "Accessibility page for Sway Bae Official.",
+};
 
 export default function AccessibilityPage() {
   return (

@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import {
   Accordion,
   AccordionContent,
@@ -6,6 +7,11 @@ import {
 } from "@/components/ui/accordion";
 
 import type { List } from "@/types";
+
+export const metadata: Metadata = {
+  title: "FAQ",
+  description: "Frequently Asked Questions for Swa Bae and The Bae Squad!",
+};
 
 export const faqList: List[] = [
   {
@@ -62,7 +68,6 @@ export default function FAQPage() {
             Find an answer to the most common questions I get asked.
           </p>
         </div>
-
         <div>
           <Accordion
             defaultValue='item-0'

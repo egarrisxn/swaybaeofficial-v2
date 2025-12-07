@@ -24,7 +24,7 @@ export default function MerchSection() {
           </span>
           <h2
             id='merch-heading'
-            className='max-w-sm font-serif text-3xl font-bold tracking-tight text-shadow-lg sm:text-3xl sm:leading-none lg:max-w-none lg:text-5xl 2xl:text-6xl'
+            className='max-w-sm font-serif text-3xl font-bold tracking-tight text-shadow-lg sm:text-4xl sm:leading-none lg:max-w-none lg:text-5xl 2xl:text-6xl'
           >
             {merchText.heading}
           </h2>

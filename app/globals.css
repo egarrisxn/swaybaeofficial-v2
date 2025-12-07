@@ -144,12 +144,21 @@
   --container-12xl: 110rem;
   --container-13xl: 120rem;
 
+  --animate-hero-pop: heroPop 0.5s ease-out forwards;
   --animate-spin-slow: spin 14s linear infinite;
   --animate-accordion-down: accordionDown 0.2s ease-out;
   --animate-accordion-up: accordionUp 0.2s ease-out;
   --animate-marquee: marquee var(--duration) linear infinite;
   --animate-marquee-vertical: marqueeVertical var(--duration) linear infinite;
 
+  @keyframes heroPop {
+    from {
+      transform: scale(0.5);
+    }
+    to {
+      transform: scale(1);
+    }
+  }
   @keyframes spin {
     to {
       transform: rotate(360deg);

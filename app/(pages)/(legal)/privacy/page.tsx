@@ -1,9 +1,15 @@
+import type { Metadata } from "next";
 import { Link } from "next-view-transitions";
 import LastUpdated from "@/components/shared/last-updated";
 import ReusableList from "@/components/shared/reusable-list";
 import ContactMeSnippet from "@/components/shared/contact-me-snippet";
 
 import type { List } from "@/types";
+
+export const metadata: Metadata = {
+  title: "Privacy",
+  description: "Privacy Policy page for Sway Bae Official.",
+};
 
 export const privacyGeneralInfo: List[] = [
   {

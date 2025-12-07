@@ -16,7 +16,6 @@ const merchCards: Merch[] = [
     title: "School of Math Sweatshirt",
     src: "/merch/sweatshirt.webp",
   },
-
   {
     id: "Pog Bottle",
     title: "Pog Bottle",
@@ -57,11 +56,34 @@ const merchCards: Merch[] = [
 export function MerchCards() {
   const [stack, setStack] = useState(merchCards);
   const [isSwiping, setIsSwiping] = useState(false);
+  const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
   const autoSwipeTimeout = useRef<ReturnType<typeof setInterval> | null>(null);
+
+  // Detect prefers-reduced-motion
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+
+    const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+    const updatePreference = (event: MediaQueryList | MediaQueryListEvent) => {
+      setPrefersReducedMotion("matches" in event ? event.matches : false);
+    };
+
+    // Initial value
+    updatePreference(mediaQuery);
+
+    // Listen for changes
+    const handleChange = (event: MediaQueryListEvent) => {
+      updatePreference(event);
+    };
+
+    mediaQuery.addEventListener("change", handleChange);
+    return () => mediaQuery.removeEventListener("change", handleChange);
+  }, []);
 
   const handleSwipeComplete = useCallback(
     (direction: "left" | "right") => {
-      if (isSwiping) return;
+      if (isSwiping) return; // allow manual swipe even when reduced motion
       setIsSwiping(true);
 
       setStack((prev) => {
@@ -77,20 +99,25 @@ export function MerchCards() {
     [isSwiping]
   );
 
+  // Auto-swipe only if NOT reduced motion
   useEffect(() => {
+    if (prefersReducedMotion) return;
+
     autoSwipeTimeout.current = setInterval(
       () => handleSwipeComplete("left"),
       4000
     );
+
     return () => {
       if (autoSwipeTimeout.current) clearInterval(autoSwipeTimeout.current);
     };
-  }, [handleSwipeComplete]);
+  }, [handleSwipeComplete, prefersReducedMotion]);
 
   return (
-    <div className='lg:h- relative h-90 w-72 sm:h-120 sm:w-96 xl:h-150 xl:w-120'>
+    <div className='relative h-90 w-72 sm:h-120 sm:w-96 xl:h-150 xl:w-120'>
       {stack.map((card, index) => {
         const isTopCard = index === 0;
+
         return (
           <motion.div
             key={card.id}
@@ -117,7 +144,7 @@ export function MerchCards() {
           >
             <div className='relative flex-1'>
               <Image
-                src={card.src || "/other/image-not-found.png"}
+                src={card.src || "/merch/image-not-found.png"}
                 alt={card.title}
                 fill
                 className='pointer-events-none object-cover'
