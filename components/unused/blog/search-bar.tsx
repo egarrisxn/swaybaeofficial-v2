@@ -1,14 +1,12 @@
 // "use client";
 
-// import { Link } from "next-view-transitions";
+// import Link from "next/link";
 // import { useSearchParams, usePathname, useRouter } from "next/navigation";
 // import { useState, useEffect, ChangeEvent } from "react";
 // import { useDebouncedCallback } from "use-debounce";
 // import { SearchIcon } from "@/components/icons";
-
 // import { searchQuery } from "@/lib/sanity/queries";
 // import { client } from "@/lib/sanity/client";
-
 // import type { SearchResult } from "@/types";
 
 // interface SearchBarProps {

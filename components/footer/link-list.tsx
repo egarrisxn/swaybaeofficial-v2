@@ -1,5 +1,4 @@
-import { Link } from "next-view-transitions";
-
+import Link from "next/link";
 import type { HyperLink } from "@/types";
 
 interface LinkListProps {

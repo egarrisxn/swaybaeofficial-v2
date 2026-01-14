@@ -1,4 +1,4 @@
-import { Link } from "next-view-transitions";
+import Link from "next/link";
 import { UserContactForm } from "@/components/resend/user-contact-form";
 import {
   MailsIcon,
@@ -6,7 +6,6 @@ import {
   MessageCircleIcon,
   TvPlayIcon,
 } from "@/components/icons";
-
 import type { TextBlurb, HyperLink, IconComponent } from "@/types";
 
 export const contactText: TextBlurb = {

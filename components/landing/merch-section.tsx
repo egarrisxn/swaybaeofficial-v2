@@ -1,6 +1,5 @@
 import { Button } from "@/components/ui/button";
 import { MerchCards } from "@/components/shared/merch-cards";
-
 import type { TextBlurb } from "@/types";
 
 export const merchText: TextBlurb = {

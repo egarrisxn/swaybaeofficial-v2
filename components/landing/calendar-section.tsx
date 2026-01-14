@@ -1,7 +1,6 @@
-import { Link } from "next-view-transitions";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { LandingCalendar } from "@/components/calendar/landing-calendar";
-
 import type { TextBlurb } from "@/types";
 
 export const calendarText: TextBlurb = {

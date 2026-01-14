@@ -1,8 +1,7 @@
 import type { ReactNode } from "react";
-import { Link } from "next-view-transitions";
+import Link from "next/link";
 import { getNowPlayingItem } from "@/app/actions/spotify";
 import { mockSpotifyNowPlaying } from "@/lib/mock/data";
-
 import type { Spotify } from "@/types/spotify";
 
 const favorite: Spotify = {

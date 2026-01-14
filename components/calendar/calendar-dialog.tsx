@@ -10,7 +10,6 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { ClockIcon, ExternalLinkIcon } from "@/components/icons";
-
 import { cn } from "@/lib/utils";
 import { formatEventTime, getEventLabelColor } from "@/lib/calendar";
 
@@ -31,7 +30,7 @@ export function CalendarDialog({
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className='flex flex-col justify-between gap-8 rounded-2xl border border-border/50 p-3 shadow-xl sm:max-w-[420px]'>
+      <DialogContent className='flex flex-col justify-between gap-8 rounded-2xl border border-border/50 p-3 shadow-xl sm:max-w-105'>
         <Badge
           className={cn(
             "w-fit rounded-full px-3 py-1 text-xs font-medium tracking-wide shadow-sm",

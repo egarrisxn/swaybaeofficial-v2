@@ -1,5 +1,4 @@
 import { Card } from "@/components/ui/card";
-
 import { subathonGoals, subathonStats } from "@/lib/subathon";
 
 export function ProgressOverview() {

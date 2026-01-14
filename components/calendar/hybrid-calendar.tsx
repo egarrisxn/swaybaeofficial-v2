@@ -14,7 +14,6 @@ import { CalendarGrid } from "@/components/calendar/calendar-grid";
 import { CalendarList } from "@/components/calendar/calendar-list";
 import { CalendarSubscribe } from "@/components/calendar/calendar-subscribe";
 import { ChevronLeftIcon, ChevronRightIcon } from "@/components/icons";
-
 import { useCalendar } from "@/hooks/use-calendar";
 import { useMediaQuery } from "@/hooks/use-media-query";
 

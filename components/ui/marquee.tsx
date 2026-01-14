@@ -40,7 +40,7 @@ function Marquee({
               : "animate-marquee flex-row",
             {
               "group-hover:paused": pauseOnHover,
-              "[animation-direction:reverse]": reverse,
+              "direction-[reverse]": reverse,
             }
           )}
         >

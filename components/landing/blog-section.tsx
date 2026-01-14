@@ -1,7 +1,6 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { ArrowRightIcon } from "@/components/icons";
-
 import type { TextBlurb } from "@/types";
 
 const blogText: TextBlurb = {

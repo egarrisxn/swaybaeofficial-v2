@@ -2,7 +2,6 @@
 
 import type { ReactElement } from "react";
 import { Resend } from "resend";
-
 import { createClient } from "@/lib/supabase/server";
 import { ContactSchema, NewsletterSchema } from "@/lib/resend/schemas";
 import {
@@ -11,7 +10,6 @@ import {
   WelcomeNewsletterTemplate,
 } from "@/lib/resend/templates";
 import { simulateMockAction } from "@/lib/mock/actions";
-
 import type { ActionState, ActionResult } from "@/types";
 
 const RESEND = new Resend(process.env.RESEND_API_KEY);

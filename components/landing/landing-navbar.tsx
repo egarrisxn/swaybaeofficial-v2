@@ -1,10 +1,9 @@
 "use client";
 
-import { Link } from "next-view-transitions";
+import Link from "next/link";
 import { MobileMenu } from "@/components/navbar/mobile-menu";
 import { ThemeToggle } from "@/components/navbar/theme-toggle";
 import { DesktopMenu } from "@/components/navbar/desktop-menu";
-
 import { useScrollVisibility } from "@/hooks/use-scroll-visibility";
 
 export function LandingNavbar() {

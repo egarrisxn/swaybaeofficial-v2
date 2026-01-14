@@ -8,7 +8,6 @@ import {
   TwitterIcon,
   YoutubeIcon,
 } from "@/components/icons";
-
 import type { HyperLink, Socials } from "@/types";
 
 // Calendar

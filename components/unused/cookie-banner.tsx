@@ -1,7 +1,6 @@
 // "use client";
 
 // import { Button } from "@/components/ui/button";
-
 // import { useCookies } from "@/hooks/use-cookies";
 
 // export function CookieBanner() {

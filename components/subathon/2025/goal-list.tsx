@@ -6,7 +6,6 @@ import {
   ZapIcon,
   ExternalLinkIcon,
 } from "@/components/icons";
-
 import { subathonGoals, subathonStats } from "@/lib/subathon";
 
 export function GoalsList() {

@@ -8,9 +8,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-
 import { sendContactMessage } from "@/app/actions/resend";
-
 import type { ActionState } from "@/types";
 
 function FieldError({ id, errors }: { id: string; errors?: string[] }) {

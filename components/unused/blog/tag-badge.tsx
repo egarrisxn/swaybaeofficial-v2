@@ -1,6 +1,5 @@
-// import { Link } from "next-view-transitions";
+// import Link from "next/link";
 // import { Badge } from "@/components/ui/badge";
-
 // import type { Tag } from "@/types";
 
 // interface TagBadgeProps {

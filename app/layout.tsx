@@ -1,13 +1,13 @@
 import type { ReactNode } from "react";
 import type { Metadata, Viewport } from "next";
 import { Poppins, Fira_Sans } from "next/font/google";
-import { ViewTransitions } from "next-view-transitions";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Toaster } from "@/components/ui/sonner";
 import { ThemeProvider } from "@/components/theme-provider";
 import "./globals.css";
 
+// import { ViewTransitions } from "next-view-transitions";
 // import { CookieBanner } from "@/components/cookie-banner";
 // import Script from "next/script";
 
@@ -106,10 +106,10 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <ViewTransitions>
-      <html lang='en' suppressHydrationWarning>
-        <head>
-          {/* <Script
+    // <ViewTransitions>
+    <html lang='en' suppressHydrationWarning>
+      <head>
+        {/* <Script
             id='gtag-init'
             strategy='afterInteractive'
             dangerouslySetInnerHTML={{
@@ -124,24 +124,24 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             `,
             }}
           /> */}
-        </head>
-        <body
-          className={`${poppins.variable} ${firaSans.variable} font-sans antialiased`}
+      </head>
+      <body
+        className={`${poppins.variable} ${firaSans.variable} font-sans antialiased`}
+      >
+        <ThemeProvider
+          attribute='class'
+          defaultTheme='system'
+          enableSystem
+          disableTransitionOnChange
         >
-          <ThemeProvider
-            attribute='class'
-            defaultTheme='system'
-            enableSystem
-            disableTransitionOnChange
-          >
-            {children}
-            {/* <CookieBanner /> */}
-            <Toaster richColors position='bottom-center' />
-          </ThemeProvider>
-          <Analytics />
-          <SpeedInsights />
-        </body>
-      </html>
-    </ViewTransitions>
+          {children}
+          {/* <CookieBanner /> */}
+          <Toaster richColors position='bottom-center' />
+        </ThemeProvider>
+        <Analytics />
+        <SpeedInsights />
+      </body>
+    </html>
+    // </ViewTransitions>
   );
 }

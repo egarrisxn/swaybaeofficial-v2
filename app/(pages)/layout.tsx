@@ -1,12 +1,11 @@
 import type { ReactNode } from "react";
-import { Link } from "next-view-transitions";
+import Link from "next/link";
 import { MobileMenu } from "@/components/navbar/mobile-menu";
 import { ThemeToggle } from "@/components/navbar/theme-toggle";
 import { DesktopMenu } from "@/components/navbar/desktop-menu";
 import { CopyrightText } from "@/components/footer/copyright-text";
 import { LinkRenderer } from "@/components/footer/link-renderer";
 import { TooltipSocialIcon } from "@/components/shared/tooltip-social-icon";
-
 import { socialData, sharedLinks } from "@/lib/constants";
 
 export default function PagesLayout({ children }: { children: ReactNode }) {

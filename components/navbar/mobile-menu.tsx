@@ -2,13 +2,12 @@
 
 import { useState } from "react";
 import { usePathname } from "next/navigation";
-import { Link } from "next-view-transitions";
+import Link from "next/link";
 import {
   Popover,
   PopoverTrigger,
   PopoverContent,
 } from "@/components/ui/popover";
-
 import { mobileNavLinks } from "@/lib/constants";
 
 export function MobileMenu() {

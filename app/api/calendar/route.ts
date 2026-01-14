@@ -1,6 +1,5 @@
 import { type NextRequest, NextResponse } from "next/server";
 import { headers } from "next/headers";
-
 import { getGoogleCalendarEvents } from "@/lib/calendar";
 
 export async function GET(request: NextRequest) {

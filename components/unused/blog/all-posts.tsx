@@ -3,7 +3,6 @@
 // import { useState } from "react";
 // import { Button } from "@/components/ui/button";
 // import { PostCard } from "@/components/blog/post-card";
-
 // import type { Post } from "@/types";
 
 // interface AllPostsProps {

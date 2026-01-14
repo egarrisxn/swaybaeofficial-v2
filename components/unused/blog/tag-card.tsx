@@ -1,11 +1,9 @@
-// import { Link } from "next-view-transitions";
+// import Link from "next/link";
 // import Image from "next/image";
 // import { Card } from "@/components/ui/card";
 // import DateBadge from "@/components/blog/date-badge";
 // import { ArrowRightIcon } from "@/components/icons";
-
 // import { urlFor } from "@/lib/sanity/client";
-
 // import type { Post } from "@/types";
 
 // interface TagCardProps {

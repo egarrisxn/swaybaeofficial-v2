@@ -4,9 +4,7 @@ import { useActionState, useEffect, useRef } from "react";
 import { toast } from "sonner";
 import { Input } from "@/components/ui/input";
 import { AnimatedSendIcon } from "@/components/icons";
-
 import { subscribeToNewsletter } from "@/app/actions/resend";
-
 import type { ActionState } from "@/types";
 
 function FieldMessage({ id, errors }: { id: string; errors?: string[] }) {

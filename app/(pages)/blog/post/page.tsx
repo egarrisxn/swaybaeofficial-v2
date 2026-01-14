@@ -11,7 +11,7 @@ export default function PostPage() {
 }
 
 // import Image from "next/image";
-// import { Link } from "next-view-transitions";
+// import Link from "next/link";
 // import { notFound } from "next/navigation";
 // import { ArrowLeftIcon } from "@/components/icons";
 // import { TableOfContents } from "@/components/blog/table-of-content";

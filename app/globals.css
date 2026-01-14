@@ -46,6 +46,173 @@
     0px 8px 10px -1px oklch(0.83 0.09 247.96 / 0.1);
   --shadow-2xl: 0px 2px 5px 0px oklch(0.83 0.09 247.96 / 0.25);
   --radius: 0.75rem;
+
+  /* ===============================
+     Button shadows (moved from TS)
+     =============================== */
+
+  /* LIGHT (used by variant: "light") */
+  --btn-shadow-light-base:
+    inset -4px -4px 6px rgba(255, 255, 255, 0.7),
+    inset 0px 1px 2px rgba(220, 220, 220, 0.6),
+    inset 4px -4px 6px rgba(240, 240, 240, 0.6),
+    0px 4px 12px rgba(200, 200, 200, 0.25),
+    inset 0px 2px 3px rgba(230, 230, 230, 0.5),
+    inset 0px 3px 6px rgba(180, 180, 180, 0.35);
+
+  --btn-shadow-light-hover:
+    inset -3px -3px 4px rgba(255, 255, 255, 0.75),
+    inset 0px 1px 2px rgba(220, 220, 220, 0.65),
+    inset 3px -3px 4px rgba(240, 240, 240, 0.65),
+    0px 3px 10px rgba(200, 200, 200, 0.3),
+    inset 0px 2px 3px rgba(230, 230, 230, 0.55),
+    inset 0px 3px 6px rgba(180, 180, 180, 0.4);
+
+  --btn-shadow-light-active:
+    inset -2px -2px 2px rgba(255, 255, 255, 0.6),
+    inset 0px 1px 2px rgba(220, 220, 220, 0.5),
+    inset 2px -2px 2px rgba(240, 240, 240, 0.6),
+    0px 2px 6px rgba(200, 200, 200, 0.2),
+    inset 0px 2px 3px rgba(230, 230, 230, 0.5),
+    inset 0px 3px 6px rgba(180, 180, 180, 0.35);
+
+  /* LIGHT variant but when you are in .dark mode (your old shadows.light.dark*) */
+  --btn-shadow-light-dark-base:
+    inset -3px -4px 6px rgba(0, 0, 0, 0.6),
+    inset 0px 1px 2px rgba(20, 20, 20, 0.6),
+    inset 3px -4px 6px rgba(50, 50, 50, 0.5), 0px 4px 12px rgba(0, 0, 0, 0.25),
+    inset 0px 2px 3px rgba(30, 30, 30, 0.5),
+    inset 0px 3px 6px rgba(60, 60, 60, 0.35);
+
+  --btn-shadow-light-dark-hover:
+    inset -3px -3px 4px rgba(0, 0, 0, 0.65),
+    inset 0px 1px 2px rgba(20, 20, 20, 0.65),
+    inset 3px -3px 4px rgba(50, 50, 50, 0.55), 0px 3px 10px rgba(0, 0, 0, 0.3),
+    inset 0px 2px 3px rgba(30, 30, 30, 0.55),
+    inset 0px 3px 6px rgba(60, 60, 60, 0.4);
+
+  --btn-shadow-light-dark-active:
+    inset -2px -2px 2px rgba(0, 0, 0, 0.5),
+    inset 0px 1px 2px rgba(20, 20, 20, 0.55),
+    inset 2px -2px 2px rgba(50, 50, 50, 0.5), 0px 2px 6px rgba(0, 0, 0, 0.2),
+    inset 0px 2px 3px rgba(30, 30, 30, 0.5),
+    inset 0px 3px 6px rgba(60, 60, 60, 0.35);
+
+  /* DARK (variant: "dark" + also used by contrast base) */
+  --btn-shadow-dark-base:
+    inset -4px -4px 4px rgba(0, 0, 16, 0.2),
+    inset 0px 1px 2px rgba(0, 0, 16, 0.7),
+    inset 4px -4px 4px rgba(0, 0, 16, 0.2), 0px 4px 10px rgba(0, 0, 16, 0.16),
+    inset 0px 2px 3px rgba(0, 0, 16, 0.2),
+    inset 0px 3px 6px rgba(255, 255, 255, 0.32);
+
+  --btn-shadow-dark-hover:
+    inset -2px -2px 3px rgba(0, 0, 16, 0.25),
+    inset 0px 1px 2px rgba(0, 0, 16, 0.7),
+    inset 2px -2px 3px rgba(0, 0, 16, 0.25), 0px 3px 8px rgba(0, 0, 16, 0.2),
+    inset 0px 2px 3px rgba(0, 0, 16, 0.25),
+    inset 0px 3px 6px rgba(255, 255, 255, 0.3);
+
+  --btn-shadow-dark-active:
+    inset -2px -2px 2px rgba(0, 0, 16, 0.2),
+    inset 0px 1px 2px rgba(0, 0, 16, 0.6),
+    inset 2px -2px 2px rgba(0, 0, 16, 0.2), 0px 2px 5px rgba(0, 0, 16, 0.16),
+    inset 0px 2px 3px rgba(0, 0, 16, 0.2),
+    inset 0px 3px 6px rgba(255, 255, 255, 0.25);
+
+  /* BLUE (variant: "blue") */
+  --btn-shadow-blue-base:
+    inset -4px -4px 6px rgba(0, 160, 255, 0.6),
+    inset 0px 1px 2px rgba(0, 128, 255, 0.35),
+    inset 4px -4px 6px rgba(0, 200, 255, 0.5),
+    0px 4px 12px rgba(0, 160, 255, 0.25),
+    inset 0px 2px 3px rgba(0, 160, 255, 0.35),
+    inset 0px 3px 6px rgba(0, 128, 200, 0.4);
+
+  --btn-shadow-blue-hover:
+    inset -3px -3px 4px rgba(0, 160, 255, 0.65),
+    inset 0px 1px 2px rgba(0, 128, 255, 0.4),
+    inset 3px -3px 4px rgba(0, 200, 255, 0.55),
+    0px 3px 10px rgba(0, 160, 255, 0.3),
+    inset 0px 2px 3px rgba(0, 160, 255, 0.4),
+    inset 0px 3px 6px rgba(0, 128, 200, 0.45);
+
+  --btn-shadow-blue-active:
+    inset -2px -2px 2px rgba(0, 160, 255, 0.5),
+    inset 0px 1px 2px rgba(0, 128, 255, 0.35),
+    inset 2px -2px 2px rgba(0, 200, 255, 0.5),
+    0px 2px 6px rgba(0, 160, 255, 0.2),
+    inset 0px 2px 3px rgba(0, 160, 255, 0.35),
+    inset 0px 3px 6px rgba(0, 128, 200, 0.4);
+
+  /* BLUE in dark mode (your old shadows.blue.dark*) */
+  --btn-shadow-blue-dark-base:
+    inset -4px -4px 6px rgba(0, 20, 40, 0.6),
+    inset 0px 1px 2px rgba(0, 40, 80, 0.4),
+    inset 4px -4px 6px rgba(0, 60, 120, 0.5),
+    0px 4px 12px rgba(0, 20, 40, 0.25), inset 0px 2px 3px rgba(0, 30, 60, 0.35),
+    inset 0px 3px 6px rgba(0, 25, 50, 0.35);
+
+  --btn-shadow-blue-dark-hover:
+    inset -3px -3px 4px rgba(0, 20, 40, 0.65),
+    inset 0px 1px 2px rgba(0, 40, 80, 0.45),
+    inset 3px -3px 4px rgba(0, 60, 120, 0.55),
+    0px 3px 10px rgba(0, 20, 40, 0.3), inset 0px 2px 3px rgba(0, 30, 60, 0.4),
+    inset 0px 3px 6px rgba(0, 25, 50, 0.4);
+
+  --btn-shadow-blue-dark-active:
+    inset -2px -2px 2px rgba(0, 20, 40, 0.5),
+    inset 0px 1px 2px rgba(0, 40, 80, 0.4),
+    inset 2px -2px 2px rgba(0, 60, 120, 0.5), 0px 2px 6px rgba(0, 20, 40, 0.2),
+    inset 0px 2px 3px rgba(0, 30, 60, 0.35),
+    inset 0px 3px 6px rgba(0, 25, 50, 0.35);
+
+  /* PINK (variant: "pink") */
+  --btn-shadow-pink-base:
+    inset -4px -4px 6px rgba(255, 0, 255, 0.6),
+    inset 0px 1px 2px rgba(200, 0, 200, 0.35),
+    inset 4px -4px 6px rgba(255, 64, 255, 0.5),
+    0px 4px 12px rgba(255, 0, 255, 0.25),
+    inset 0px 2px 3px rgba(255, 0, 255, 0.35),
+    inset 0px 3px 6px rgba(200, 0, 200, 0.4);
+
+  --btn-shadow-pink-hover:
+    inset -3px -3px 4px rgba(255, 0, 255, 0.65),
+    inset 0px 1px 2px rgba(200, 0, 200, 0.4),
+    inset 3px -3px 4px rgba(255, 64, 255, 0.55),
+    0px 3px 10px rgba(255, 0, 255, 0.3),
+    inset 0px 2px 3px rgba(255, 0, 255, 0.4),
+    inset 0px 3px 6px rgba(200, 0, 200, 0.45);
+
+  --btn-shadow-pink-active:
+    inset -2px -2px 2px rgba(255, 0, 255, 0.5),
+    inset 0px 1px 2px rgba(200, 0, 200, 0.35),
+    inset 2px -2px 2px rgba(255, 64, 255, 0.5),
+    0px 2px 6px rgba(255, 0, 255, 0.2),
+    inset 0px 2px 3px rgba(255, 0, 255, 0.35),
+    inset 0px 3px 6px rgba(200, 0, 200, 0.4);
+
+  /* PINK in dark mode (your old shadows.pink.dark*) */
+  --btn-shadow-pink-dark-base:
+    inset -4px -4px 6px rgba(50, 0, 50, 0.6),
+    inset 0px 1px 2px rgba(80, 0, 80, 0.4),
+    inset 4px -4px 6px rgba(120, 0, 120, 0.5),
+    0px 4px 12px rgba(50, 0, 50, 0.25), inset 0px 2px 3px rgba(70, 0, 70, 0.35),
+    inset 0px 3px 6px rgba(40, 0, 40, 0.35);
+
+  --btn-shadow-pink-dark-hover:
+    inset -3px -3px 4px rgba(50, 0, 50, 0.65),
+    inset 0px 1px 2px rgba(80, 0, 80, 0.45),
+    inset 3px -3px 4px rgba(120, 0, 120, 0.55),
+    0px 3px 10px rgba(50, 0, 50, 0.3), inset 0px 2px 3px rgba(70, 0, 70, 0.4),
+    inset 0px 3px 6px rgba(40, 0, 40, 0.4);
+
+  --btn-shadow-pink-dark-active:
+    inset -2px -2px 2px rgba(50, 0, 50, 0.5),
+    inset 0px 1px 2px rgba(80, 0, 80, 0.4),
+    inset 2px -2px 2px rgba(120, 0, 120, 0.5), 0px 2px 6px rgba(50, 0, 50, 0.2),
+    inset 0px 2px 3px rgba(70, 0, 70, 0.35),
+    inset 0px 3px 6px rgba(40, 0, 40, 0.35);
 }
 
 .dark {
@@ -130,6 +297,38 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+
+  /* ===============================
+     Button shadow aliases (nice names)
+     =============================== */
+
+  --shadow-btn-light: var(--btn-shadow-light-base);
+  --shadow-btn-light-hover: var(--btn-shadow-light-hover);
+  --shadow-btn-light-active: var(--btn-shadow-light-active);
+
+  --shadow-btn-light-dark: var(--btn-shadow-light-dark-base);
+  --shadow-btn-light-dark-hover: var(--btn-shadow-light-dark-hover);
+  --shadow-btn-light-dark-active: var(--btn-shadow-light-dark-active);
+
+  --shadow-btn-dark: var(--btn-shadow-dark-base);
+  --shadow-btn-dark-hover: var(--btn-shadow-dark-hover);
+  --shadow-btn-dark-active: var(--btn-shadow-dark-active);
+
+  --shadow-btn-blue: var(--btn-shadow-blue-base);
+  --shadow-btn-blue-hover: var(--btn-shadow-blue-hover);
+  --shadow-btn-blue-active: var(--btn-shadow-blue-active);
+
+  --shadow-btn-blue-dark: var(--btn-shadow-blue-dark-base);
+  --shadow-btn-blue-dark-hover: var(--btn-shadow-blue-dark-hover);
+  --shadow-btn-blue-dark-active: var(--btn-shadow-blue-dark-active);
+
+  --shadow-btn-pink: var(--btn-shadow-pink-base);
+  --shadow-btn-pink-hover: var(--btn-shadow-pink-hover);
+  --shadow-btn-pink-active: var(--btn-shadow-pink-active);
+
+  --shadow-btn-pink-dark: var(--btn-shadow-pink-dark-base);
+  --shadow-btn-pink-dark-hover: var(--btn-shadow-pink-dark-hover);
+  --shadow-btn-pink-dark-active: var(--btn-shadow-pink-dark-active);
 }
 
 @theme {

@@ -1,53 +1,7 @@
-import { ComponentProps } from "react";
+import * as React from "react";
 import { Slot } from "@radix-ui/react-slot";
 import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
-
-const shadows = {
-  light: {
-    base: "inset_-4px_-4px_6px_rgba(255,255,255,0.7),inset_0px_1px_2px_rgba(220,220,220,0.6),inset_4px_-4px_6px_rgba(240,240,240,0.6),0px_4px_12px_rgba(200,200,200,0.25),inset_0px_2px_3px_rgba(230,230,230,0.5),inset_0px_3px_6px_rgba(180,180,180,0.35)",
-    hover:
-      "inset_-3px_-3px_4px_rgba(255,255,255,0.75),inset_0px_1px_2px_rgba(220,220,220,0.65),inset_3px_-3px_4px_rgba(240,240,240,0.65),0px_3px_10px_rgba(200,200,200,0.3),inset_0px_2px_3px_rgba(230,230,230,0.55),inset_0px_3px_6px_rgba(180,180,180,0.4)",
-    active:
-      "inset_-2px_-2px_2px_rgba(255,255,255,0.6),inset_0px_1px_2px_rgba(220,220,220,0.5),inset_2px_-2px_2px_rgba(240,240,240,0.6),0px_2px_6px_rgba(200,200,200,0.2),inset_0px_2px_3px_rgba(230,230,230,0.5),inset_0px_3px_6px_rgba(180,180,180,0.35)",
-    dark: "inset_-3px_-4px_6px_rgba(0,0,0,0.6),inset_0px_1px_2px_rgba(20,20,20,0.6),inset_3px_-4px_6px_rgba(50,50,50,0.5),0px_4px_12px_rgba(0,0,0,0.25),inset_0px_2px_3px_rgba(30,30,30,0.5),inset_0px_3px_6px_rgba(60,60,60,0.35)",
-    darkHover:
-      "inset_-3px_-3px_4px_rgba(0,0,0,0.65),inset_0px_1px_2px_rgba(20,20,20,0.65),inset_3px_-3px_4px_rgba(50,50,50,0.55),0px_3px_10px_rgba(0,0,0,0.3),inset_0px_2px_3px_rgba(30,30,30,0.55),inset_0px_3px_6px_rgba(60,60,60,0.4)",
-    darkActive:
-      "inset_-2px_-2px_2px_rgba(0,0,0,0.5),inset_0px_1px_2px_rgba(20,20,20,0.55),inset_2px_-2px_2px_rgba(50,50,50,0.5),0px_2px_6px_rgba(0,0,0,0.2),inset_0px_2px_3px_rgba(30,30,30,0.5),inset_0px_3px_6px_rgba(60,60,60,0.35)",
-  },
-  dark: {
-    base: "inset_-4px_-4px_4px_rgba(0,0,16,0.2),inset_0px_1px_2px_rgba(0,0,16,0.7),inset_4px_-4px_4px_rgba(0,0,16,0.2),0px_4px_10px_rgba(0,0,16,0.16),inset_0px_2px_3px_rgba(0,0,16,0.2),inset_0px_3px_6px_rgba(255,255,255,0.32)",
-    hover:
-      "inset_-2px_-2px_3px_rgba(0,0,16,0.25),inset_0px_1px_2px_rgba(0,0,16,0.7),inset_2px_-2px_3px_rgba(0,0,16,0.25),0px_3px_8px_rgba(0,0,16,0.2),inset_0px_2px_3px_rgba(0,0,16,0.25),inset_0px_3px_6px_rgba(255,255,255,0.3)",
-    active:
-      "inset_-2px_-2px_2px_rgba(0,0,16,0.2),inset_0px_1px_2px_rgba(0,0,16,0.6),inset_2px_-2px_2px_rgba(0,0,16,0.2),0px_2px_5px_rgba(0,0,16,0.16),inset_0px_2px_3px_rgba(0,0,16,0.2),inset_0px_3px_6px_rgba(255,255,255,0.25)",
-  },
-  blue: {
-    base: "inset_-4px_-4px_6px_rgba(0,160,255,0.6),inset_0px_1px_2px_rgba(0,128,255,0.35),inset_4px_-4px_6px_rgba(0,200,255,0.5),0px_4px_12px_rgba(0,160,255,0.25),inset_0px_2px_3px_rgba(0,160,255,0.35),inset_0px_3px_6px_rgba(0,128,200,0.4)",
-    hover:
-      "inset_-3px_-3px_4px_rgba(0,160,255,0.65),inset_0px_1px_2px_rgba(0,128,255,0.4),inset_3px_-3px_4px_rgba(0,200,255,0.55),0px_3px_10px_rgba(0,160,255,0.3),inset_0px_2px_3px_rgba(0,160,255,0.4),inset_0px_3px_6px_rgba(0,128,200,0.45)",
-    active:
-      "inset_-2px_-2px_2px_rgba(0,160,255,0.5),inset_0px_1px_2px_rgba(0,128,255,0.35),inset_2px_-2px_2px_rgba(0,200,255,0.5),0px_2px_6px_rgba(0,160,255,0.2),inset_0px_2px_3px_rgba(0,160,255,0.35),inset_0px_3px_6px_rgba(0,128,200,0.4)",
-    dark: "inset_-4px_-4px_6px_rgba(0,20,40,0.6),inset_0px_1px_2px_rgba(0,40,80,0.4),inset_4px_-4px_6px_rgba(0,60,120,0.5),0px_4px_12px_rgba(0,20,40,0.25),inset_0px_2px_3px_rgba(0,30,60,0.35),inset_0px_3px_6px_rgba(0,25,50,0.35)",
-    darkHover:
-      "inset_-3px_-3px_4px_rgba(0,20,40,0.65),inset_0px_1px_2px_rgba(0,40,80,0.45),inset_3px_-3px_4px_rgba(0,60,120,0.55),0px_3px_10px_rgba(0,20,40,0.3),inset_0px_2px_3px_rgba(0,30,60,0.4),inset_0px_3px_6px_rgba(0,25,50,0.4)",
-    darkActive:
-      "inset_-2px_-2px_2px_rgba(0,20,40,0.5),inset_0px_1px_2px_rgba(0,40,80,0.4),inset_2px_-2px_2px_rgba(0,60,120,0.5),0px_2px_6px_rgba(0,20,40,0.2),inset_0px_2px_3px_rgba(0,30,60,0.35),inset_0px_3px_6px_rgba(0,25,50,0.35)",
-  },
-  pink: {
-    base: "inset_-4px_-4px_6px_rgba(255,0,255,0.6),inset_0px_1px_2px_rgba(200,0,200,0.35),inset_4px_-4px_6px_rgba(255,64,255,0.5),0px_4px_12px_rgba(255,0,255,0.25),inset_0px_2px_3px_rgba(255,0,255,0.35),inset_0px_3px_6px_rgba(200,0,200,0.4)",
-    hover:
-      "inset_-3px_-3px_4px_rgba(255,0,255,0.65),inset_0px_1px_2px_rgba(200,0,200,0.4),inset_3px_-3px_4px_rgba(255,64,255,0.55),0px_3px_10px_rgba(255,0,255,0.3),inset_0px_2px_3px_rgba(255,0,255,0.4),inset_0px_3px_6px_rgba(200,0,200,0.45)",
-    active:
-      "inset_-2px_-2px_2px_rgba(255,0,255,0.5),inset_0px_1px_2px_rgba(200,0,200,0.35),inset_2px_-2px_2px_rgba(255,64,255,0.5),0px_2px_6px_rgba(255,0,255,0.2),inset_0px_2px_3px_rgba(255,0,255,0.35),inset_0px_3px_6px_rgba(200,0,200,0.4)",
-    dark: "inset_-4px_-4px_6px_rgba(50,0,50,0.6),inset_0px_1px_2px_rgba(80,0,80,0.4),inset_4px_-4px_6px_rgba(120,0,120,0.5),0px_4px_12px_rgba(50,0,50,0.25),inset_0px_2px_3px_rgba(70,0,70,0.35),inset_0px_3px_6px_rgba(40,0,40,0.35)",
-    darkHover:
-      "inset_-3px_-3px_4px_rgba(50,0,50,0.65),inset_0px_1px_2px_rgba(80,0,80,0.45),inset_3px_-3px_4px_rgba(120,0,120,0.55),0px_3px_10px_rgba(50,0,50,0.3),inset_0px_2px_3px_rgba(70,0,70,0.4),inset_0px_3px_6px_rgba(40,0,40,0.4)",
-    darkActive:
-      "inset_-2px_-2px_2px_rgba(50,0,50,0.5),inset_0px_1px_2px_rgba(80,0,80,0.4),inset_2px_-2px_2px_rgba(120,0,120,0.5),0px_2px_6px_rgba(50,0,50,0.2),inset_0px_2px_3px_rgba(70,0,70,0.35),inset_0px_3px_6px_rgba(40,0,40,0.35)",
-  },
-};
 
 const buttonVariants = cva(
   "inline-flex items-center justify-center cursor-pointer gap-2 whitespace-nowrap rounded-full font-semibold transition-all duration-200 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive",
@@ -65,14 +19,34 @@ const buttonVariants = cva(
         destructive:
           "bg-destructive text-white hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/60",
         link: "text-link underline-offset-4 hover:underline",
-        basic: "text-link ",
+        basic: "text-link",
         neomorph:
-          "border-2  bg-white text-black uppercase leading-relaxed active:translate-x-[0.07rem] active:translate-y-[0.07rem] shadow-[3px_3.5px_0px_#0f0f0f] hover:shadow-[1px_1px_0px_black,-1.5px_-1.5px_0px_#0f0f0f] active:shadow-[0px_0px_0px_#0f0f0f] dark:shadow-[2px_3px_0px_#fafafa] dark:hover:shadow-[1px_1.5px_0px_#fafafa] dark:active:shadow-[0px_0px_0px_#fafafa]",
-        light: `bg-linear-to-b from-[#f9f9f9] to-[#e5e2e2] text-slate-900/90 hover:text-slate-900 shadow-[${shadows.light.base}] hover:bg-top-right  hover:shadow-[${shadows.light.hover}] active:shadow-[${shadows.light.active}] dark:shadow-[${shadows.light.dark}] dark:hover:shadow-[${shadows.light.darkHover}] dark:active:shadow-[${shadows.light.darkActive}]`,
-        dark: `bg-linear-to-b from-[#232326] to-[#353538] text-slate-100/90 hover:text-slate-100 shadow-[${shadows.dark.base}] hover:bg-top-right hover:shadow-[${shadows.dark.hover}] active:shadow-[${shadows.dark.active}]`,
-        blue: `bg-linear-to-b from-[#00f0ff] to-[#00ffea]  shadow-[${shadows.blue.base}] hover:bg-top-right hover:shadow-[${shadows.blue.hover}] active:shadow-[${shadows.blue.active}] dark:shadow-[${shadows.blue.dark}] dark:hover:shadow-[${shadows.blue.darkHover}] dark:active:shadow-[${shadows.blue.darkActive}]`,
-        pink: `bg-linear-to-b from-[#ff00ff] to-[#ff00dd]  hover:bg-top-right shadow-[${shadows.pink.base}] hover:shadow-[${shadows.pink.hover}] active:shadow-[${shadows.pink.active}] dark:shadow-[${shadows.pink.dark}] dark:hover:shadow-[${shadows.pink.darkHover}] dark:active:shadow-[${shadows.pink.darkActive}]`,
-        contrast: `bg-linear-to-b from-[#232326] to-[#353538] text-slate-100/90 hover:text-slate-100 shadow-[${shadows.dark.base}] hover:shadow-[${shadows.dark.hover}] active:shadow-[${shadows.dark.active}] dark:bg-linear-to-b dark:from-[#f9f9f9] dark:to-[#e5e2e2] dark:text-slate-900/90 dark:hover:text-slate-900 dark:shadow-[${shadows.light.dark}] dark:hover:shadow-[${shadows.light.darkHover}] dark:active:shadow-[${shadows.light.darkActive}]`,
+          "border-2 bg-white text-black uppercase leading-relaxed active:translate-x-[0.07rem] active:translate-y-[0.07rem] shadow-[3px_3.5px_0px_#0f0f0f] hover:shadow-[1px_1px_0px_black,-1.5px_-1.5px_0px_#0f0f0f] active:shadow-[0px_0px_0px_#0f0f0f] dark:shadow-[2px_3px_0px_#fafafa] dark:hover:shadow-[1px_1.5px_0px_#fafafa] dark:active:shadow-[0px_0px_0px_#fafafa]",
+
+        light:
+          "bg-linear-to-b from-[#f9f9f9] to-[#e5e2e2] text-slate-900/90 hover:text-slate-900 hover:bg-top-right " +
+          "shadow-(--shadow-btn-light) hover:shadow-(--shadow-btn-light-hover) active:shadow-(--shadow-btn-light-active) " +
+          "dark:shadow-(--shadow-btn-light-dark) dark:hover:shadow-(--shadow-btn-light-dark-hover) dark:active:shadow-(--shadow-btn-light-dark-active)",
+
+        dark:
+          "bg-linear-to-b from-[#232326] to-[#353538] text-slate-100/90 hover:text-slate-100 hover:bg-top-right " +
+          "shadow-(--shadow-btn-dark) hover:shadow-(--shadow-btn-dark-hover) active:shadow-(--shadow-btn-dark-active)",
+
+        blue:
+          "bg-linear-to-b from-[#00f0ff] to-[#00ffea] hover:bg-top-right " +
+          "shadow-(--shadow-btn-blue) hover:shadow-(--shadow-btn-blue-hover) active:shadow-(--shadow-btn-blue-active) " +
+          "dark:shadow-(--shadow-btn-blue-dark) dark:hover:shadow-(--shadow-btn-blue-dark-hover) dark:active:shadow-(--shadow-btn-blue-dark-active)",
+
+        pink:
+          "bg-linear-to-b from-[#ff00ff] to-[#ff00dd] hover:bg-top-right " +
+          "shadow-(--shadow-btn-pink) hover:shadow-(--shadow-btn-pink-hover) active:shadow-(--shadow-btn-pink-active) " +
+          "dark:shadow-(--shadow-btn-pink-dark) dark:hover:shadow-(--shadow-btn-pink-dark-hover) dark:active:shadow-(--shadow-btn-pink-dark-active)",
+
+        contrast:
+          "bg-linear-to-b from-[#232326] to-[#353538] text-slate-100/90 hover:text-slate-100 " +
+          "shadow-(--shadow-btn-dark) hover:shadow-(--shadow-btn-dark-hover) active:shadow-(--shadow-btn-dark-active) " +
+          "dark:bg-linear-to-b dark:from-[#f9f9f9] dark:to-[#e5e2e2] dark:text-slate-900/90 dark:hover:text-slate-900 " +
+          "dark:shadow-(--shadow-btn-light-dark) dark:hover:shadow-(--shadow-btn-light-dark-hover) dark:active:shadow-(--shadow-btn-light-dark-active)",
       },
       size: {
         default: "h-9 text-sm px-4 py-2 has-[>svg]:px-3",
@@ -92,25 +66,26 @@ const buttonVariants = cva(
   }
 );
 
-function Button({
-  className,
-  variant,
-  size,
-  asChild = false,
-  ...props
-}: ComponentProps<"button"> &
+type ButtonProps = React.ComponentPropsWithoutRef<"button"> &
   VariantProps<typeof buttonVariants> & {
     asChild?: boolean;
-  }) {
-  const Comp = asChild ? Slot : "button";
+  };
 
-  return (
-    <Comp
-      data-slot='button'
-      className={cn(buttonVariants({ variant, size, className }))}
-      {...props}
-    />
-  );
-}
+const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
+  ({ className, variant, size, asChild = false, ...props }, ref) => {
+    const Comp = asChild ? Slot : "button";
+
+    return (
+      <Comp
+        ref={ref}
+        data-slot='button'
+        className={cn(buttonVariants({ variant, size, className }))}
+        {...props}
+      />
+    );
+  }
+);
+
+Button.displayName = "Button";
 
 export { Button, buttonVariants };

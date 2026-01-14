@@ -1,5 +1,4 @@
 import { Tweets } from "@/components/ui/tweets";
-
 import type { TextBlurb } from "@/types";
 
 const twitterText: TextBlurb = {

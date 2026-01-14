@@ -1,4 +1,4 @@
-import { Link } from "next-view-transitions";
+import Link from "next/link";
 import { UserNewsletterForm } from "@/components/resend/user-newsletter-form";
 import { TooltipSocialIcon } from "@/components/shared/tooltip-social-icon";
 import { CopyrightText } from "@/components/footer/copyright-text";
@@ -6,7 +6,6 @@ import { LinkRenderer } from "@/components/footer/link-renderer";
 import { LinkList } from "@/components/footer/link-list";
 import { BackToTopButton } from "@/components/footer/back-to-top-button";
 import { CurrentlyPlayingSpotify } from "@/components/footer/currently-playing-spotify";
-
 import {
   quickLinks,
   moreLinks,

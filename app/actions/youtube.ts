@@ -1,7 +1,6 @@
 "use server";
 
 import { mockYouTubeFeed } from "@/lib/mock/data";
-
 import type { YouTubeVideo, YouTubeApiItem } from "@/types/youtube";
 
 const YOUTUBE_KEY = process.env.YOUTUBE_API_KEY;

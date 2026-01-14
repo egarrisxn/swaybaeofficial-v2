@@ -1,7 +1,6 @@
 import { Video } from "@/components/ui/video";
 import { Button } from "@/components/ui/button";
 import { YouTubeFeed } from "@/components/shared/youtube-feed";
-
 import type { TextBlurb } from "@/types";
 
 const youTubeText: TextBlurb = {
