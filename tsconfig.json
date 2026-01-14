@@ -23,13 +23,12 @@
     }
   },
   "include": [
-    "**/*.mts",
+    "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
-    "next-env.d.ts",
-    "eslint-config-next.d.ts"
+    "**/*.mts"
   ],
   "exclude": ["node_modules"]
 }

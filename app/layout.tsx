@@ -1,13 +1,11 @@
 import type { ReactNode } from "react";
 import type { Metadata, Viewport } from "next";
 import { Poppins, Fira_Sans } from "next/font/google";
+import { ViewTransitions } from "next-view-transitions";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import { ViewTransitions } from "next-view-transitions";
-import { ThemeProvider } from "@/app/context/theme";
-import { TooltipProvider } from "@/app/context/tooltip";
 import { Toaster } from "@/components/ui/sonner";
-import { SITE_URL, SITE_TITLE, SITE_DESC, SITE_HANDLE } from "@/lib/config";
+import { ThemeProvider } from "@/components/theme-provider";
 import "./globals.css";
 
 // import { CookieBanner } from "@/components/cookie-banner";
@@ -29,6 +27,16 @@ const firaSans = Fira_Sans({
   variable: "--font-fira-sans",
 });
 
+export const SITE_URL = (
+  process.env.SITE_URL ||
+  process.env.NEXT_PUBLIC_SITE_URL ||
+  "http://localhost:3000"
+).replace(/\/$/, "");
+
+export const SITE_TITLE = "Sway Bae";
+export const SITE_DESC = "The official page for Sway Bae & The Bae Squad!";
+export const SITE_HANDLE = "@sway_baeTV";
+
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
@@ -37,7 +45,7 @@ export const metadata: Metadata = {
   },
   description: SITE_DESC,
   referrer: "origin-when-cross-origin",
-  creator: "egxo.dev.",
+  creator: "egxo.dev",
   keywords: [
     "swaybae",
     "sway_bae",
@@ -101,7 +109,6 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     <ViewTransitions>
       <html lang='en' suppressHydrationWarning>
         <head>
-          <meta name='apple-mobile-web-app-title' content='Sway Bae' />
           {/* <Script
             id='gtag-init'
             strategy='afterInteractive'
@@ -127,7 +134,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             enableSystem
             disableTransitionOnChange
           >
-            <TooltipProvider delayDuration={0}>{children}</TooltipProvider>
+            {children}
             {/* <CookieBanner /> */}
             <Toaster richColors position='bottom-center' />
           </ThemeProvider>

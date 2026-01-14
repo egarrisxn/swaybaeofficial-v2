@@ -1,5 +1,4 @@
 import type { MetadataRoute } from "next";
-import { SITE_URL } from "@/lib/config";
 
 export default function robots(): MetadataRoute.Robots {
   return {
@@ -10,6 +9,6 @@ export default function robots(): MetadataRoute.Robots {
         disallow: "/private/",
       },
     ],
-    sitemap: `${SITE_URL}/sitemap.xml`,
+    sitemap: "https://swaybae.net/sitemap.xml",
   };
 }

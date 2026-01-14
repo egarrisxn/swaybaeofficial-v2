@@ -13,7 +13,16 @@ const eslintConfig = defineConfig([
       "@typescript-eslint/no-unused-vars": "off",
     },
   },
-  globalIgnores([".next/**", "out/**", "build/**", "next-env.d.ts"]),
+  globalIgnores([
+    ".next/**",
+    ".git/**",
+    ".vscode/**",
+    "public/**",
+    "out/**",
+    "build/**",
+    "next-env.d.ts",
+    "**/node_modules/",
+  ]),
   prettier,
 ]);
 

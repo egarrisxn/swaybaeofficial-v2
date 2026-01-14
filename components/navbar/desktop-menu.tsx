@@ -51,7 +51,7 @@ export function DesktopMenu() {
           <NavigationMenuItem>
             <NavigationMenuTrigger>Subathon</NavigationMenuTrigger>
             <NavigationMenuContent>
-              <ul className='grid w-[100px]'>
+              <ul className='grid w-25'>
                 <li>
                   <NavigationMenuLink asChild>
                     <Link href='/subathon/2024'>2024</Link>

@@ -8,7 +8,6 @@ import {
   PopoverTrigger,
   PopoverContent,
 } from "@/components/ui/popover";
-import { DropdownToggle } from "@/components/navbar/dropdown-toggle";
 
 import { mobileNavLinks } from "@/lib/constants";
 
@@ -21,7 +20,33 @@ export function MobileMenu() {
     <div className='lg:hidden'>
       <Popover open={open} onOpenChange={setOpen}>
         <PopoverTrigger asChild>
-          <DropdownToggle />
+          <button className='group text-text-foreground inline-flex cursor-pointer items-center justify-center transition-all'>
+            <svg
+              width={24}
+              height={24}
+              viewBox='0 0 24 24'
+              fill='none'
+              stroke='currentColor'
+              strokeWidth={2}
+              strokeLinecap='round'
+              strokeLinejoin='round'
+              xmlns='http://www.w3.org/2000/svg'
+              className='size-5 md:size-6'
+            >
+              <path
+                d='M4 12L20 12'
+                className='origin-center -translate-y-1.75 transition-all duration-300 ease-[cubic-bezier(.5,.85,.25,1.1)] group-aria-expanded:translate-x-0 group-aria-expanded:translate-y-0 group-aria-expanded:rotate-135'
+              />
+              <path
+                d='M4 12H20'
+                className='origin-center transition-all duration-300 ease-[cubic-bezier(.5,.85,.25,1.8)] group-aria-expanded:rotate-45'
+              />
+              <path
+                d='M4 12H20'
+                className='origin-center translate-y-1.75 transition-all duration-300 ease-[cubic-bezier(.5,.85,.25,1.1)] group-aria-expanded:translate-y-0 group-aria-expanded:rotate-135'
+              />
+            </svg>
+          </button>
         </PopoverTrigger>
         <PopoverContent
           align='start'
@@ -45,7 +70,7 @@ export function MobileMenu() {
                     href={link.href}
                     style={pathname === link.href ? activeStyle : {}}
                     className='block w-full'
-                    onClick={() => setOpen(false)} // <-- close popover
+                    onClick={() => setOpen(false)}
                   >
                     {link.label}
                   </Link>

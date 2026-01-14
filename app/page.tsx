@@ -1,5 +1,5 @@
-import { LandingNavbar } from "@/components/navbar/landing-navbar";
-import { LandingFooter } from "@/components/footer/landing-footer";
+import { LandingNavbar } from "@/components/landing/landing-navbar";
+import { LandingFooter } from "@/components/landing/landing-footer";
 import { ScrollUpButton } from "@/components/shared/scroll-up-button";
 import { SectionDivider } from "@/components/shared/section-divider";
 import HeroSection from "@/components/landing/hero-section";
