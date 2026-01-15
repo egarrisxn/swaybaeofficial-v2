@@ -1,12 +1,14 @@
+// NOTE:
+// This route intentionally uses request-specific data (query params).
+// Next.js build will attempt prerender checks and bail out.
+// The NEXT_PRERENDER_INTERRUPTED message is expected and safe to ignore.
+
 import { type NextRequest, NextResponse } from "next/server";
-import { headers } from "next/headers";
 import { getGoogleCalendarEvents } from "@/lib/calendar";
 
 export async function GET(request: NextRequest) {
   try {
-    headers();
-
-    const searchParams = request.nextUrl.searchParams;
+    const { searchParams } = new URL(request.url);
 
     const month = searchParams.get("month");
     const year = searchParams.get("year");
@@ -25,8 +27,12 @@ export async function GET(request: NextRequest) {
     const events = await getGoogleCalendarEvents(timeMin, timeMax);
 
     return NextResponse.json({ events });
-  } catch (error) {
-    console.error("Calendar API error:", error);
+  } catch (error: any) {
+    // Ignore Next.js prerender bailout noise during build
+    if (error?.digest !== "NEXT_PRERENDER_INTERRUPTED") {
+      console.error("Calendar API error:", error);
+    }
+
     return NextResponse.json(
       { error: "Failed to fetch calendar events" },
       { status: 500 }

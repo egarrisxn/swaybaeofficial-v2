@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 import Link from "next/link";
-import { getNowPlayingItem } from "@/app/actions/spotify";
+import { getNowPlayingItem } from "@/lib/spotify";
 import { mockSpotifyNowPlaying } from "@/lib/mock/data";
 import type { Spotify } from "@/types/spotify";
 

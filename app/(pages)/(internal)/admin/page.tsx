@@ -1,3 +1,19 @@
+//! Below can be used as a debug page to check the logged-in Supabase user
+
+// import { createClient } from "@/lib/supabase/server";
+
+// export default async function AdminDebugPage() {
+//   const supabase = await createClient();
+
+//   const {
+//     data: { user },
+//   } = await supabase.auth.getUser();
+
+//   console.log("Supabase user", user);
+
+//   return <pre className='p-4'>{JSON.stringify(user, null, 2)}</pre>;
+// }
+
 import { redirect } from "next/navigation";
 import { adminApproveComment, adminDeleteComment } from "@/app/actions/admin";
 import { createClient } from "@/lib/supabase/server";

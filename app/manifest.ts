@@ -1,13 +1,10 @@
 import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
-  const SITE_TITLE = "Sway Bae";
-  const SITE_DESC = "The official page for Sway Bae & The Bae Squad!";
-
   return {
-    name: SITE_TITLE,
-    short_name: SITE_TITLE,
-    description: SITE_DESC,
+    name: "Sway Bae",
+    short_name: "Sway Bae",
+    description: "The official page for Sway Bae & The Bae Squad!",
     lang: "en",
     start_url: "/",
     scope: "/",
